@@ -48,26 +48,33 @@ Route::get('/lihat', function () {
     return view('admin.lihat');
 });
 
+//baru
 Route::get('/pengadaan1', function () {
     return view('admin.pengadaan1');
 });
+
+Route::get('/pengadaan2', function () {
+    return view('admin.pengadaan2');
+});
+//
+
 
 Auth::routes();
 Auth::routes(['verify' => false]);
 // Auth::routes(['verify' => true]);
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('/admin',[view::class, 'index']);
-Route::get('/masuk',[view::class, 'login']);
-Route::post('/save',[view::class, 'save']);
+Route::get('/admin', [view::class, 'index']);
+Route::get('/masuk', [view::class, 'login']);
+Route::post('/save', [view::class, 'save']);
 // Route::delete('/admin/{id}',[view::class, 'delete']);
 // Route::delete('/admin/{id}', 'view@destroy')->name('admin.destroy');
 // Route::get('admin/hapus/{id}', 'view@hapus');
 Route::get('admin/hapus/{id}', [view::class, 'hapus']);
 
-Route::get('/guest',[GuestController::class, 'index'])->name('guest');
+Route::get('/guest', [GuestController::class, 'index'])->name('guest');
 
-Route::get('/pengguna',[view::class, 'pengguna'])->name('pengguna');
+Route::get('/pengguna', [view::class, 'pengguna'])->name('pengguna');
 // Route::dele('/delete',[view::class, 'destroy']);
 // Route::delete('/pengguna/{id}', 'view@destroy')->name('pengguna.destroy');
 
