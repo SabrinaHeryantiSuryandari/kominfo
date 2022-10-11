@@ -353,7 +353,7 @@
                   </a>
                   <div class="collapse" id="ui-basic">
                     <ul class="nav flex-column sub-menu">
-                      <li class="nav-item"> <a class="nav-link" href="LPpengadaan1">1juta - 10juta</a></li>
+                      <li class="nav-item"> <a class="nav-link" href="/pengadaan1">1juta - 10juta</a></li>
                       <li class="nav-item"> <a class="nav-link" href="#">> 10juta - 50juta</a></li>
                       <li class="nav-item"> <a class="nav-link" href="#">> 50juta</a></li>
                     </ul>

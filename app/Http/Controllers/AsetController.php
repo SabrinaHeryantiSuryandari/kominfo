@@ -19,7 +19,7 @@ class AsetController extends Controller
         $asets = Aset::all();
         $pemiliks = Pemilik::all();
       
-        return view('admin.laporan',compact('asets'))
+        return view('admin.LPpengadaan1',compact('asets'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     
     }

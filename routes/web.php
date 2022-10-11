@@ -48,6 +48,10 @@ Route::get('/lihat', function () {
     return view('admin.lihat');
 });
 
+Route::get('/pengadaan1', function () {
+    return view('admin.pengadaan1');
+});
+
 Auth::routes();
 Auth::routes(['verify' => false]);
 // Auth::routes(['verify' => true]);
