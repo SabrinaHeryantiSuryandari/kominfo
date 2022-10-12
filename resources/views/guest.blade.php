@@ -1,16 +1,16 @@
 @extends('index/tamu')
-{{-- @section('content')
+<!-- {{-- @section('content')
     @section('title')
         {{'Beranda'}}
     @endsection
     @section('judul')
         {{'Dashboard'}}
-    @endsection --}}
+    @endsection --}} -->
 <!-- Content Row -->
-{{-- <div class="row">
+<!-- {{-- <div class="row">
     
 </div> 
  
                    
                     
-@endsection --}}
+@endsection --}} -->
