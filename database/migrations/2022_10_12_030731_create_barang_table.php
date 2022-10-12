@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('barang', function (Blueprint $table) {
             $table->id();
             $table->integer('no_sk_pengadaan');
-            $table->varchar('jenis_pemgadaan');
-            $table->varchar('sub_pengadaan');
+            $table->string('jenis_pemgadaan');
+            $table->string('sub_pengadaan');
             $table->integer('volume');
             $table->integer('satuan');
             $table->timestamps();

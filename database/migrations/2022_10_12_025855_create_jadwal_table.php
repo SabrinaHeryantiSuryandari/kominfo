@@ -16,14 +16,14 @@ return new class extends Migration
         Schema::create('jadwal', function (Blueprint $table) {
             $table->id();
             $table->integer('no_surat');
-            $table->varchar('program');
-            $table->varchar('kegiatan');
-            $table->varchar('sub_kegiatan');
-            $table->varchar('pekerjaan');
+            $table->string('program');
+            $table->string('kegiatan');
+            $table->string('sub_kegiatan');
+            $table->string('pekerjaan');
             $table->integer('total_biaya');
             $table->integer('kode_rek');
-            $table->varchar('pelaksana');
-            $table->varchar('uraian');
+            $table->string('pelaksana');
+            $table->string('uraian');
             $table->integer('alokasi_waktu');
             $table->date('tgl');
             $table->char('hari');
