@@ -12,9 +12,9 @@
     <div class="col-md-6 mb-4 stretch-card transparent">
         <div class="card card-dark-blue">
             <div class="card-body">
-                <p class="mb-4">Total Bookings</p>
-                <p class="fs-30 mb-2">61344</p>
-                <p>22.00% (30 days)</p>
+                <h4 class="mb-4 pt-2">Input Pengadaan</h4>
+                {{-- <p class="fs-30 mb-2">Input Pengadaan</p><br> --}}
+                {{-- <p>22.00% (30 days)</p> --}}
                 <div class="pt-2">
                     <button type="button" class="btn btn-danger btn-icon-text">
                         <i class="ti-upload btn-icon-prepend"></i>
@@ -27,9 +27,9 @@
     <div class="col-md-6 mb-4 stretch-card transparent">
         <div class="card card-tale">
             <div class="card-body">
-                <p class="mb-4">Total Bookings</p>
-                <p class="fs-30 mb-2">61344</p>
-                <p>22.00% (30 days)</p>
+                <h4 class="mb-4 pt-2" >Input Anggaran</h4>
+                {{-- <p class="fs-30 mb-2">Input Anggaran</p><br> --}}
+                {{-- <p>22.00% (30 days)</p> --}}
                 <div class="pt-2">
                     <button type="button" class="btn btn-danger btn-icon-text">
                         <i class="ti-upload btn-icon-prepend"></i>
@@ -43,7 +43,6 @@
 
 
 <div class="row">
-    <div class="row">
         <div class="col grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
@@ -75,8 +74,6 @@
                 </div>
             </div>
         </div>
-
-    </div>
 </div>
 
 <!-- Content Row -->
