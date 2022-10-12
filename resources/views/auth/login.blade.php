@@ -182,13 +182,13 @@
                                             </a>
                                         @endif                                        
                                     </form>
-                                    <hr>
+                                    
                                     {{-- <button type="submit" class="btn btn-primary">
                                         {{ route('tamu') }}
                                     </button> --}}
-                                    <div class="text-center">
+                                    {{--  <div class="text-center">
                                     <a class="btn btn-primary text-center" href="{{ route('guest') }}"> LOGIN AS GUEST </a>
-                                </div>
+                                </div>  --}}
                             {{-- @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">
