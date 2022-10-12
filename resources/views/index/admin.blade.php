@@ -12,23 +12,23 @@
     <div class="col-md-12 grid-margin stretch-card">
         <div class="card shadow">
             <div class="card-body">
-                <div class="row">
+                {{-- <div class="row"> --}}
                     <div class="col-12">
-                        <button type="button" class="btn btn-danger btn-lg btn-icon-text ">
+                        <button type="button" class="btn btn-danger btn-mg btn-icon-text ">
                             <i class="ti-upload btn-icon-prepend"></i>
                             Upload
                         </button>
                     </div>
-                </div>
+                {{-- </div> --}}
             </div>
         </div>
     </div>
 </div>
 
 <div class="row">
-    <div class="row">
+    {{-- <div class="col-md-12 grid-margin stretch-card"> --}}
         <div class="col grid-margin stretch-card">
-            <div class="card">
+            <div class="card shadow">
                 <div class="card-body">
                     <div class="chartjs-size-monitor">
                         <div class="chartjs-size-monitor-expand">
@@ -59,7 +59,7 @@
             </div>
         </div>
 
-    </div>
+    {{-- </div> --}}
 </div>
 
 <!-- Content Row -->
