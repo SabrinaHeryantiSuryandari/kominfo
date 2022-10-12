@@ -8,22 +8,39 @@
 @endsection
 <!-- Content Row -->
 
-<div class="row">
-    <div class="col-md-12 grid-margin stretch-card">
-        <div class="card shadow">
+<div class="row ">
+    <div class="col-md-6 mb-4 stretch-card transparent">
+        <div class="card card-dark-blue">
             <div class="card-body">
-                <div class="row">
-                    <div class="col-12">
-                        <button type="button" class="btn btn-danger btn-lg btn-icon-text ">
-                            <i class="ti-upload btn-icon-prepend"></i>
-                            Upload
-                        </button>
-                    </div>
+                <p class="mb-4">Total Bookings</p>
+                <p class="fs-30 mb-2">61344</p>
+                <p>22.00% (30 days)</p>
+                <div class="pt-2">
+                    <button type="button" class="btn btn-danger btn-icon-text">
+                        <i class="ti-upload btn-icon-prepend"></i>
+                        Input Pengadaan
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-4 stretch-card transparent">
+        <div class="card card-tale">
+            <div class="card-body">
+                <p class="mb-4">Total Bookings</p>
+                <p class="fs-30 mb-2">61344</p>
+                <p>22.00% (30 days)</p>
+                <div class="pt-2">
+                    <button type="button" class="btn btn-danger btn-icon-text">
+                        <i class="ti-upload btn-icon-prepend"></i>
+                        Input Anggaran
+                    </button>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 
 <div class="row">
     <div class="row">
