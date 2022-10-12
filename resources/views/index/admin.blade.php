@@ -16,10 +16,10 @@
                 {{-- <p class="fs-30 mb-2">Input Pengadaan</p><br> --}}
                 {{-- <p>22.00% (30 days)</p> --}}
                 <div class="pt-2">
-                    <button type="button" class="btn btn-danger btn-icon-text">
+                    <a href="/input_pengadaan" type="button" class="btn btn-danger btn-icon-text">
                         <i class="ti-upload btn-icon-prepend"></i>
                         Input Pengadaan
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -31,10 +31,10 @@
                 {{-- <p class="fs-30 mb-2">Input Anggaran</p><br> --}}
                 {{-- <p>22.00% (30 days)</p> --}}
                 <div class="pt-2">
-                    <button type="button" class="btn btn-danger btn-icon-text">
+                    <a href="/input_anggaran" type="button" class="btn btn-danger btn-icon-text">
                         <i class="ti-upload btn-icon-prepend"></i>
                         Input Anggaran
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -76,14 +76,14 @@
     </div>
 </div>
 
-                <!-- Content Row -->
+<!-- Content Row -->
 @endsection
-                
-                
-                <div class="row">
 
-                    <!-- Area Chart -->
-                    <!-- {{-- <div class="card shadow mb-4  text-center my-3 col-12">
+
+<div class="row">
+
+    <!-- Area Chart -->
+    <!-- {{-- <div class="card shadow mb-4  text-center my-3 col-12">
         <div class="card-header text-white" style="background-color: #40B9CB;">
             Index Aset Terdata
         </div>
@@ -93,5 +93,4 @@
         </div>
     </div> --}} -->
 
-                </div>
-                
+</div>
