@@ -176,13 +176,13 @@
 
 <body>
     {{-- background="{{ asset('template/')}} --}}
-    <img src="{{ asset('img/bg.jpg') }}" id="bg" alt="">
+    <img src="{{ asset('img/bg1.jpg') }}" id="bg" class="img-thumbnail" >
 
     <div class="card-img-overlay text-center d-flex flex-column h-100">
         <div class="my-auto">
             <!-- <h5 class="card-title">Card title</h5> -->
-            <h1 class="text-center mb-5 text-white"><b> SELAMAT DATANG DI <br> SISTEM INFORMASI MANAJEMEN ASET TANAH <br> DINAS PEKERJAAN UMUM
-                SUMBER DAYA AIR</b> </h1>
+            <h1 class="text-center mb-5 text-white"><b> SELAMAT DATANG DI <br> SISTEM INFORMASI KEUANGAN <br> DINAS KOMUNIKASI & INFORMATIKA
+                PROVINSI JAWA TIMUR</b> </h1>
             {{-- <button type="button" class="btn btn-info "> --}}
             <a class="btn btn-lg btn-primary mt-5" href="{{ route('login') }}"> Masuk</a>
             {{-- </button> --}}
