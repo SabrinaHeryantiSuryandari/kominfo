@@ -31,46 +31,156 @@
                 <div class="card-body">
                   <h4 class="card-title">Data Masukan Pengadaan</h4>
                   <p class="card-description">
-                    Isi format dibawah ini.
+                    SK Pejabat Pengadaan
                   </p>
                   <form class="forms-sample">
                     <div class="form-group">
-                      <label for="exampleInputName1">Name</label>
-                      <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
+                      <label for="exampleInputTanggal">Tanggal</label>
+                      <input type="text" class="form-control" id="exampleInputTanggal" placeholder="">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail3">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
+                      <label for="exampleInputNomor">Nomor</label>
+                      <input type="text" class="form-control" id="exampleInputNomor" placeholder="">
+                    </div>
+                  </form>
+                  <p class="card-description">
+                    SK Pejabat Pemeriksa Administratif
+                  </p>
+                  <form class="forms-sample">
+                    <div class="form-group">
+                      <label for="exampleInputTanggal">Tanggal</label>
+                      <input type="text" class="form-control" id="exampleInputTanggal" placeholder="">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputPassword4">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword4" placeholder="Password">
+                      <label for="exampleInputNomor">Nomor</label>
+                      <input type="text" class="form-control" id="exampleInputNomor" placeholder="">
                     </div>
                     <div class="form-group">
-                      <label for="exampleSelectGender">Gender</label>
-                        <select class="form-control" id="exampleSelectGender">
-                          <option>Male</option>
-                          <option>Female</option>
+                      <label for="exampleInputNama">Nama</label>
+                      <input type="text" class="form-control" id="exampleInputNama" placeholder="">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputNIP">NIP</label>
+                      <input type="text" class="form-control" id="exampleInputNIP" placeholder="">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputNoBA">No. BA Hasil Pem. Adm.</label>
+                      <input type="text" class="form-control" id="exampleInputNoBA" placeholder="">
+                    </div>
+                  </form>
+                  <p class="card-description">
+                    Bidang Pengelolaan
+                  </p>
+                  <form class="forms-sample">
+                  <div class="form-group">
+                      <label for="exampleSelectProgram">Program</label>
+                        <select class="form-control" id="exampleSelectProgram">
+                          <option>Penyelenggaraan Statistik Sektoral</option>
+                          <option>Penyelenggaraan Statistik Sektoral</option>
+                          <option>Penyelenggaraan Statistik Sektoral</option>
                         </select>
                       </div>
                     <div class="form-group">
-                      <label>File upload</label>
-                      <input type="file" name="img[]" class="file-upload-default">
-                      <div class="input-group col-xs-12">
-                        <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
-                        <span class="input-group-append">
-                          <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-                        </span>
-                      </div>
+                      <label for="exampleInputKegiatan">Kegiatan</label>
+                      <input type="text" class="form-control" id="exampleInputKegiatan" placeholder="">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputCity1">City</label>
-                      <input type="text" class="form-control" id="exampleInputCity1" placeholder="Location">
+                      <label for="exampleSubKegiatan">Sub Kegiatan</label>
+                      <textarea class="form-control" id="exampleSubKegiatan" rows="4"></textarea>
                     </div>
                     <div class="form-group">
-                      <label for="exampleTextarea1">Textarea</label>
-                      <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
+                      <label for="exampleInputPekerjaan">Pekerjaan</label>
+                      <input type="email" class="form-control" id="exampleInputPekerjaan" placeholder="">
                     </div>
+                    <div class="form-group">
+                      <label for="exampleInputKodeRekening">Kode Rekening</label>
+                      <input type="password" class="form-control" id="exampleInputKodeRekening" placeholder="">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleUraianBelanja">Uraian Belanja</label>
+                      <textarea class="form-control" id="exampleUraianBelanja" rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputSumberDana">Sumber Dana</label>
+                      <input type="password" class="form-control" id="exampleInputSumberDana" placeholder="">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputTanggalPelaksanaan">Tanggal Pelaksanaan</label>
+                      <input type="text" class="form-control" id="exampleInputTanggalPelaksanaan" placeholder="">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputBatasWaktuPenyelesaian">Batas Waktu Penyelesaian</label>
+                      <input type="text" class="form-control" id="exampleInputBatasWaktuPenyelesaian" placeholder="">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputJkWaktuPengerjaan">Jk Waktu Pengerjaan</label>
+                      <input type="text" class="form-control" id="exampleInputJkWaktuPengerjaan" placeholder="">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputTglmulaipekerjaan">Tgl Mulai Pekerjaan</label>
+                      <input type="email" class="form-control" id="exampleInputTglmulaipekerjaan" placeholder="">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputTempat">Tempat</label>
+                      <input type="email" class="form-control" id="exampleInputTempat" placeholder="">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputKota">Kota</label>
+                      <input type="email" class="form-control" id="exampleInputKota" placeholder="">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPelaksana">Pelaksana</label>
+                      <input type="email" class="form-control" id="exampleInputPelaksana" placeholder="">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputAlamat">Alamat</label>
+                      <input type="email" class="form-control" id="exampleInputAlamat" placeholder="">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputYangTTD">Yang TTD</label>
+                      <input type="email" class="form-control" id="exampleInputYangTTD" placeholder="">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputJabatan">Jabatan</label>
+                      <input type="email" class="form-control" id="exampleInputJabatan" placeholder="">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputNPWP">NPWP</label>
+                      <input type="email" class="form-control" id="exampleInputNPWP" placeholder="">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputNo.Tlpn">No.Tlpn</label>
+                      <input type="email" class="form-control" id="exampleInputNo.Tlpn" placeholder="">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputFax">Fax</label>
+                      <input type="email" class="form-control" id="exampleInputFax" placeholder="">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail">Email</label>
+                      <input type="email" class="form-control" id="exampleInputEmail" placeholder="">
+                    </div>
+                    <p class="card-description">
+                    Surat Penawaran
+                  </p>
+                  <form class="forms-sample">
+                    <div class="form-group">
+                      <label for="exampleInputNo.Surat">No.Surat</label>
+                      <input type="text" class="form-control" id="exampleInputNo.Surat" placeholder="">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputJkWaktuPekerjaan">Jk Waktu Pekerjaan</label>
+                      <input type="text" class="form-control" id="exampleInputJkWaktuPekerjaan" placeholder="">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputJkWaktuPenawaran">Jk Waktu Penawaran</label>
+                      <input type="text" class="form-control" id="exampleInputJkWaktuPenawaran" placeholder="">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputNo.Kwitansi">No.Kwitansi</label>
+                      <input type="text" class="form-control" id="exampleInputNo.Kwitansi" placeholder="">
+                    </div>
+                  </form>
                     <button type="submit" class="btn btn-primary mr-2">Simpan</button>
                     <button class="btn btn-light">Batal</button>
                   </form>
