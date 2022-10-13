@@ -26,7 +26,7 @@
 <div class="col-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Input Data Anggaran Baru</h4>
+            <h4 class="card-title">Input Jadwal Pengadaan</h4>
             <form action="" method="POST">
                 @csrf
 

@@ -13,14 +13,14 @@
         <div class="card card-dark-blue">
             <div class="card-body">
                 <h4 class="mb-4 pt-2 ">Input Pengadaan</h4>
-                {{-- <p class="fs-30 mb-2">Input Pengadaan</p><br> --}}
-                {{-- <p>22.00% (30 days)</p> --}}
+                <!-- {{-- <p class="fs-30 mb-2">Input Pengadaan</p><br> --}}
+                {{-- <p>22.00% (30 days)</p> --}} -->
                 <div class="pt-2 ">
-                    {{-- <a href="/input_pengadaan" type="button" class="btn btn-danger btn-icon-text  "> --}}
+                    <!-- {{-- <a href="/input_pengadaan" type="button" class="btn btn-danger btn-icon-text  "> --}} -->
                     <a href="/input_pengadaan" type="button" class="btn btn-outline-danger" style="color: white; border-color: white">
                         <i class="ti-upload btn-icon-prepend"></i>
                         Input Pengadaan
-                        {{-- <i class="menu-arrow"></i> --}}
+                        <!-- {{-- <i class="menu-arrow"></i> --}} -->
                     </a>
                 </div>
             </div>
@@ -30,13 +30,43 @@
         <div class="card card-tale">
             <div class="card-body">
                 <h4 class="mb-4 pt-2">Input Anggaran</h4>
-                {{-- <p class="fs-30 mb-2">Input Anggaran</p><br> --}}
-                {{-- <p>22.00% (30 days)</p> --}}
+                <!-- {{-- <p class="fs-30 mb-2">Input Anggaran</p><br> --}}
+                {{-- <p>22.00% (30 days)</p> --}} -->
                 <div class="pt-2">
                     <a href="/input_anggaran" type="button" class="btn btn-outline-danger" style="color: white; border-color: white">
                         <i class="ti-upload btn-icon-prepend"></i>
                         Input Anggaran
                     </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-4 stretch-card transparent">
+        <div class="card card-tale">
+            <div class="card-body">
+                <h4 class="mb-4 pt-2">Input Jadwal</h4>
+                <!-- {{-- <p class="fs-30 mb-2">Input Anggaran</p><br> --}}
+                {{-- <p>22.00% (30 days)</p> --}} -->
+                <div class="pt-2">
+                    <a href="/input_jadwal" type="button" class="btn btn-outline-danger" style="color: white; border-color: white">
+                        <i class="ti-upload btn-icon-prepend"></i>
+                        Input Jadwal
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-4 stretch-card transparent">
+        <div class="card card-dark-blue">
+            <div class="card-body">
+                <h4 class="mb-4 pt-2">BELUM TAU</h4>
+                <!-- {{-- <p class="fs-30 mb-2">Input Anggaran</p><br> --}}
+                {{-- <p>22.00% (30 days)</p> --}} -->
+                <div class="pt-2">
+                    <button type="button" class="btn btn-outline-danger" style="color: white; border-color: white">
+                        <i class="ti-upload btn-icon-prepend"></i>
+                        BELUM TAU
+                    </button>
                 </div>
             </div>
         </div>

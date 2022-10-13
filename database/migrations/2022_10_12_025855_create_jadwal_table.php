@@ -15,18 +15,18 @@ return new class extends Migration
     {
         Schema::create('jadwal', function (Blueprint $table) {
             $table->id();
-            $table->integer('no_surat');
-            $table->string('program');
-            $table->string('kegiatan');
-            $table->string('sub_kegiatan');
-            $table->string('pekerjaan');
-            $table->integer('total_biaya');
-            $table->integer('kode_rek');
-            $table->string('pelaksana');
-            $table->string('uraian');
-            $table->integer('alokasi_waktu');
-            $table->date('tgl');
-            $table->char('hari');
+            $table->integer('kegiatan');
+            $table->string('alokasi');
+            $table->string('hari');
+            $table->date('tanggal');
+            $table->string('nomer');
+            // $table->integer('total_biaya');
+            // $table->integer('kode_rek');
+            // $table->string('pelaksana');
+            // $table->string('uraian');
+            // $table->integer('alokasi_waktu');
+            // $table->date('tgl');
+            // $table->char('hari');
             $table->timestamps();
         });
     }

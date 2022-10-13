@@ -15,13 +15,13 @@
   <link rel="stylesheet" href="{{ asset('template1/vendors/css/vendor.bundle.base.css') }}">
   <!-- endinject -->
   <!-- Plugin css for this page -->
+  <link rel="stylesheet" href="{{ asset('template1/vendors/mdi/css/materialdesignicons.min.css') }}">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="{{ asset('template1/css/vertical-layout-light/style.css') }}">
   <!-- endinject -->
   <link rel="shortcut icon" href="{{ asset('template1/images/favicon.png') }}" />
 </head>
-
 
 <body id="page-top">
 
@@ -352,9 +352,8 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/pengadaan1">1juta - 10juta</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/pengadaan2">> 10juta - 50juta</a></li>
-                <li class="nav-item"> <a class="nav-link" href="#">> 50juta</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/pengadaan1"><i class="fa-solid fa-less-than-equal "></i> 50juta</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/pengadaan2"><i class="fa-solid fa-greater-than "></i> 50juta</a></li>
               </ul>
             </div>
           </li>
