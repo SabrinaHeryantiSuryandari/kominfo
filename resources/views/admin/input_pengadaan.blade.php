@@ -29,9 +29,9 @@
 <div class="col-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Basic form elements</h4>
+                  <h4 class="card-title">Data Masukan Pengadaan</h4>
                   <p class="card-description">
-                    Basic form elements
+                    Isi format dibawah ini.
                   </p>
                   <form class="forms-sample">
                     <div class="form-group">
@@ -71,8 +71,8 @@
                       <label for="exampleTextarea1">Textarea</label>
                       <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                    <button class="btn btn-light">Cancel</button>
+                    <button type="submit" class="btn btn-primary mr-2">Simpan</button>
+                    <button class="btn btn-light">Batal</button>
                   </form>
                 </div>
               </div>
