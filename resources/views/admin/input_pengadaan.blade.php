@@ -23,7 +23,6 @@
 </div>
 @endif
 
-<<<<<<< HEAD
 <form action="" method="POST">
     @csrf
 
@@ -126,7 +125,6 @@
                         <span class="input-group-append">
                             <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
                         </span>
->>>>>>> 905bc647648e97d222fa5b99c507b35854a29df8
                     </div>
                     <button type="submit" class="btn btn-primary mr-2">Submit</button>
                     <button class="btn btn-light">Cancel</button>
