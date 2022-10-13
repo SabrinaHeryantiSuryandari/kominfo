@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('data', function (Blueprint $table) {
             $table->id();
-            $table->integer('no_sk_pengadaan');
-            $table->date('tgl_pengadaan');
-            $table->integer('no_sk_administrasi');
-            $table->date('tgl_administrasi');
-            $table->char('nama_pejabat');
+            $table->integer('biaya');
+            $table->date('kode_rek');
+            $table->integer('tgl_pelaksana');
+            $table->date('perihal');
+            $table->char('nama_pelaksana');
             $table->integer('nip');
             $table->integer('no_ba');
             $table->string('bidang');
