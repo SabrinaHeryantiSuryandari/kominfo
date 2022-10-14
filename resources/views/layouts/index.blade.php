@@ -134,7 +134,7 @@
             {{-- Logout --}}
             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
-                            <i class="ti-power-off text-primary"></i>
+              <i class="ti-power-off text-primary"></i>
               {{ __('Logout') }}
             </a>
 
@@ -443,7 +443,7 @@
 
                 @endguest
                 {{--/judul--}}
-                {{--  <div class="col-12 col-xl-4">
+                {{-- <div class="col-12 col-xl-4">
                   <div class="justify-content-end d-flex">
                     <div class="dropdown flex-md-grow-1 flex-xl-grow-0">
                       <button class="btn btn-sm btn-light bg-white dropdown-toggle" type="button" id="dropdownMenuDate2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -1169,6 +1169,23 @@
     <script src="{{ asset('template1/js/dashboard.js') }}"></script>
     <script src="{{ asset('template1/js/Chart.roundedBarCharts.js') }}"></script>
     <!-- End custom js for this page-->
+
+    <script>
+      var coll = document.getElementsByClassName("collapsible");
+      var i;
+
+      for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var content = this.nextElementSibling;
+          if (content.style.display === "block") {
+            content.style.display = "none";
+          } else {
+            content.style.display = "block";
+          }
+        });
+      }
+    </script>
 </body>
 
 </html>
