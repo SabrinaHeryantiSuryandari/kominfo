@@ -19,17 +19,23 @@ return new class extends Migration
             $table->string('kode_rek');
             $table->date('tgl_pelaksana');
             $table->string('perihal');
-            $table->string('nama_pelaksana');
-            $table->string('pt_pelaksana');
-            $table->string('alamat');
-            $table->string('jabatan_pelaksana');
-            $table->string('npwp');
-            $table->char('tlp');
-            $table->string('jenis_pengadaan');
-            $table->string('jenis_barang_pengadaan');
-            $table->char('volume');
-            $table->string('status');
+            $table->foreignId('pelaksana_id');
+            $table->foreignId('pengadaan_id');
             $table->foreignId('jadwal_id');
+
+
+            // $table->string('nama_pelaksana');
+            // $table->string('pt_pelaksana');
+            // $table->string('alamat');
+            // $table->string('jabatan_pelaksana');
+            // $table->string('npwp');
+            // $table->char('tlp');
+            // $table->string('jenis_pengadaan');
+            // $table->string('jenis_barang_pengadaan');
+            // $table->char('volume');
+            // $table->string('status');
+            // $table->foreignId('jadwal_id');
+
             // $table->string('uraian_belanja');
             // $table->string('sumber_dana');
             // $table->date('tgl_pelaksanaan');
