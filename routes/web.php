@@ -69,10 +69,16 @@ Route::get('/input_jadwal', function () {
     return view('admin.input_jadwal');
 });
 
+<<<<<<< HEAD
 // Route::get('/input_pelaksana', function (){
 //     return view('admin.input_pelaksana');
 // });
 Route::resource('/input_pelaksana', PelaksanaController::class);
+=======
+Route::get('/input_barang', function () {
+    return view('admin.input_barang');
+});
+>>>>>>> fa94754479e17be958a031db7f83f5e1d1447d9c
 //
 
 

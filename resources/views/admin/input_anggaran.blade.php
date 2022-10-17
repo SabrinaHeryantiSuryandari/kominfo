@@ -26,50 +26,42 @@
 <div class="col-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Data Masukan Anggaran</h4>
+            <h4 class="card-title">Input Data Perusahaan</h4>
             <p class="card-description">
                 Isi format dibawah ini.
             </p>
             <form class="forms-sample">
                 <div class="form-group">
-                    <label for="exampleInputName1">Name</label>
-                    <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
+                    <label for="exampleInputName1">Nama Perusahaan</label>
+                    <input type="text" class="form-control" id="exampleInputName1" placeholder="Nama Perusahaan">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail3">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
+                    <label for="exampleTextarea1">Alamat</label>
+                    <textarea class="form-control" id="exampleTextarea1" rows="4" placeholder="Alamat Perusahaan"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword4">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword4" placeholder="Password">
+                    <label for="exampleInputName1">Penanggung Jawab</label>
+                    <input type="text" class="form-control" id="exampleInputName1" placeholder="Penanggung Jawab">
                 </div>
                 <div class="form-group">
-                    <label for="exampleSelectGender">Gender</label>
-                    <select class="form-control" id="exampleSelectGender">
-                        <option>Male</option>
-                        <option>Female</option>
-                    </select>
+                    <label for="exampleInputName1">Jabatan</label>
+                    <input type="text" class="form-control" id="exampleInputName1" placeholder="Jabatan">
                 </div>
                 <div class="form-group">
-                    <label>File upload</label>
-                    <input type="file" name="img[]" class="file-upload-default">
-                    <div class="input-group col-xs-12">
-                        <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
-                        <span class="input-group-append">
-                            <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-                        </span>
-                    </div>
+                    <label for="exampleInputName1">Kode Rekening</label>
+                    <input type="text" class="form-control" id="exampleInputName1" placeholder="Kode Rekening">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputCity1">City</label>
-                    <input type="text" class="form-control" id="exampleInputCity1" placeholder="Location">
+                    <label for="exampleInputName1">NPWP</label>
+                    <input type="text" class="form-control" id="exampleInputName1" placeholder="NPWP">
                 </div>
                 <div class="form-group">
-                    <label for="exampleTextarea1">Textarea</label>
-                    <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
+                    <label for="exampleInputName1">Telephone</label>
+                    <input type="text" class="form-control" id="exampleInputName1" placeholder="Telephone">
                 </div>
+
                 <button type="submit" class="btn btn-primary mr-2">Simpan</button>
-                <a href="/home" class="btn btn-light">Batal</>
+                <a href="/home" class="btn btn-light">Batal</a>
             </form>
         </div>
     </div>
