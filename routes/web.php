@@ -68,6 +68,10 @@ Route::get('/input_anggaran', function () {
 Route::get('/input_jadwal', function () {
     return view('admin.input_jadwal');
 });
+
+Route::get('/input_barang', function () {
+    return view('admin.input_barang');
+});
 //
 
 

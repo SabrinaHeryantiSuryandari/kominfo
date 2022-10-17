@@ -294,8 +294,9 @@
             </ul>
           </div>
         </div>
-        <button type="submit" class="btn btn-primary mr-2">Simpan</button>
-        <a href="/home" class="btn btn-light">Batal</>
+        <a href="/home" class="btn btn-light">Batal</a>
+        <a href="/input_barang" type="submit" class="btn btn-primary mr-2">Selanjutnya</a>
+
       </form>
     </div>
   </div>
