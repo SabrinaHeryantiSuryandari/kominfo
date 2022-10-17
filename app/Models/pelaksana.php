@@ -20,7 +20,7 @@ class pelaksana extends Model
         'tlp'
     ];
 
-    protected $table = "pelaksana";
+    protected $table = "pelaksanas";
     protected $primarykay = "id";
     
  

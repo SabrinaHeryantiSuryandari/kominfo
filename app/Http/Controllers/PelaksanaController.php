@@ -70,7 +70,7 @@ class PelaksanaController extends Controller
      */
     public function show(pelaksana $pelaksana)
     {
-        //
+        return view('admin.show',compact('pelaksana'));
     }
 
     /**
@@ -79,9 +79,9 @@ class PelaksanaController extends Controller
      * @param  \App\Models\pelaksana  $pelaksana
      * @return \Illuminate\Http\Response
      */
-    public function edit(pelaksana $pelaksana)
+    public function edit(Pelaksana $pelaksana)
     {
-        //
+        return view('admin.edit',compact('pelaksana'));
     }
 
     /**
@@ -91,9 +91,22 @@ class PelaksanaController extends Controller
      * @param  \App\Models\pelaksana  $pelaksana
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, pelaksana $pelaksana)
+    public function update(Request $request, Pelaksana $pelaksana)
     {
-        //
+        $request->validate([
+            'pt_pelaksana' => 'required',
+            'alamat' => 'required',
+            'nama_pelaksana' => 'required',
+            'jabatan_pelaksana' => 'required',
+            'kode_rekening' => 'required',
+            'npwp' => 'required',
+            'tlp' => 'required'
+        ]);
+      
+        $pelaksana->update($request->all());
+      
+        return redirect()->route('pelaksanas.index')
+                        ->with('success','Aset Berhasil updated!');
     }
 
     /**
@@ -102,8 +115,11 @@ class PelaksanaController extends Controller
      * @param  \App\Models\pelaksana  $pelaksana
      * @return \Illuminate\Http\Response
      */
-    public function destroy(pelaksana $pelaksana)
+    public function destroy(Pelaksana $pelaksana)
     {
-        //
+        $pelaksana->delete();
+       
+        return redirect()->route('pelaksanas.index')
+                        ->with('success','Aset Berhasil Dihapus!');
     }
 }

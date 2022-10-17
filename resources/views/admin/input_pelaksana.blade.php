@@ -3,12 +3,12 @@
 @section('input-data-collapse', 'collapsed')
 @section('input-sudah', 'active')
 @section('content')
-<!-- @section('judul')
+{{-- @section('judul')
 {{'Input Data / Belum Tersertifikasi'}}
 @endsection -->
 <!-- @section('title')
 {{'Input Data yang Belum Tersertifikasi'}}
-@endsection -->
+@endsection --}}
 
 <!-- Content Row -->
 
@@ -33,52 +33,68 @@
   </div>
 </div> --}}
 
-<form action="{{ route('asets.store') }}" method="POST">
+<form action="{{ route('pelaksanas.store') }}" method="POST">
     @csrf
 
-        <div class="card shadow mb-3 ">
-            <div class="card-body">
-                <div class="table-responsive" >
-                    <table class="" style="margin:20px auto;" id="dataTable" width="100%" cellspacing="0">
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <div class="form-group">
-                                <tr>
-                                    <td>Status Aset</td>
-                                    <td>
-                                        <select name="status_aset" value="{{ old('status_aset') }}">
-                                            <option value="">----Pilih Status Aset----</option>
-                                            <option value="Tersertifikasi" >Tersertifikasi</option>
-                                            <option value="Belum Tersertifikasi" selected>Belum Tersertifikasi</option>
-                                        </select>
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card shadow">
+          <div class="card-body">
+            <h4 class="card-title">Data Masukan Pengadaan</h4>
+                <table class="" style="margin:20px auto;" id="dataTable" width="100%" cellspacing="0">
+                    
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <tr>
+                                <td>Nama CV Pelaksana</td>
+                                <td>
+                                    <input type="text" name="pt_pelaksana" value="{{ old('pt_pelaksana') }}" placeholder="CV Pelaksana">
                                         <br>
-                                        <small class="text-danger">{{ $errors->first('status_aset') }}</small>
-                                    </td>
+                                        <small class="text-danger">{{ $errors->first('pt_pelaksana') }}</small>
                                     
-                                    <td>Asal Usul Aset</td>
-                                    <td>
-                                        <select name="asalusul_aset" value="{{ old('asalusul_aset') }}">
-                                            <option value="" selected>----Pilih Asal Usul Aset----</option>
-                                            <option value="Pembelian">Pembelian</option>
-                                            <option value="Hibah">Hibah</option>
-                                        </select>
-                                        <br>
-                                        <small class="text-danger">{{ $errors->first('asalusul_aset') }}</small>
-                                    </td>
-                                </tr> 
-                            </div>
+                                    {{-- <select name="pt_pelaksana" value="{{ old('pt_pelaksana') }}">
+                                        <option value="">----Pilih Status Aset----</option>
+                                        <option value="Tersertifikasi" >Tersertifikasi</option>
+                                        <option value="Belum Tersertifikasi" selected>Belum Tersertifikasi</option>
+                                    </select>
+                                    <br>
+                                    <small class="text-danger">{{ $errors->first('pt_pelaksana') }}</small> --}}
+                                </td>
+                                    
+                                <td>Telepon</td>
+                                <td>
+                                    <input type="text" name="tlp" value="{{ old('tlp') }}" placeholder="Telepon">
+                                    <br>
+                                    <small class="text-danger">{{ $errors->first('tlp') }}</small>
+                                    
+                                    {{-- <select name="asalusul_aset" value="{{ old('asalusul_aset') }}">
+                                        <option value="" selected>----Pilih Asal Usul Aset----</option>
+                                        <option value="Pembelian">Pembelian</option>
+                                        <option value="Hibah">Hibah</option>
+                                    </select>
+                                    <br>
+                                    <small class="text-danger">{{ $errors->first('asalusul_aset') }}</small> --}}
+                                </td>
+                            </tr> 
                         </div>
+                    </div>
+
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
                                 <tr>
-                                    <td>No Sertifikat</td>
+                                    <td>Nama Pelaksana</td>
                                     <td>
-                                        <input type="text" name="no_sertifikat" value="{{ old('no_sertifikat') }}" placeholder="No Sertifikat">
+                                        <input type="text" name="nama_pelaksana" value="{{ old('nama_pelaksana') }}" placeholder="Nama Pelaksana">
                                         <br>
-                                        <small class="text-danger">{{ $errors->first('no_sertifikat') }}</small>
+                                        <small class="text-danger">{{ $errors->first('nama_pelaksana') }}</small>
                                     </td>
                                     
-                                    <td>Kondisi Aset</td>
+                                    <td>Jabatan Pelaksana</td>
                                     <td>
+                                        <input type="text" name="jabatan_pelaksana" value="{{ old('jabatan_pelaksana') }}" placeholder="Jabatan Pelaksana">
+                                        <br>
+                                        <small class="text-danger">{{ $errors->first('jabatan_pelaksana') }}</small>
+                                    </td>
+                                    {{-- <td>
                                         <select name="kondisi_aset" value="{{ old('kondisi_aset') }}">
                                             <option value="" selected>-----Pilih Kondisi Aset-----</option>
                                             <option value="Layak">Layak</option>
@@ -87,22 +103,27 @@
                                         </select>
                                         <br>
                                         <small class="text-danger">{{ $errors->first('kondisi_aset') }}</small>
-                                    </td>
+                                    </td> --}}
                                 </tr> 
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
                                 <tr>
-                                    <td>Nama Aset</td>
+                                    <td>Kode Rekening</td>
                                     <td>
-                                        <input id="text" name="nama_aset" value="{{ old('nama_aset') }}" placeholder="Nama Aset">
+                                        <input id="text" name="kode_rekening" value="{{ old('kode_rekening') }}" placeholder="Kode Rekening">
                                         <br>
-                                        <small class="text-danger">{{ $errors->first('nama_aset') }}</small>
+                                        <small class="text-danger">{{ $errors->first('kode_rekening') }}</small>
                                     </td> 
                                     
-                                    <td>Kondisi Geografis</td>
+                                    <td>NPWP</td>
                                     <td>
+                                        <input id="text" name="npwp" value="{{ old('npwp') }}" placeholder="NPWP">
+                                        <br>
+                                        <small class="text-danger">{{ $errors->first('npwp') }}</small>
+                                    </td> 
+                                    {{-- <td>
                                         <select name="kondisi_geografis" value="{{ old('kondisi_geografis') }}">
                                             <option value="" selected>--Pilih Kondisi Geografis--</option>
                                             <option value="Dataran Tinggi">Dataran Tinggi</option>
@@ -111,7 +132,7 @@
                                         </select>
                                         <br>
                                         <small class="text-danger">{{ $errors->first('kondisi_geografis') }}</small>
-                                    </td>
+                                    </td> --}}
                                 </tr> 
                             </div>
                         </div>
@@ -120,18 +141,18 @@
                                 <tr>
                                     <td>Alamat</td>
                                     <td>
-                                        <input id="w3review" name="alamat_aset" value="{{ old('alamat_aset') }}" placeholder="Alamat">
+                                        <input id="w3review" name="alamat" value="{{ old('alamat') }}" placeholder="Alamat">
                                         <br>
-                                        <small class="text-danger">{{ $errors->first('alamat_aset') }}</small>
+                                        <small class="text-danger">{{ $errors->first('alamat') }}</small>
                                     </td>
                                     
-                                    <td>Tahun Rehabilitasi</td>
+                                    {{-- <td>Tahun Rehabilitasi</td>
                                     <td>
                                         {{-- <input id="text" name="th_rehab" value="{{ old('th_rehab') }}"> --}}
-                                        <input type="date" id="text" name="th_rehab" value="{{ old('th_rehab') }}" placeholder="Tahun Rehabilitasi">
+                                        {{-- <input type="date" id="text" name="th_rehab" value="{{ old('th_rehab') }}" placeholder="Tahun Rehabilitasi">
                                         <br>
                                         <small class="text-danger">{{ $errors->first('th_rehab') }}</small>
-                                    </td>
+                                    </td>  --}}
                                     
                                 </tr> 
                             </div>
@@ -139,7 +160,7 @@
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
                                 <tr>
-                                    <td>Luas Aset</td>
+                                    {{-- <td>Luas Aset</td>
                                     <td>
                                         <input id="text" name="luas_aset" value="{{ old('luas_aset') }}" placeholder="Luas Aset">
                                         <br>
@@ -148,11 +169,11 @@
                                     
                                     <td>Tahun Kepemilikan</td>
                                     <td>
-                                        <input type="date" id="text" name="th_kepemilikan" value="{{ old('th_kepemilikan') }}">
+                                        <input type="date" id="text" name="th_kepemilikan" value="{{ old('th_kepemilikan') }}"> --}}
                                         {{-- <input id="text" name="th_kepemilikan" value="{{ old('th_kepemilikan') }}"> --}}
                                         <br>
-                                        <small class="text-danger">{{ $errors->first('th_kepemilikan') }}</small>
-                                    </td>
+                                        {{-- <small class="text-danger">{{ $errors->first('th_kepemilikan') }}</small>
+                                    </td> --}}
 
                                 </tr> 
                             </div>
@@ -160,7 +181,7 @@
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
                                 <tr>
-                                    <td>Keterangan Aset</td>
+                                    {{-- <td>Keterangan Aset</td>
                                     <td>
                                         <input id="text" name="keterangan_aset" value="{{ old('keterangan_aset') }}" placeholder="Keterangan">
                                         <br>
@@ -169,11 +190,11 @@
                                     
                                     <td>Tahun Pembangunan</td>
                                     <td>
-                                        <input type="date" id="text" name="th_pembangunan" value="{{ old('th_pembangunan') }}">
+                                        <input type="date" id="text" name="th_pembangunan" value="{{ old('th_pembangunan') }}"> --}}
                                         {{-- <input id="text" name="th_pembangunan" value="{{ old('th_pembangunan') }}"> --}}
-                                        <br>
+                                        {{-- <br>
                                         <small class="text-danger">{{ $errors->first('th_pembangunan') }}</small>
-                                    </td>
+                                    </td> --}}
                                 </tr> 
                             </div>
                         </div>
