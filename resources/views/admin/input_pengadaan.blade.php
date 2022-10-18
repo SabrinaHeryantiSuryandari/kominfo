@@ -31,44 +31,44 @@
       <form>
         @csrf
         <div class="row">
-        <div class="col-md-12">
+          <div class="col-md-12">
             <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Pelaksana/Nama Perusahaan</label>
-                <div class="col-sm-9">
-                  <select class="form-control">
-                    <option>Category1</option>
-                    <option>Category2</option>
-                    <option>Category3</option>
-                    <option>Category4</option>
-                  </select>
-                </div>
-                <label class="col-sm-3 col-form-label">Hari</label>
-                <div class="col-sm-9">
-                  <select class="form-control">
-                  {{--  nnti di masukin db  --}}
-                    <option>Senin</option>
-                    <option>Selasa</option>
-                    <option>Rabu</option>
-                    <option>Kamis</option>
-                    <option>Jumat</option>
-                    <option>Sabtu</option>
-                    <option>Minggu</option>
-                  </select>
-                </div>
-                <label class="col-sm-3 col-form-label">Tanggal Pelaksanaan</label>
-                <div class="col-sm-9">
-                  <input class="form-control" placeholder="dd/mm/yyyy"/>
-                </div>
-                <label class="col-sm-3 col-form-label">Deskripsi Pelaksanaan</label>
-                <div class="col-sm-9">
-                  <input type="text" class="form-control" />
-                </div>
+              <label class="col-sm-3 col-form-label">Pelaksana/Nama Perusahaan</label>
+              <div class="col-sm-9">
+                <select class="form-control">
+                  <option>Category1</option>
+                  <option>Category2</option>
+                  <option>Category3</option>
+                  <option>Category4</option>
+                </select>
+              </div>
+              <label class="col-sm-3 col-form-label">Hari</label>
+              <div class="col-sm-9">
+                <select class="form-control">
+                  {{-- nnti di masukin db  --}}
+                  <option>Senin</option>
+                  <option>Selasa</option>
+                  <option>Rabu</option>
+                  <option>Kamis</option>
+                  <option>Jumat</option>
+                  <option>Sabtu</option>
+                  <option>Minggu</option>
+                </select>
+              </div>
+              <label class="col-sm-3 col-form-label">Tanggal Pelaksanaan</label>
+              <div class="col-sm-9">
+                <input class="form-control" type="date" placeholder="dd/mm/yyyy" />
+              </div>
+              <label class="col-sm-3 col-form-label">Deskripsi Pelaksanaan</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" />
               </div>
             </div>
           </div>
-          <a href="/home" class="btn btn-light">Batal</a>
-          <a href="/input_jadwal" type="submit" class="btn btn-primary mr-2">Selanjutnya</a>
-{{--  <div class="row">
+        </div>
+        <a href="/home" class="btn btn-light">Batal</a>
+        <a href="/input_jadwal" type="submit" class="btn btn-primary mr-2">Selanjutnya</a>
+        {{-- <div class="row">
           <div class="col-12">
             <ul class="">
               <li>
