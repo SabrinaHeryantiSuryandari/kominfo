@@ -6,9 +6,9 @@
 @section('judul')
 {{'Input Data / Belum Tersertifikasi'}}
 @endsection
-@section('title')
+<!-- @section('title')
 {{'Input Data yang Belum Tersertifikasi'}}
-@endsection
+@endsection -->
 
 <!-- Content Row -->
 
@@ -30,10 +30,12 @@
             <p class="card-description">
                 Isi format dibawah ini.
             </p>
-            <form class="forms-sample">
+            <form action="{{ route('pelaksanas.store') }}" method="POST">
+                @csrf
                 <div class="form-group">
-                    <label for="exampleInputName1">Nama Perusahaan</label>
-                    <input type="text" class="form-control" id="exampleInputName1" placeholder="Nama Perusahaan">
+                    <label for="exampleInputName1">Nama CV Pelaksana</label>
+                    <input class="form-control" type="text" name="pt_pelaksana" value="{{ old('pt_pelaksana') }}" placeholder="CV Pelaksana">
+                    <small class="text-danger">{{ $errors->first('pt_pelaksana') }}</small>
                 </div>
                 <div class="form-group">
                     <label for="exampleTextarea1">Alamat</label>

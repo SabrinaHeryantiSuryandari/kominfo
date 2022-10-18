@@ -6,6 +6,9 @@ use App\Http\Controllers\AsetController;
 use App\Http\Controllers\GuestController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PemilikController;
+
+use App\Http\Controllers\PelaksanaController;
+
 use Illuminate\Contracts\View\View as ViewView;
 use Illuminate\Support\Facades\Auth;
 
@@ -100,7 +103,6 @@ Route::get('/pengguna', [view::class, 'pengguna'])->name('pengguna');
 
 //tambahkan kode berikut
 // Route::resource('/asets', PemilikController::class);
-Route::resource('/LPpengadaan1', AsetController::class);
 
 Route::resource('/delete', view::class);
 
