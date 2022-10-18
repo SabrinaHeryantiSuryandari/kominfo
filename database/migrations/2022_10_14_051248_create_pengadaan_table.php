@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('pengadaans', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('perusahaan_id');
+            $table->foreignId('pelaksana_id');
             $table->string('jenis_pengadaan');
             $table->string('tanggal_acara');
             $table->string('deskripsi_tgl_acara');

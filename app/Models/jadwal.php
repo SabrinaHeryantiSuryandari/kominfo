@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class jadwal extends Model
 {
     use HasFactory;
+
+    
 }

@@ -6,6 +6,7 @@ use App\Models\pengadaan;
 use App\Models\pelaksana;
 use App\Models\barang;
 use App\Models\jadwal;
+
 use Illuminate\Http\Request;
 
 class PengadaanController extends Controller
@@ -17,8 +18,10 @@ class PengadaanController extends Controller
      */
     public function index()
     {
-        $pelaksanas = Pelaksana::all();
         $pengadaans = Pengadaan::all();
+        $pelaksanas = Pelaksana::all();
+        $barangs = Barang::all();
+        $jadwals = Jadwal::all();
 
         return view('admin.input_pengadaan',compact('pengadaans'))
         ->with('i', (request()->input('page', 1) - 1) * 5);
@@ -32,8 +35,9 @@ class PengadaanController extends Controller
     public function create()
     {
         // return view('admin.input_pengadaan');
-        $pelaksana = pelaksana::all();
-        
+        $pelaksanas = pelaksana::all();
+        $pengadaans = Pengadaan::all();
+
         return view('pengadaan', compact('pelaksanas'));
     }
 
@@ -65,30 +69,30 @@ class PengadaanController extends Controller
         //                 ->with('success','Data Pelaksana Berhasil Disimpan!');
 
         $pelaksanas =   Pelaksana::create($request->except([
-            'perusahaan_id',// => 'required',
-            'jenis_pengadaan',// => 'required',
-            'tanggal_acara',// => 'required',
-            'deskripsi_tgl_acara',// => 'required',
-            'waktu_acara',// => 'required',
-            'tempat_acara',// => 'required',
-            'total_hps',// => 'required',
-            'deskripsi_hps',// => 'required',
-            'nilai_negosiasi',// => 'required',
-            'nilai_negosiasi',// => 'required'
+            'pelaksana_id',
+            'jenis_pengadaan',
+            'tanggal_acara',
+            'deskripsi_tgl_acara',
+            'waktu_acara',
+            'tempat_acara',
+            'total_hps',
+            'deskripsi_hps',
+            'nilai_negosiasi',
+            'deskripsi_nilai_nego',        
         ]));
 
         $request['pelaksana_id'] = $pelaksanas->id;
         $pengadaans = Pengadaan::create($request->only([
-            'perusahaan_id',// => 'required',
-            'jenis_pengadaan',// => 'required',
-            'tanggal_acara',// => 'required',
-            'deskripsi_tgl_acara',// => 'required',
-            'waktu_acara',// => 'required',
-            'tempat_acara',// => 'required',
-            'total_hps',// => 'required',
-            'deskripsi_hps',// => 'required',
-            'nilai_negosiasi',// => 'required',
-            'nilai_negosiasi',// => 'required'
+            'pelaksana_id',
+            'jenis_pengadaan',
+            'tanggal_acara',
+            'deskripsi_tgl_acara',
+            'waktu_acara',
+            'tempat_acara',
+            'total_hps',
+            'deskripsi_hps',
+            'nilai_negosiasi',
+            'deskripsi_nilai_nego'        
         ]));
 
         return back()->with('success',' Post baru berhasil dibuat.');
@@ -125,7 +129,34 @@ class PengadaanController extends Controller
      */
     public function update(Request $request, pengadaan $pengadaan)
     {
-        //
+        // $pelaksanas =   Pelaksana::updating($request->except([
+        //     'pelaksana_id',
+        //     'jenis_pengadaan',
+        //     'tanggal_acara',
+        //     'deskripsi_tgl_acara',
+        //     'waktu_acara',
+        //     'tempat_acara',
+        //     'total_hps',
+        //     'deskripsi_hps',
+        //     'nilai_negosiasi',
+        //     'deskripsi_nilai_nego',        
+        // ]));
+
+        // $request['pelaksana_id'] = $pelaksanas ->id;
+        // $pengadaans = Pengadaan::updating($request->only([
+        //     'pelaksana_id',
+        //     'jenis_pengadaan',
+        //     'tanggal_acara',
+        //     'deskripsi_tgl_acara',
+        //     'waktu_acara',
+        //     'tempat_acara',
+        //     'total_hps',
+        //     'deskripsi_hps',
+        //     'nilai_negosiasi',
+        //     'deskripsi_nilai_nego'        
+        // ]));
+
+        return back()->with('success',' Post baru berhasil dibuat.');
     }
 
     /**

@@ -20,6 +20,8 @@ class PelaksanaController extends Controller
     {
         $pelaksanas = Pelaksana::all();
         $pengadaans = Pengadaan::all();
+        $barangs = Barang::all();
+        $jadwals = Jadwal::all();
 
         return view('admin.input_pelaksana',compact('pelaksanas'))
         ->with('i', (request()->input('page', 1) - 1) * 5);
@@ -102,9 +104,9 @@ class PelaksanaController extends Controller
             'npwp' => 'required',
             'tlp' => 'required'
         ]);
-      
+    
         $pelaksana->update($request->all());
-      
+    
         return redirect()->route('pelaksanas.index')
                         ->with('success','Aset Berhasil updated!');
     }
