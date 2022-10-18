@@ -69,7 +69,7 @@
           <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
         </div>
         <button type="submit" class="btn btn-primary mr-2">Simpan</button>
-        <a href="/input_pengadaan" class="btn btn-light">Kembali</a>
+        <a href="/input_barang" class="btn btn-light">Kembali</a>
       </form>
     </div>
   </div>

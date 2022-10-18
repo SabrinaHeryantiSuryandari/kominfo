@@ -125,11 +125,12 @@
                     </tbody>
                 </table>
             </div>
-            <br>
-            <button type="submit" class="btn btn-primary mr-2">Simpan</button>
-            <a href="/input_jadwal" class="btn btn-light">Kembali</a>
+            <br>]
+            <center>
+                <a href="/input_jadwal" type="submit" class="btn btn-primary mr-2 text-center">Selanjutnya</a>
+                <a href="/input_pengadaan" class="btn btn-danger text-center">Kembali</a>
+            </center>
         </div>
-
     </div>
 </div>
 
