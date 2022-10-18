@@ -9,7 +9,7 @@
 
 <!-- @section('title')
 {{'Input Data yang Belum Tersertifikasi'}}
-@endsection --}} -->
+@endsection --}}
 
 <!-- Content Row -->
 

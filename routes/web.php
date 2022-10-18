@@ -75,6 +75,7 @@ Route::get('/input_jadwal', function () {
 Route::get('/input_barang', function () {
     return view('admin.input_barang');
 });
+Route::resource('/pelaksanas', PelaksanaController::class);
 Route::get('/input_pelaksana', function () {
     return view('admin.input_pelaksana');
 });
@@ -103,7 +104,6 @@ Route::get('/pengguna', [view::class, 'pengguna'])->name('pengguna');
 
 //tambahkan kode berikut
 // Route::resource('/asets', PemilikController::class);
-Route::resource('/pelaksanas', PelaksanaController::class);
 
 Route::resource('/delete', view::class);
 
