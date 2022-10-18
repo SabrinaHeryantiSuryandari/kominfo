@@ -79,6 +79,10 @@ Route::resource('/pelaksanas', PelaksanaController::class);
 Route::get('/input_pelaksana', function () {
     return view('admin.input_pelaksana');
 });
+
+Route::get('/input_biaya', function () {
+    return view('admin.input_biaya');
+});
 //
 
 
