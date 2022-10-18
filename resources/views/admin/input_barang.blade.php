@@ -28,7 +28,8 @@
 <div class="col-12 grid-margin stretch-card">
     <div class="card shadow">
         <div class="card-body">
-            <h4> Masukan Barang Pengadaan</h4>
+            <h4>Data Masukan Barang</h4>
+            <br>
             <div class="row-fluid">
                 <div class="container">
                     <form method="POST" action="">
@@ -36,7 +37,7 @@
                             <div class="form-group baru-data">
                                 <div class="form-row">
                                     <div class="form-group col-md-3">
-                                        <label for="inputEmail4">Nama Barag</label>
+                                        <label for="inputEmail4">Nama Barang</label>
                                         <input type="text" class="form-control" id="" placeholder="Nama Barang">
                                     </div>
                                     <div class="form-group col-md-3">
@@ -125,11 +126,9 @@
                     </tbody>
                 </table>
             </div>
-            <br>]
-            <center>
-                <a href="/input_jadwal" type="submit" class="btn btn-primary mr-2 text-center">Selanjutnya</a>
-                <a href="/input_pengadaan" class="btn btn-danger text-center">Kembali</a>
-            </center>
+            <br>
+            <a href="/input_pengadaan" class="btn btn-light">Kembali</a>
+            <a href="/input_biaya" type="submit" class="btn btn-primary mr-2">Selanjutnya</a>
         </div>
     </div>
 </div>

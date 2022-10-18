@@ -31,9 +31,65 @@
       <form>
         @csrf
         <div class="row">
+        <div class="col-md-12">
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Pelaksana/Nama Perusahaan</label>
+                <div class="col-sm-9">
+                  <select class="form-control">
+                    <option>Category1</option>
+                    <option>Category2</option>
+                    <option>Category3</option>
+                    <option>Category4</option>
+                  </select>
+                </div>
+                <label class="col-sm-3 col-form-label">Hari</label>
+                <div class="col-sm-9">
+                  <select class="form-control">
+                  {{--  nnti di masukin db  --}}
+                    <option>Senin</option>
+                    <option>Selasa</option>
+                    <option>Rabu</option>
+                    <option>Kamis</option>
+                    <option>Jumat</option>
+                    <option>Sabtu</option>
+                    <option>Minggu</option>
+                  </select>
+                </div>
+                <label class="col-sm-3 col-form-label">Tanggal Pelaksanaan</label>
+                <div class="col-sm-9">
+                  <input class="form-control" placeholder="dd/mm/yyyy"/>
+                </div>
+                <label class="col-sm-3 col-form-label">Deskripsi Pelaksanaan</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="/home" class="btn btn-light">Batal</a>
+          <a href="/input_jadwal" type="submit" class="btn btn-primary mr-2">Selanjutnya</a>
+{{--  <div class="row">
           <div class="col-12">
             <ul class="">
               <li>
+              <div class="collapsible">Pelaksana</div>
+                <div class="content">
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <label class="active" for="gda">Tanggal</label>
+                      <input placeholder="GDA" id="gda" value="" type="date" name="gda" class="input validate ">
+                      <span class="error error_gda"></span>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <label class="active" for="gda">Nomor</label>
+                      <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
+                      <span class="error error_gda"></span>
+                    </div>
+                  </div>
+                </div>
+
                 <div class="collapsible">SK Pejabat Pengadaan</div>
                 <div class="content">
                   <div class="row">
@@ -292,11 +348,7 @@
 
               </li>
             </ul>
-          </div>
-        </div>
-        <a href="/home" class="btn btn-light">Batal</a>
-        <a href="/input_barang" type="submit" class="btn btn-primary mr-2">Selanjutnya</a>
-
+          </div>  --}}
       </form>
     </div>
   </div>
