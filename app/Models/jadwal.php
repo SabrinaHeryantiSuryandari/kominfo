@@ -9,5 +9,22 @@ class jadwal extends Model
 {
     use HasFactory;
 
-    
+    protected $table = "jadwals";
+    protected $primarykay = "id";
+
+    protected $fillable = [
+        // 'id', 
+        'pengadaan_id',
+        'kegiatan',
+        'alokasi',
+        'hari',
+        'tanggal',
+        'nomor',
+        'deskripsi_tgl'
+    ];
+ 
+    public function pengadaan()
+    {
+    	return $this->belongsTo(pengadaan::class);
+    }
 }
