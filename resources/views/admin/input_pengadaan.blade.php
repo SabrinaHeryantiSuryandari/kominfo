@@ -42,24 +42,27 @@
                   <option>Category4</option>
                 </select>
               </div>
-              <label class="col-sm-3 col-form-label">Hari</label>
-              <div class="col-sm-9">
-                <select class="form-control">
-                  {{-- nnti di masukin db  --}}
-                  <option>Senin</option>
-                  <option>Selasa</option>
-                  <option>Rabu</option>
-                  <option>Kamis</option>
-                  <option>Jumat</option>
-                  <option>Sabtu</option>
-                  <option>Minggu</option>
-                </select>
-              </div>
               <label class="col-sm-3 col-form-label">Tanggal Pelaksanaan</label>
               <div class="col-sm-9">
                 <input class="form-control" type="date" placeholder="dd/mm/yyyy" />
               </div>
               <label class="col-sm-3 col-form-label">Deskripsi Pelaksanaan</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" />
+              </div>
+              <label class="col-sm-3 col-form-label">Total Biaya</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" />
+              </div>
+              <label class="col-sm-3 col-form-label">Deskripsi</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" />
+              </div>
+              <label class="col-sm-3 col-form-label">Nilai Negosiasi</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" />
+              </div>
+              <label class="col-sm-3 col-form-label">Deskripsi</label>
               <div class="col-sm-9">
                 <input type="text" class="form-control" />
               </div>

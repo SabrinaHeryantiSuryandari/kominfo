@@ -45,13 +45,13 @@
               <div class="col-sm-9">
                 <input type="text" class="form-control" />
               </div>
-                <label class="col-sm-3 col-form-label">Deskripsi</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" />
-                </div>
+              <label class="col-sm-3 col-form-label">Deskripsi</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" />
               </div>
             </div>
           </div>
+        </div>
           <a href="/input_barang" class="btn btn-light">Kembali</a>
           <a href="#" type="submit" class="btn btn-primary mr-2">Selesai</a>
       </form>

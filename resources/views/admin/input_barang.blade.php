@@ -127,8 +127,8 @@
                 </table>
             </div>
             <br>
-            <a href="/input_pengadaan" class="btn btn-light">Kembali</a>
-            <a href="/input_biaya" type="submit" class="btn btn-primary mr-2">Selanjutnya</a>
+            <a href="/input_jadwal" class="btn btn-light">Kembali</a>
+            <a href="#" type="submit" class="btn btn-primary mr-2">Selesai</a>
         </div>
     </div>
 </div>
