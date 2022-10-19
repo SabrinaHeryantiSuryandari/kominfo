@@ -8,6 +8,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PemilikController;
 
 use App\Http\Controllers\PelaksanaController;
+use App\Http\Controllers\PengadaanController;
 
 use Illuminate\Contracts\View\View as ViewView;
 use Illuminate\Support\Facades\Auth;

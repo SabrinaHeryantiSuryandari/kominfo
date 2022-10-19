@@ -10,7 +10,7 @@ class pengadaan extends Model
     use HasFactory;
 
     
-    protected $table = "pengadaan";
+    protected $table = "pengadaans";
     protected $primarykay = "id";
     
     protected $fillable = [
@@ -24,16 +24,16 @@ class pengadaan extends Model
         'total_hps',
         'deskripsi_hps',
         'nilai_negosiasi',
-        'nilai_negosiasi'
+        'deskripsi_nilai_nego'
 
     ];
  
     public function pelaksana()
     {
-    	return $this->belongsTo(pelaksana::class);
+    	return $this->belongsTo(pelaksanas::class);
     }
-    public function barang()
-    {
-    	return $this->belongsTo(barang::class);
-    }
+    // public function barang()
+    // {
+    // 	return $this->belongsTo(barang::class);
+    // }
 }

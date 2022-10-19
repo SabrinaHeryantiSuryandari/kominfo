@@ -20,8 +20,8 @@ class PengadaanController extends Controller
     {
         $pengadaans = Pengadaan::all();
         $pelaksanas = Pelaksana::all();
-        $barangs = Barang::all();
-        $jadwals = Jadwal::all();
+        // $barangs = Barang::all();
+        // $jadwals = Jadwal::all();
 
         return view('admin.input_pengadaan',compact('pengadaans'))
         ->with('i', (request()->input('page', 1) - 1) * 5);
@@ -156,7 +156,7 @@ class PengadaanController extends Controller
         //     'deskripsi_nilai_nego'        
         // ]));
 
-        return back()->with('success',' Post baru berhasil dibuat.');
+        // return back()->with('success',' Post baru berhasil dibuat.');
     }
 
     /**

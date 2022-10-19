@@ -20,8 +20,8 @@ class PelaksanaController extends Controller
     {
         $pelaksanas = Pelaksana::all();
         $pengadaans = Pengadaan::all();
-        $barangs = Barang::all();
-        $jadwals = Jadwal::all();
+        // $barangs = Barang::all();
+        // $jadwals = Jadwal::all();
 
         return view('admin.input_pelaksana',compact('pelaksanas'))
         ->with('i', (request()->input('page', 1) - 1) * 5);
