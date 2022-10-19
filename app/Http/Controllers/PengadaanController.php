@@ -20,7 +20,7 @@ class PengadaanController extends Controller
     {
         $pengadaans = Pengadaan::all();
         $pelaksanas = Pelaksana::all();
-        // $barangs = Barang::all();
+        $barangs = Barang::all();
         // $jadwals = Jadwal::all();
 
         return view('admin.input_pengadaan',compact('pengadaans'))
@@ -36,8 +36,9 @@ class PengadaanController extends Controller
     {
         // return view('admin.input_pengadaan');
         $pelaksanas = pelaksana::all();
-        $pengadaans = Pengadaan::all();
-
+        // $pengadaans = Pengadaan::all();
+        $barangs = barang::all();
+        
         return view('pengadaan', compact('pelaksanas'));
     }
 
@@ -69,7 +70,7 @@ class PengadaanController extends Controller
         //                 ->with('success','Data Pelaksana Berhasil Disimpan!');
 
         $pelaksanas =   Pelaksana::create($request->except([
-            'pelaksana_id',
+
             'jenis_pengadaan',
             'tanggal_acara',
             'deskripsi_tgl_acara',
