@@ -128,7 +128,7 @@
 
           <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
             <!-- {{-- Settings --}} -->
-            <a class="dropdown-item">
+            <a href="/setting" class="dropdown-item">
               <i class="ti-settings text-primary"></i>
               Settings
             </a>
