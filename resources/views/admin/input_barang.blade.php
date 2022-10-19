@@ -62,10 +62,11 @@
                                 <div class="button-group">
                                     <button type="button" class="btn btn-success btn-tambah"><i class="fa fa-plus"></i></button>
                                     <button type="button" class="btn btn-danger btn-hapus" style="display:none;"><i class="fa fa-times"></i></button>
-                                    <button type="submit" class="btn btn-primary btn-simpan"><i class="fa fa-save"></i></button>
+
                                 </div>
                             </div>
                         </div>
+                        <button type="submit" class="btn btn-primary btn-simpan">Simpan <i class="fa fa-save"></i></button>
                     </form>
                 </div>
                 <!-- Javascript -->
@@ -133,14 +134,43 @@
     </div>
 </div>
 
-
-
-@endsection
-
-
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 <script type="text/javascript">
+    function addForm() {
+        var addrow = '<div class="form-group baru-data">\
+                        <div class="form-row">\
+                            <div class="form-group col-md-3">\
+                                <label for="inputEmail4">Nama Barang</label>\
+                                <input type="text" class="form-control" id="" placeholder="Nama Barang">\
+                            </div>\
+                            <div class="form-group col-md-3">\
+                                <label for="inputEmail4">Jumlah Barang</label>\
+                                <input type="number" class="form-control" id="" placeholder="Jumlah Barang">\
+                            </div>\
+                            <div class="form-group col-md-3">\
+                                <label for="">Satuan</label>\
+                                <select class="form-control" id="">\
+                                    <option>Pilih</option>\
+                                    <option>Buah</option>\
+                                    <option>Pack</option>\
+                                    <option>Lusin</option>\
+                                    <option>Karton</option>\
+                                </select>\
+                            </div>\
+                            <div class="form-group col-md-3">\
+                                <label for="inputPassword4">Harga Satuan</label>\
+                                <input type="text" class="form-control" id="" placeholder="1.200.000">\
+                            </div>\
+                        </div>\
+                        <div class="button-group">\
+                            <button type="button" class="btn btn-success btn-tambah"><i class="fa fa-plus"></i></button>\
+                            <button type="button" class="btn btn-danger btn-hapus"><i class="fa fa-times"></i></button>\
+                        </div>\
+                    </div>'
+        $("#dynamic_form").append(addrow);
+    }
+
     $("#dynamic_form").on("click", ".btn-tambah", function() {
         addForm()
         $(this).css("display", "none")
@@ -171,3 +201,7 @@
         })
     })
 </script>
+
+
+
+@endsection

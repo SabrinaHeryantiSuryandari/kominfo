@@ -33,7 +33,7 @@
                 <!-- {{-- <p class="fs-30 mb-2">Input Anggaran</p><br> --}}
                 {{-- <p>22.00% (30 days)</p> --}} -->
                 <div class="pt-2">
-                    <a href="/pelaksanas" type="button" class="btn btn-outline-danger" style="color: white; border-color: white">
+                    <a href="/input_pelaksana" type="button" class="btn btn-outline-danger" style="color: white; border-color: white">
                         <i class="ti-upload btn-icon-prepend"></i>
                         Input Pelaksana
                     </a>
