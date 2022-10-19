@@ -26,33 +26,29 @@
 <div class="col-12 grid-margin stretch-card">
   <div class="card shadow">
     <div class="card-body">
-      <h4 class="card-title">Data Masukan Biaya</h4>
+      <h4 class="card-title">Edit Profil</h4>
 
       <form>
         @csrf
         <div class="row">
         <div class="col-md-12">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Total Biaya</label>
+              <label class="col-sm-3 col-form-label">Nama</label>
               <div class="col-sm-9">
                 <input type="text" class="form-control" />
               </div>
-              <label class="col-sm-3 col-form-label">Deskripsi</label>
+              <label class="col-sm-3 col-form-label">Email</label>
               <div class="col-sm-9">
                 <input type="text" class="form-control" />
               </div>
-              <label class="col-sm-3 col-form-label">Nilai Negosiasi</label>
-              <div class="col-sm-9">
-                <input type="text" class="form-control" />
-              </div>
-              <label class="col-sm-3 col-form-label">Deskripsi</label>
+              <label class="col-sm-3 col-form-label">Password</label>
               <div class="col-sm-9">
                 <input type="text" class="form-control" />
               </div>
             </div>
           </div>
         </div>
-          <a href="/input_barang" class="btn btn-light">Kembali</a>
+          <a href="/home" class="btn btn-light">Batal</a>
           <a href="#" type="submit" class="btn btn-primary mr-2">Selesai</a>
       </form>
     </div>
