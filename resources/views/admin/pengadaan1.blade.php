@@ -1,12 +1,14 @@
 @extends('layouts/index')
-
+@section('input-data', 'active')
+@section('input-data-collapse', 'collapsed')
+@section('input-sudah', 'active')
 @section('content')
-@section('judul')
+<!-- @section('judul')
 {{'Input Data / Belum Tersertifikasi'}}
-@endsection
-@section('title')
+@endsection -->
+<!-- @section('title')
 {{'Input Data yang Belum Tersertifikasi'}}
-@endsection
+@endsection -->
 
 <div class="row">
     {{-- <div class="col-lg-12 grid-margin stretch-card">
@@ -61,27 +63,37 @@
                     </div>
                     @endif
 
-                    <table class="table table-bordered" id="example" style="width:100%">
+                    <table class="table table-bordered" id="example">
                         <thead>
                             <tr>
-                                <th> NO </th>
-                                <th> ID </th>
-                                <th>No Sertifikat</th>
-                                <th>Nama Aset</th>
-                                <th>Alamat</th>
-                                <th>Status Aset</th>
-                                {{-- <th>Luas Aset</th> --}}
-                                {{-- <th>Kondisi Aset</th>
-                            <th>Kondisi Geografis</th>
-                            <th>Asal Usul</th>
-                            <th>Tahun Kepemilikan</th>
-                            <th>Tahun Pembangunan</th>
-                            <th>Tahun Rehab</th> --}}
-                                <th>Keterangan</th>
-                                <th width="280px">Action</th>
+                                <th>No</th>
+                                <th>Pelaksana/Nama Perusahaan</th>
+                                <th>Kegiatan</th>
+                                <th>Tanggal Pelaksanaan</th>
+                                <th>HPS/OE</th>
+                                <th>Harga Penawaran</th>
+                                <th>Harga Penawaran setelah Negosiasi</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
+                        @foreach ($pelaksanas as $pelaksana)
+                        <tr>
+                        <td>{{ $pelaksana->no }}</td>
+                        <td>{{ $pelaksana->pt_pelaksana }}</td>
+                        <td>{{ $pelaksana->tanggal_acara }}</td>
+                        <td>{{ $pelaksana->total_hps }}</td>
+                        <td>{{ $pelaksana->harga_penawaran }}</td>
+                        <td>{{ $pelaksana->nilai_negosiasi }}</td>
+                        <td>
+                        <form action="{{ route('pelaksanas.destroy',$pelaksana->id) }}" method="Post">
+                        <a class="btn btn-primary" href="{{ route('pelaksanas.edit',$pelaksana->id) }}">Edit</a>
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                        </td>
+                        </tr>
                             <!-- {{-- @foreach ($asets as $aset) --}}
                             {{-- <tr>
                                 <td>{{ ++$i }}</td>
@@ -113,4 +125,7 @@
         </div>
     </div>
 </div>
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+<script type="text/javascript">
 @endsection

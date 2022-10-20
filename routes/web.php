@@ -84,6 +84,8 @@ Route::get('/input_pelaksana', function () {
 Route::get('/setting', function () {
     return view('admin.setting');
 });
+
+
 //
 
 

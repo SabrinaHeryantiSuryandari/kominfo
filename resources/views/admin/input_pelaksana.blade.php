@@ -69,17 +69,8 @@
                         </div>
                     </div>
                 </table>
-                <div class="col-xs-12 col-sm-12 col-md-12 text-center mt-3">
-                    <div class="form-group text-center">
-                        <tr>
-                            <td>
-                                <br>
-                                <button type="submit" class="btn btn-success text-center">Submit</button>
-                                <a href="/home" class="btn btn-light text-center">Kembali</a>
-                            </td>
-                        </tr>
-                    </div>
-                </div>
+                <a href="/home" class="btn btn-light">Kembali</a>
+                <a href="#" type="submit" class="btn btn-primary mr-2">Selesai</a>
             </form>
         </div>
     </div>
