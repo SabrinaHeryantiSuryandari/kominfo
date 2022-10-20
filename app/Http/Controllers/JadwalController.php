@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\pelaksana;
+use App\Models\pengadaan;
+use App\Models\barang;
 use App\Models\jadwal;
+
 use Illuminate\Http\Request;
 
 class JadwalController extends Controller
@@ -14,7 +18,13 @@ class JadwalController extends Controller
      */
     public function index()
     {
-        //
+        //$pelaksanas = Pelaksana::all();
+        //$pengadaans = Pengadaan::all();
+        // $barangs = Barang::all();
+        // $jadwals = Jadwal::all();
+
+        return view('admin.input_jadwal', compact('jadwals'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -24,7 +34,7 @@ class JadwalController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.input_jadwal');
     }
 
     /**
@@ -35,7 +45,23 @@ class JadwalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            // 'id' => 'required',
+            'pengadaan_id' => 'required',
+            'kegiatan' => 'required',
+            'alokasi' => 'required',
+            'hari' => 'required',
+            'tanggal' => 'required',
+            'nomor' => 'required',
+            'deskripsi_tgl' => 'required'
+        ]);
+
+        Jadwal::create($request->all());
+        // $asets = Aset::create($request->except(['aset_id', 'nama', 'keterangan']));
+        // $pemilik = Pemilik::create(['aset_id' => $asets->id, $request->only(['nama', 'keterangan', 'aset_id'])]);
+
+        return redirect()->route('jadwals.index')
+            ->with('success', 'Data Jadwal Berhasil Disimpan!');
     }
 
     /**
