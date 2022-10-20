@@ -23,8 +23,8 @@ class PelaksanaController extends Controller
         // $barangs = Barang::all();
         // $jadwals = Jadwal::all();
 
-        return view('admin.input_pelaksana',compact('pelaksanas'))
-        ->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('admin.input_pelaksana', compact('pelaksanas'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -55,13 +55,13 @@ class PelaksanaController extends Controller
             'npwp' => 'required',
             'tlp' => 'required'
         ]);
-      
-        Pelaksana::create($request->all()); 
+
+        Pelaksana::create($request->all());
         // $asets = Aset::create($request->except(['aset_id', 'nama', 'keterangan']));
         // $pemilik = Pemilik::create(['aset_id' => $asets->id, $request->only(['nama', 'keterangan', 'aset_id'])]);
 
         return redirect()->route('pelaksanas.index')
-                        ->with('success','Data Pelaksana Berhasil Disimpan!');
+            ->with('success', 'Data Pelaksana Berhasil Disimpan!');
     }
 
     /**
@@ -72,7 +72,7 @@ class PelaksanaController extends Controller
      */
     public function show(pelaksana $pelaksana)
     {
-        return view('admin.show',compact('pelaksana'));
+        return view('admin.show', compact('pelaksana'));
     }
 
     /**
@@ -83,7 +83,7 @@ class PelaksanaController extends Controller
      */
     public function edit(Pelaksana $pelaksana)
     {
-        return view('admin.edit',compact('pelaksana'));
+        return view('admin.edit', compact('pelaksana'));
     }
 
     /**
@@ -104,11 +104,11 @@ class PelaksanaController extends Controller
             'npwp' => 'required',
             'tlp' => 'required'
         ]);
-    
+
         $pelaksana->update($request->all());
-    
+
         return redirect()->route('pelaksanas.index')
-                        ->with('success','Aset Berhasil updated!');
+            ->with('success', 'Aset Berhasil updated!');
     }
 
     /**
@@ -120,8 +120,8 @@ class PelaksanaController extends Controller
     public function destroy(Pelaksana $pelaksana)
     {
         $pelaksana->delete();
-       
+
         return redirect()->route('pelaksanas.index')
-                        ->with('success','Aset Berhasil Dihapus!');
+            ->with('success', 'Aset Berhasil Dihapus!');
     }
 }

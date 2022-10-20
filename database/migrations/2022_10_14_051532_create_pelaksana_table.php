@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('alamat');
             $table->string('nama_pelaksana');
             $table->string('jabatan_pelaksana');
-            $table->string('kode_rekening');
+            $table->char('kode_rekening');
             $table->string('npwp');
             $table->char('tlp');
 

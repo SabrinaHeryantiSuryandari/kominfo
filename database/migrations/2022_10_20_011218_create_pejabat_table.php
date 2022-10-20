@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('pejabat_pembuatan_komitmen');
             $table->string('nip_pejabat_komitmen');
             $table->string('pejabat_pengadaan');
-            $table->string('nip_pejabat_kpengadaan');
+            $table->string('nip_pejabat_pengadaan');
             $table->string('bpp');
             $table->string('nip_bpp');
             $table->timestamps();

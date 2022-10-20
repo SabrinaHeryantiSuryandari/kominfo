@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('pengadaan_id');
             $table->string('barang');
-            $table->string('jumlah_barang');
+            $table->integer('jumlah_barang');
             $table->string('satuan');
             $table->string('harga_satuan');
             $table->timestamps();

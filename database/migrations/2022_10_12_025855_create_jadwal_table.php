@@ -17,12 +17,12 @@ return new class extends Migration
             $table->id();
             $table->foreignId('pengadaan_id');
             $table->string('kegiatan');
-            $table->string('alokasi');
+            $table->integer('alokasi');
             $table->string('hari');
             $table->date('tanggal');
             $table->string('nomor');
             $table->string('deskripsi_tgl');
-            
+
             // $table->integer('total_biaya');
             // $table->integer('kode_rek');
             // $table->string('pelaksana');
