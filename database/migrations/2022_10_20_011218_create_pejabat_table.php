@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('pejabat', function (Blueprint $table) {
             $table->id();
+            $table->char('tahun');
             $table->string('kuasa_pengguna_anggaran');
             $table->string('nip_kuasa_pengguna');
             $table->string('pejabat_pembuatan_komitmen');
