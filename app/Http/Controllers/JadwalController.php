@@ -72,7 +72,7 @@ class JadwalController extends Controller
      */
     public function show(jadwal $jadwal)
     {
-        //
+        return view('admin.show', compact('jadwal'));
     }
 
     /**
@@ -83,7 +83,7 @@ class JadwalController extends Controller
      */
     public function edit(jadwal $jadwal)
     {
-        //
+        return view('admin.edit', compact('jadwal'));
     }
 
     /**
@@ -95,7 +95,20 @@ class JadwalController extends Controller
      */
     public function update(Request $request, jadwal $jadwal)
     {
-        //
+        $request->validate([
+            'pengadaan_id' => 'required',
+            'kegiatan' => 'required',
+            'alokasi' => 'required',
+            'hari' => 'required',
+            'tanggal' => 'required',
+            'nomor' => 'required',
+            'deskripsi_tgl' => 'required'
+        ]);
+
+        $jadwal->update($request->all());
+
+        return redirect()->route('jadwals.index')
+            ->with('success', 'Jadwal Berhasil updated!');
     }
 
     /**
@@ -106,6 +119,9 @@ class JadwalController extends Controller
      */
     public function destroy(jadwal $jadwal)
     {
-        //
+        $pelaksana->delete();
+
+        return redirect()->route('jadwals.index')
+            ->with('success', 'Jadwal Berhasil Dihapus!');
     }
 }
