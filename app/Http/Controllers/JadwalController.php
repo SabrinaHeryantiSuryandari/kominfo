@@ -21,7 +21,7 @@ class JadwalController extends Controller
         //$pelaksanas = Pelaksana::all();
         //$pengadaans = Pengadaan::all();
         // $barangs = Barang::all();
-        // $jadwals = Jadwal::all();
+        $jadwals = Jadwal::all();
 
         return view('admin.input_jadwal', compact('jadwals'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
@@ -119,7 +119,7 @@ class JadwalController extends Controller
      */
     public function destroy(jadwal $jadwal)
     {
-        $pelaksana->delete();
+        $jadwal->delete();
 
         return redirect()->route('jadwals.index')
             ->with('success', 'Jadwal Berhasil Dihapus!');

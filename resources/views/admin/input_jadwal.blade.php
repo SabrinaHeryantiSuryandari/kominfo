@@ -6,7 +6,7 @@
 @section('judul')
 {{'Input Data / Belum Tersertifikasi'}}
 @endsection
-@section('title')
+<!-- @section('title')
 {{'Input Data yang Belum Tersertifikasi'}}
 @endsection
 
@@ -30,45 +30,56 @@
       <br>
       <div class="row-fluid">
         <div class="container">
-          <form method="POST" action="">
+          <form method="POST" action="{{ route('jadwals.store') }}">
             <div class="" id="dynamic_form">
               <div class="form-group baru-data">
                 <div class="form-row">
                   <div class="form-group col-md-2">
                     <label for="">Pelaksana</label>
-                    <select class="form-control" id="">
+                    <select class="form-control" name="pengadaan_id" value="{{ old('pengadaan_id') }}">
                       <option>Pilih</option>
                       <option>Buah</option>
                       <option>Pack</option>
                       <option>Lusin</option>
                       <option>Karton</option>
                     </select>
+                    <small class="text-danger">{{ $errors->first('pengadaan_id') }}</small>
                   </div>
                   <div class="form-group col-md-2">
                     <label for="">Kegiatan</label>
-                    <select class="form-control" id="">
+                    <select class="form-control" name="kegiatan" value="{{ old('kegiatan') }}">
                       <option>Pilih</option>
                       <option>Buah</option>
                       <option>Pack</option>
                       <option>Lusin</option>
                       <option>Karton</option>
                     </select>
+                    <small class="text-danger">{{ $errors->first('kegiatan') }}</small>
                   </div>
                   <div class="form-group col-md-2">
                     <label for="inputPassword4">Alokasi</label>
-                    <input type="number" class="form-control" id="" placeholder="1">
+                    <input type="number" class="form-control" name="alokasi" value="{{ old('alokasi') }}" placeholder="1">
+                    <small class="text-danger">{{ $errors->first('alokasi') }}</small>
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label for="inputPassword4">Hari</label>
+                    <input type="number" class="form-control" name="hari" value="{{ old('hari') }}" placeholder="1">
+                    <small class="text-danger">{{ $errors->first('hari') }}</small>
                   </div>
                   <div class="form-group col-md-2">
                     <label for="inputPassword4">Tanggal</label>
-                    <input type="date" class="form-control" id="" placeholder="Tanggal">
+                    <input type="date" class="form-control" name="tanggal" value="{{ old('tanggal') }}" placeholder="Tanggal">
+                    <small class="text-danger">{{ $errors->first('tanggal') }}</small>
                   </div>
                   <div class="form-group col-md-2">
                     <label for="inputPassword4">Deskripsi Tanggal</label>
-                    <input type="text" class="form-control" id="" placeholder="Deskripsi Pelaksanaan">
+                    <input type="text" class="form-control" name="deskripsi_tgl" value="{{ old('deskripsi_tgl') }}" placeholder="Deskripsi Pelaksanaan">
+                    <small class="text-danger">{{ $errors->first('deskripsi_tgl') }}</small>
                   </div>
                   <div class="form-group col-md-2">
                     <label for="inputEmail4">Nomor</label>
-                    <input type="text" class="form-control" id="" placeholder="Nomor Surat">
+                    <input type="text" class="form-control" name="nomor" value="{{ old('nomor') }}" placeholder="Nomor Surat">
+                    <small class="text-danger">{{ $errors->first('nomor') }}</small>
                   </div>
                 </div>
                 <div class="button-group">
