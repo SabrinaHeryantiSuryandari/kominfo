@@ -37,9 +37,13 @@
               <div class="col-sm-9">
                 <select class="form-control">
                   <option>Category1</option>
-                  <option>Category2</option>
+                  @foreach ($pelaksanas as $pelaksana)
+                    <option vel> {{ $pelaksana->pt_pelaksana }}</option>
+                  @endforeach
+                  
+                  {{-- <option>Category2</option>
                   <option>Category3</option>
-                  <option>Category4</option>
+                  <option>Category4</option> --}}
                 </select>
               </div>
               <label class="col-sm-3 col-form-label">Tanggal Pelaksanaan</label>

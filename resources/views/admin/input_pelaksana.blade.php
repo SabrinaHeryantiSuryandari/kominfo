@@ -43,12 +43,12 @@
                             <small class="text-danger">{{ $errors->first('alamat') }}</small>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputName1">Nama Pelaksana</label>
+                            <label for="exampleInputName1">Nama Penanggung Jawab Pelaksana</label>
                             <input class="form-control" type="text" name="nama_pelaksana" value="{{ old('nama_pelaksana') }}" placeholder="Nama Pelaksana">
                             <small class="text-danger">{{ $errors->first('nama_pelaksana') }}</small>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputName1">Jabatan Pelaksana</label>
+                            <label for="exampleInputName1">Jabatan Penanggung Jawab Pelaksana</label>
                             <input class="form-control" type="text" name="jabatan_pelaksana" value="{{ old('jabatan_pelaksana') }}" placeholder="Jabatan Pelaksana">
                             <small class="text-danger">{{ $errors->first('jabatan_pelaksana') }}</small>
                         </div>

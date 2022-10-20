@@ -28,7 +28,7 @@ class pengadaan extends Model
 
     ];
  
-    public function pelaksana()
+    public function pelaksanas()
     {
     	return $this->belongsTo(pelaksanas::class);
     }
@@ -37,5 +37,5 @@ class pengadaan extends Model
     {
     	return $this->belongsTo(barang::class);
     }
-    
+
 }
