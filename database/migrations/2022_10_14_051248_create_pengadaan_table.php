@@ -17,14 +17,12 @@ return new class extends Migration
             $table->id();
             $table->foreignId('pelaksana_id');
             $table->string('jenis_pengadaan');
-            $table->string('tanggal_acara');
-            $table->string('deskripsi_tgl_acara');
-            $table->string('waktu_acara');
-            $table->string('tempat_acara');
             $table->string('total_hps');
             $table->string('deskripsi_hps');
+            $table->string('harga_penawaran');
+            $table->string('deskripsi_penawaran');
             $table->string('nilai_negosiasi');
-            $table->string('deskripsi_nilai_nego');
+            $table->string('deskripsi_negosiasi');
             $table->timestamps();
         });
     }
