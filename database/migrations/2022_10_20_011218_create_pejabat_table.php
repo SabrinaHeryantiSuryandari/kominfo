@@ -14,15 +14,26 @@ return new class extends Migration
     public function up()
     {
         Schema::create('pejabats', function (Blueprint $table) {
+            // $table->id();
+            // $table->string('kuasa_pengguna_anggaran');
+            // $table->string('nip_kuasa_pengguna');
+            // $table->string('pejabat_pembuatan_komitmen');
+            // $table->string('nip_pejabat_komitmen');
+            // $table->string('pejabat_pengadaan');
+            // $table->string('nip_pejabat_kpengadaan');
+            // $table->string('bpp');
+            // $table->string('nip_bpp');
+            // $table->timestamps();
+
             $table->id();
             $table->string('kuasa_pengguna_anggaran');
-            $table->string('nip_kuasa_pengguna');
+            $table->integer('nip_kuasa_pengguna');
             $table->string('pejabat_pembuatan_komitmen');
-            $table->string('nip_pejabat_komitmen');
+            $table->integer('nip_pejabat_komitmen');
             $table->string('pejabat_pengadaan');
-            $table->string('nip_pejabat_kpengadaan');
+            $table->integer('nip_pejabat_kpengadaan');
             $table->string('bpp');
-            $table->string('nip_bpp');
+            $table->integer('nip_bpp');
             $table->timestamps();
         });
     }

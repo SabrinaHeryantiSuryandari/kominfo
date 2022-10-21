@@ -14,12 +14,20 @@ return new class extends Migration
     public function up()
     {
         Schema::create('barangs', function (Blueprint $table) {
+            // $table->id();
+            // $table->foreignId('pengadaan_id')->constrained();
+            // $table->string('barang');
+            // $table->string('jumlah_barang');
+            // $table->string('satuan');
+            // $table->string('harga_satuan');
+            // $table->timestamps();
+
             $table->id();
-            $table->foreignId('pengadaan_id');
+            $table->foreignId('pengadaan_id')->constrained();
             $table->string('barang');
-            $table->string('jumlah_barang');
-            $table->string('satuan');
-            $table->string('harga_satuan');
+            $table->integer('jumlah_barang');
+            $table->integer('satuan');
+            $table->integer('harga_satuan');
             $table->timestamps();
         });
     }

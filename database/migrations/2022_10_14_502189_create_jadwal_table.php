@@ -14,23 +14,26 @@ return new class extends Migration
     public function up()
     {
         Schema::create('jadwals', function (Blueprint $table) {
+            // $table->id();
+            // $table->foreignId('pengadaan_id')->constrained();
+            // $table->string('kegiatan');
+            // $table->string('alokasi');
+            // $table->string('hari');
+            // $table->date('tanggal');
+            // $table->string('nomor');
+            // $table->string('deskripsi_tgl');
+            // $table->timestamps();
+
             $table->id();
-            $table->foreignId('pengadaan_id');
+            $table->foreignId('pengadaan_id')->constrained();
             $table->string('kegiatan');
             $table->string('alokasi');
-            $table->string('hari');
+            $table->date('hari');
             $table->date('tanggal');
-            $table->string('nomor');
-            $table->string('deskripsi_tgl');
-            
-            // $table->integer('total_biaya');
-            // $table->integer('kode_rek');
-            // $table->string('pelaksana');
-            // $table->string('uraian');
-            // $table->integer('alokasi_waktu');
-            // $table->date('tgl');
-            // $table->char('hari');
+            $table->integer('nomor');
+            $table->text('deskripsi_tgl');
             $table->timestamps();
+
         });
     }
 
