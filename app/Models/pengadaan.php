@@ -28,14 +28,12 @@ class pengadaan extends Model
 
     ];
  
-    public function pelaksanas()
+    public function pelaksana()
     {
-    	return $this->belongsTo(pelaksanas::class);
+    	return $this->belongsTo(pelaksana::class);
     }
-
     public function barang()
     {
     	return $this->belongsTo(barang::class);
     }
-
 }

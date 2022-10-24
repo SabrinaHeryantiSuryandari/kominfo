@@ -61,12 +61,14 @@ Route::get('/pengadaan2', function () {
     return view('admin.pengadaan2');
 });
 
-Route::get('/input_pengadaan', function () {
-    return view('admin.input_pengadaan');
-});
 
 Route::get('/input_anggaran', function () {
     return view('admin.input_anggaran');
+});
+
+Route::resource('/pengaadaan', PengadaanController::class);
+Route::get('/input_pengadaan', function () {
+    return view('admin.input_pengadaan');
 });
 
 Route::get('/input_jadwal', function () {

@@ -24,8 +24,8 @@ class pelaksana extends Model
     protected $primarykay = "id";
     
  
-    public function pengadaans()
+    public function pengadaan()
     {
-    	return $this->belongsToMany(pengadaan::class);
+    	return $this->hasOne(pengadaan::class);
     }
 }

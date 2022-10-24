@@ -34,6 +34,9 @@ class PelaksanaController extends Controller
      */
     public function create()
     {
+        // $pelaksanas = Pelaksana::all();
+        // return view('admin.create', compact('pelaksanas'));
+
         return view('admin.input_pelaksana');
     }
 
