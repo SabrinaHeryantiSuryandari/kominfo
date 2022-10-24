@@ -27,13 +27,13 @@ return new class extends Migration
 
             $table->id();
             $table->string('kuasa_pengguna_anggaran');
-            $table->integer('nip_kuasa_pengguna');
+            $table->bigInteger('nip_kuasa_pengguna');
             $table->string('pejabat_pembuatan_komitmen');
-            $table->integer('nip_pejabat_komitmen');
+            $table->bigInteger('nip_pejabat_komitmen');
             $table->string('pejabat_pengadaan');
-            $table->integer('nip_pejabat_kpengadaan');
+            $table->bigInteger('nip_pejabat_kpengadaan');
             $table->string('bpp');
-            $table->integer('nip_bpp');
+            $table->bigInteger('nip_bpp');
             $table->timestamps();
         });
     }

@@ -25,10 +25,12 @@ return new class extends Migration
             $table->id();
             $table->foreignId('pengadaan_id')->constrained();
             $table->string('barang');
-            $table->integer('jumlah_barang');
-            $table->integer('satuan');
-            $table->integer('harga_satuan');
+            $table->bigInteger('jumlah_barang');
+            $table->string('satuan');
+            $table->bigInteger('harga_satuan');
             $table->timestamps();
+            // $table->integer('satuan');
+            // $table->integer('harga_satuan');
         });
     }
 

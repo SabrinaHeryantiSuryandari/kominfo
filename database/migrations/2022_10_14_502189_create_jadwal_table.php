@@ -30,7 +30,7 @@ return new class extends Migration
             $table->string('alokasi');
             $table->date('hari');
             $table->date('tanggal');
-            $table->integer('nomor');
+            $table->bigInteger('nomor');
             $table->text('deskripsi_tgl');
             $table->timestamps();
 
@@ -44,6 +44,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jadwals');
+        Schema::dropIfExists('jadwals   ');
     }
 };
