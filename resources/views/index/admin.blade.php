@@ -44,7 +44,33 @@
     </div>
 
 </div>
-
+{{-- 
+<div class="card-body">
+    <a href="/pegawai/tambah" class="btn btn-primary">Input Pegawai Baru</a>
+    <br/>
+    <br/>
+    <table class="table table-bordered table-hover table-striped">
+        <thead>
+            <tr>
+                <th>Nama</th>
+                <th>Alamat</th>
+                <th>OPSI</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($pelaksanas as $p)
+            <tr>
+                <td>{{ $p->pt_pelaksana }}</td>
+                <td>{{ $p->nama }}</td>
+                <td>
+                    <a href="/pegawai/edit/{{ $p->id }}" class="btn btn-warning">Edit</a>
+                    <a href="/pegawai/hapus/{{ $p->id }}" class="btn btn-danger">Hapus</a>
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div> --}}
 
 <div class="row">
     <div class="col grid-margin stretch-card">

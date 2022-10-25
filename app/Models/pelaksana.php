@@ -28,4 +28,5 @@ class pelaksana extends Model
     {
     	return $this->hasOne(pengadaan::class);
     }
+
 }

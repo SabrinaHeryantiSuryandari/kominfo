@@ -2,11 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\pelaksana;
-use App\Models\pengadaan;
-use App\Models\barang;
-use App\Models\jadwal;
-
+use App\Models\Pelaksana;
 use Illuminate\Http\Request;
 
 class PelaksanaController extends Controller
@@ -18,25 +14,29 @@ class PelaksanaController extends Controller
      */
     public function index()
     {
-        $pelaksanas = Pelaksana::all();
-        $pengadaans = Pengadaan::all();
-        // $barangs = Barang::all();
-        // $jadwals = Jadwal::all();
+        // $pelaksanas = pelaksana::all();
+        // $pelaksanas = pelaksana::orderBy('id','desc')->paginate(5);
+        // return view('pelaksanas.index', compact('pelaksanas'));
+        // $getmodel = new pelaksana()
 
-        return view('admin.input_pelaksana',compact('pelaksanas'))
-        ->with('i', (request()->input('page', 1) - 1) * 5);
+        $pelaksana = Pelaksana::select('*')
+                        ->get();
+
+        return view('admin.input_pengadaan',['pelaksana'=>$pelaksana] );
+        // dd($pelaksana);
+        
+
+        
     }
 
     /**
      * Show the form for creating a new resource.
-     *
+     
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        // $pelaksanas = Pelaksana::all();
-        // return view('admin.create', compact('pelaksanas'));
-
+        // return view('pelaksanas.create');
         return view('admin.input_pelaksana');
     }
 
@@ -59,7 +59,7 @@ class PelaksanaController extends Controller
             'tlp' => 'required'
         ]);
       
-        Pelaksana::create($request->all()); 
+        pelaksana::create($request->post()); 
         // $asets = Aset::create($request->except(['aset_id', 'nama', 'keterangan']));
         // $pemilik = Pemilik::create(['aset_id' => $asets->id, $request->only(['nama', 'keterangan', 'aset_id'])]);
 
@@ -75,7 +75,7 @@ class PelaksanaController extends Controller
      */
     public function show(pelaksana $pelaksana)
     {
-        return view('admin.show',compact('pelaksana'));
+        return view('pelaksanas.show',compact('pelaksanas'));
     }
 
     /**
@@ -84,9 +84,9 @@ class PelaksanaController extends Controller
      * @param  \App\Models\pelaksana  $pelaksana
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pelaksana $pelaksana)
+    public function edit(pelaksana $pelaksana)
     {
-        return view('admin.edit',compact('pelaksana'));
+        return view('pelaksanas.edit',compact('pelaksanas'));
     }
 
     /**
@@ -96,7 +96,7 @@ class PelaksanaController extends Controller
      * @param  \App\Models\pelaksana  $pelaksana
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pelaksana $pelaksana)
+    public function update(Request $request, pelaksana $pelaksana)
     {
         $request->validate([
             'pt_pelaksana' => 'required',
@@ -108,7 +108,7 @@ class PelaksanaController extends Controller
             'tlp' => 'required'
         ]);
     
-        $pelaksana->update($request->all());
+        $pelaksana->fill($request->post())->save();
     
         return redirect()->route('pelaksanas.index')
                         ->with('success','Aset Berhasil updated!');
@@ -120,7 +120,7 @@ class PelaksanaController extends Controller
      * @param  \App\Models\pelaksana  $pelaksana
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pelaksana $pelaksana)
+    public function destroy(pelaksana $pelaksana)
     {
         $pelaksana->delete();
        

@@ -66,10 +66,13 @@ Route::get('/input_anggaran', function () {
     return view('admin.input_anggaran');
 });
 
-Route::resource('/pengaadaan', PengadaanController::class);
-Route::get('/input_pengadaan', function () {
-    return view('admin.input_pengadaan');
-});
+// Route::resource('/pengaadaan', PengadaanController::class);
+// Route::get('/input_pengadaan', function () {
+//     return view('admin.inputpengadaan');
+// });
+
+//untuk 
+Route::get('/input_pengadaan',[PelaksanaController::class, 'index']);
 
 Route::get('/input_jadwal', function () {
     return view('admin.input_jadwal');
@@ -78,7 +81,7 @@ Route::get('/input_jadwal', function () {
 Route::get('/input_barang', function () {
     return view('admin.input_barang');
 });
-Route::resource('/pelaksanas', PelaksanaController::class);
+// Route::resource('/pelaksanas', PelaksanaController::class);
 Route::get('/input_pelaksana', function () {
     return view('admin.input_pelaksana');
 });

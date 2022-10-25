@@ -33,21 +33,16 @@
         <div class="row">
           <div class="col-md-12">
             <div class="form-group row">
+              
               <label class="col-sm-3 col-form-label">Pelaksana/Nama Perusahaan</label>
               <div class="col-sm-9">
-                {{-- <a href="{{ route('pelaksanas.create') }}" class="btn btn-md btn-success mb-3">TAMBAH POST</a> --}}
                 <select class="form-control">
-                  {{-- <option>Category1</option> --}}
-                  @foreach ($pelaksana as $item)
-                    <option value="{{$item->id}}"> {{ $item->pt_pelaksana }}</option>
+                  @foreach ($pelaksana as $get)
+                    <option > {{$get->pt_pelaksana}}</option>
                   @endforeach
-                  
-                  {{-- <option>Category2</option>
-                  <option>Category3</option>
-                  <option>Category4</option> --}}
                 </select>
-                {{-- {{ $pelaksanas->links() }} --}}
               </div>
+
               <label class="col-sm-3 col-form-label">Tanggal Pelaksanaan</label>
               <div class="col-sm-9">
                 <input class="form-control" type="date" placeholder="dd/mm/yyyy" />
