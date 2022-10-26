@@ -28,7 +28,7 @@
     <div class="card shadow">
         <div class="card-body">
             <h4 class="card-title">Input Data Pelaksana</h4>
-            <form action="{{ route('pelaksanas.store') }}" method="POST">
+            <form action="postdata" method="POST">
                 @csrf
                 <table class="" style="margin:20px auto;" id="dataTable" width="100%" cellspacing="0">
                     <div class="col-xs-12 col-sm-12 col-md-12">

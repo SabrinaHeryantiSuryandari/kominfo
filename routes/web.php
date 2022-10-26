@@ -73,6 +73,9 @@ Route::get('/input_anggaran', function () {
 
 //untuk 
 Route::get('/input_pengadaan',[PelaksanaController::class, 'index']);
+Route::get('/input_pelaksana',[PelaksanaController::class, 'create']);
+Route::post('/postdata',[PelaksanaController::class,'store']);
+// Route::post('/inputpelaksana'. PelaksanaController::class);
 
 Route::get('/input_jadwal', function () {
     return view('admin.input_jadwal');

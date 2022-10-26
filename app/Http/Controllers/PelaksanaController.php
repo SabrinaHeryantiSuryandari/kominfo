@@ -14,13 +14,13 @@ class PelaksanaController extends Controller
      */
     public function index()
     {
-        // $pelaksanas = pelaksana::all();
+        $pelaksana = Pelaksana::all();
         // $pelaksanas = pelaksana::orderBy('id','desc')->paginate(5);
         // return view('pelaksanas.index', compact('pelaksanas'));
         // $getmodel = new pelaksana()
 
-        $pelaksana = Pelaksana::select('*')
-                        ->get();
+        // $pelaksana = Pelaksana::select('*')
+        //                 ->get();
 
         return view('admin.input_pengadaan',['pelaksana'=>$pelaksana] );
         // dd($pelaksana);
@@ -59,12 +59,14 @@ class PelaksanaController extends Controller
             'tlp' => 'required'
         ]);
       
-        pelaksana::create($request->post()); 
+        Pelaksana::create($request->post()); 
         // $asets = Aset::create($request->except(['aset_id', 'nama', 'keterangan']));
         // $pemilik = Pemilik::create(['aset_id' => $asets->id, $request->only(['nama', 'keterangan', 'aset_id'])]);
 
-        return redirect()->route('pelaksanas.index')
-                        ->with('success','Data Pelaksana Berhasil Disimpan!');
+        // return redirect()->route('admin.input_pelaksana')
+        //                 ->with('success','Data Pelaksana Berhasil Disimpan!');
+
+        return redirect()->to('home');
     }
 
     /**
@@ -73,9 +75,9 @@ class PelaksanaController extends Controller
      * @param  \App\Models\pelaksana  $pelaksana
      * @return \Illuminate\Http\Response
      */
-    public function show(pelaksana $pelaksana)
+    public function show(Pelaksana $pelaksana)
     {
-        return view('pelaksanas.show',compact('pelaksanas'));
+        return view('admin.input_pelaksana',compact('pelaksana'));
     }
 
     /**
@@ -84,9 +86,9 @@ class PelaksanaController extends Controller
      * @param  \App\Models\pelaksana  $pelaksana
      * @return \Illuminate\Http\Response
      */
-    public function edit(pelaksana $pelaksana)
+    public function edit(Pelaksana $pelaksana)
     {
-        return view('pelaksanas.edit',compact('pelaksanas'));
+        return view('admin.input_pelaksana',compact('pelaksana'));
     }
 
     /**
@@ -120,7 +122,7 @@ class PelaksanaController extends Controller
      * @param  \App\Models\pelaksana  $pelaksana
      * @return \Illuminate\Http\Response
      */
-    public function destroy(pelaksana $pelaksana)
+    public function destroy(Pelaksana $pelaksana)
     {
         $pelaksana->delete();
        

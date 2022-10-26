@@ -33,12 +33,16 @@
         <div class="row">
           <div class="col-md-12">
             <div class="form-group row">
-              
+
               <label class="col-sm-3 col-form-label">Pelaksana/Nama Perusahaan</label>
               <div class="col-sm-9">
-                <select class="form-control">
+                <select class="form-control" name="pelaksana_id" >
+                  <option> Pilih PT </option>
                   @foreach ($pelaksana as $get)
-                    <option > {{$get->pt_pelaksana}}</option>
+                    {{-- <option > {{$get->pt_pelaksana}}</option> --}}
+                    <option value="{{$get->id}}" {{ $visitor->host_id == $host->id ? 'selected' : ''  }}>
+                      {{$host->name}} <br>{{$host->Mobile}}
+                  </option>
                   @endforeach
                 </select>
               </div>
