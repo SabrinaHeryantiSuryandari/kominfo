@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\jadwal;
+
 use Illuminate\Http\Request;
 
 class JadwalController extends Controller
@@ -14,7 +15,9 @@ class JadwalController extends Controller
      */
     public function index()
     {
-        //
+        $jadwal = Jadwal::all();
+
+        return view('admin.input_jadwal', ['jadwal'=>$jadwal]);
     }
 
     /**
@@ -24,7 +27,7 @@ class JadwalController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.input_pelaksana');
     }
 
     /**
@@ -35,7 +38,20 @@ class JadwalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            // 'id' => 'required',
+            'pengadaan_id' => 'required',
+            'kegiatan' => 'required',
+            'alokasi' => 'required',
+            'hari' => 'required',
+            'tanggal' => 'required',
+            'nomor' => 'required',
+            'deskripsi_tgl' => 'required'
+        ]);
+        
+        Jadwal::create($request->post());
+        
+        return redirect()->to('home');
     }
 
     /**

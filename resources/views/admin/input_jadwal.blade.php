@@ -1,5 +1,5 @@
 @extends('layouts/index')
-{{-- @section('input-data', 'active')
+@section('input-data', 'active')
 @section('input-data-collapse', 'collapsed')
 @section('input-sudah', 'active')
 @section('content')
@@ -8,7 +8,7 @@
 @endsection
 @section('title')
 {{'Input Data yang Belum Tersertifikasi'}}
-@endsection --}}
+@endsection
 
 <!-- Content Row -->
 
@@ -33,31 +33,41 @@
         <div class="row">
           <div class="col-md-12">
             <div class="form-group row">
+
               <label class="col-sm-3 col-form-label">Nomor</label>
               <div class="col-sm-9">
                 <input type="text" class="form-control" />
               </div>
+
               <label class="col-sm-3 col-form-label">Kegiatan</label>
               <div class="col-sm-9">
                 <select class="form-control">
-                  <option>Category1</option>
-                  <option>Category2</option>
+                  <option>Pilih Pengadaan</option>
+                  @foreach ($pengadaan as $item)
+                    <option value="{{$item->id}}">{{$item->jenis_pengadaan}}</option>
+                  @endforeach
+
+                  {{-- <option>Category2</option>
                   <option>Category3</option>
-                  <option>Category4</option>
+                  <option>Category4</option> --}}
                 </select>
               </div>
+
               <label class="col-sm-3 col-form-label">Alokasi</label>
               <div class="col-sm-9">
                 <input type="text" class="form-control" />
               </div>
+
               <label class="col-sm-3 col-form-label">Tanggal Pelaksanaan</label>
               <div class="col-sm-9">
                 <input class="form-control" type="date" placeholder="dd/mm/yyyy" />
               </div>
+
               <label class="col-sm-3 col-form-label">Deskripsi Pelaksanaan</label>
               <div class="col-sm-9">
                 <input type="text" class="form-control" />
               </div>
+
             </div>
           </div>
         </div>

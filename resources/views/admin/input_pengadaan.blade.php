@@ -64,27 +64,27 @@
 
               <label for="exampleTextarea1" class="col-sm-9 col-form-label">Deskripsi HPS (Harga Perkiraan Sendiri)</label>
               <div class="col-sm-12">
-                <input type="text" class="form-control" placeholder="Sepuluh Juta Rupiah">
+                <input type="text" class="form-control" name="deskripsi_hps" placeholder="Sepuluh Juta Rupiah">
               </div>
 
               <label for="exampleTextarea1" class="col-sm-9 col-form-label">Harga Penawaran</label>
               <div class="col-sm-12">
-                <input type="text" class="form-control" placeholder="10000000">
+                <input type="text" class="form-control" name="harga_penawaran" placeholder="10000000">
               </div>
 
               <label for="exampleTextarea1" class="col-sm-9 col-form-label">Deskripsi Harga Penawaran </label>
               <div class="col-sm-12">
-                <input type="text" class="form-control" placeholder="Sepuluh Juta Rupiah">
+                <input type="text" class="form-control" name="deskripsi_penawaran" placeholder="Sepuluh Juta Rupiah">
               </div>
 
               <label for="exampleTextarea1" class="col-sm-9 col-form-label">Nilai Negosiasi</label>
               <div class="col-sm-12">
-                <input type="text" class="form-control" placeholder="10000000">
+                <input type="text" class="form-control" name="nilai_negosiasi" placeholder="10000000">
               </div>
 
               <label for="exampleTextarea1" class="col-sm-9 col-form-label">Deskripsi Negosiasi</label>
               <div class="col-sm-12">
-                <input type="text" class="form-control" placeholder="Sepuluh Juta Rupiah">
+                <input type="text" class="form-control" name="deskripsi_negosiasi" placeholder="Sepuluh Juta Rupiah">
               </div>
             {{-- </div> --}}
           {{-- </div> --}}
@@ -92,7 +92,8 @@
         </table>
 
         <a href="/home" class="btn btn-light">Batal</a>
-        <a href="/input_jadwal" type="submit" class="btn btn-primary mr-2">Selanjutnya</a>
+        <button type="submit" class="btn btn-primary mr-2">Selanjutnya</button>
+        <a href="/input_jadwal" class="btn btn-light">NEXT</a>
         
         {{-- <div class="row">
           <div class="col-12">

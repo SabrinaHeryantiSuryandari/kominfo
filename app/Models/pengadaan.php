@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class pengadaan extends Model
+class Pengadaan extends Model
 {
     use HasFactory;
     
@@ -15,21 +15,21 @@ class pengadaan extends Model
         'jenis_pengadaan',
         'total_hps',
         'deskripsi_hps',
-        'Harga Penawaran',
-        'Deskripsi_penawaran',
+        'harga_penawaran',
+        'deskripsi_penawaran',
         'nilai_negosiasi',
-        'deskripsi_nilai_nego'
+        'deskripsi_negosiasi'
     ];
     
     protected $table = "pengadaans";
     protected $primarykay = "id";
  
+    public function barang()
+    {
+        return $this->hasMany(barang::class);
+    }
     public function pelaksana()
     {
     	return $this->belongsTo(pelaksana::class);
-    }
-    public function barang()
-    {
-    	return $this->belongsTo(barang::class);
     }
 }

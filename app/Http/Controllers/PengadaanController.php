@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\pengadaan;
+use App\Models\Pengadaan;
 use App\Models\pelaksana;
 use App\Models\barang;
 use App\Models\jadwal;
@@ -18,13 +18,17 @@ class PengadaanController extends Controller
      */
     public function index()
     {
-        $pengadaans = Pengadaan::all();
-        $pelaksanas = Pelaksana::all();
-        $barangs = Barang::all();
+        $pengadaan = Pengadaan::all();
+        // $pelaksana = Pelaksana::all();
+        // $barang = Barang::all();
         // $jadwals = Jadwal::all();
 
-        return view('admin.input_pengadaan',compact('pengadaans'))
-        ->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('admin.input_jadwal',['pengadaan'=>$pengadaan], 
+        // ['pelaksana'=>$pelaksana] 
+    );
+
+        // return view('admin.input_pengadaan',compact('pengadaans'))
+        // ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -35,11 +39,12 @@ class PengadaanController extends Controller
     public function create()
     {
         // return view('admin.input_pengadaan');
-        $pelaksanas = pelaksana::all();
+        // $pelaksana = Pelaksana::all();
         // $pengadaans = Pengadaan::all();
-        $barangs = barang::all();
+        // $barang = Barang::all();
         
-        return view('pengadaan', compact('pelaksanas'));
+        // return view('pengadaan', compact('pelaksanas'));
+        return view('admin.input_pengadaan');
     }
 
     /**
@@ -50,53 +55,56 @@ class PengadaanController extends Controller
      */
     public function store(Request $request)
     {
-        // $request->validate([
+        $request->validate([
             // 'id' => 'required',
-            // 'perusahaan_id' => 'required',
-            // 'jenis_pengadaan' => 'required',
-            // 'tanggal_acara' => 'required',
-            // 'deskripsi_tgl_acara' => 'required',
-            // 'waktu_acara' => 'required',
-            // 'tempat_acara' => 'required',
-            // 'total_hps' => 'required',
-            // 'deskripsi_hps' => 'required',
-            // 'nilai_negosiasi' => 'required',
-            // 'nilai_negosiasi' => 'required'
-        // ]);
+            'pelaksana_id' => 'required',
+            'jenis_pengadaan' => 'required',
+            'total_hps' => 'required',
+            'deskripsi_hps' => 'required',
+            'harga_penawaran' => 'required',
+            'deskripsi_penawaran' => 'required',
+            'nilai_negosiasi' => 'required',
+            'deskripsi_negosiasi' => 'required'
+        ]);
       
-        // Jadwal::create($request->all()); 
+        Pengadaan::create($request->post()); 
+
+        // return redirect()->route('home')
+        //                 ->with('success','Aset Berhasil Dihapus!');
+        
+        return redirect()->to('home');
         
         // return redirect()->route('jadwals.index')
         //                 ->with('success','Data Pelaksana Berhasil Disimpan!');
 
-        $pelaksanas =   Pelaksana::create($request->except([
+        // $pelaksana =   Pelaksana::create($request->except([
 
-            'jenis_pengadaan',
-            'tanggal_acara',
-            'deskripsi_tgl_acara',
-            'waktu_acara',
-            'tempat_acara',
-            'total_hps',
-            'deskripsi_hps',
-            'nilai_negosiasi',
-            'deskripsi_nilai_nego',        
-        ]));
+        //     'jenis_pengadaan',
+        //     'tanggal_acara',
+        //     'deskripsi_tgl_acara',
+        //     'waktu_acara',
+        //     'tempat_acara',
+        //     'total_hps',
+        //     'deskripsi_hps',
+        //     'nilai_negosiasi',
+        //     'deskripsi_nilai_nego',        
+        // ]));
 
-        $request['pelaksana_id'] = $pelaksanas->id;
-        $pengadaans = Pengadaan::create($request->only([
-            'pelaksana_id',
-            'jenis_pengadaan',
-            'tanggal_acara',
-            'deskripsi_tgl_acara',
-            'waktu_acara',
-            'tempat_acara',
-            'total_hps',
-            'deskripsi_hps',
-            'nilai_negosiasi',
-            'deskripsi_nilai_nego'        
-        ]));
+        // $request['pelaksana_id'] = $pelaksana->id;
+        // $pengadaan = Pengadaan::create($request->only([
+        //     'pelaksana_id',
+        //     'jenis_pengadaan',
+        //     'tanggal_acara',
+        //     'deskripsi_tgl_acara',
+        //     'waktu_acara',
+        //     'tempat_acara',
+        //     'total_hps',
+        //     'deskripsi_hps',
+        //     'nilai_negosiasi',
+        //     'deskripsi_nilai_nego'        
+        // ]));
 
-        return back()->with('success',' Post baru berhasil dibuat.');
+        // return back()->with('success',' Post baru berhasil dibuat.');
     }
 
     /**
@@ -107,7 +115,7 @@ class PengadaanController extends Controller
      */
     public function show(pengadaan $pengadaan)
     {
-        return view('admin.lihat',compact('pengadaan'));
+        return view('admin.input_pengadaan',compact('pengadaan'));
     }
 
     /**
