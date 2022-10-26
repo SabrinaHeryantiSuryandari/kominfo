@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pelaksana;
+use App\Models\pengadaan;
+
 use Illuminate\Http\Request;
 
 class PelaksanaController extends Controller
@@ -15,6 +17,7 @@ class PelaksanaController extends Controller
     public function index()
     {
         $pelaksana = Pelaksana::all();
+        $pengadaan = Pengadaan::all();
         // $pelaksanas = pelaksana::orderBy('id','desc')->paginate(5);
         // return view('pelaksanas.index', compact('pelaksanas'));
         // $getmodel = new pelaksana()
@@ -22,7 +25,7 @@ class PelaksanaController extends Controller
         // $pelaksana = Pelaksana::select('*')
         //                 ->get();
 
-        return view('admin.input_pengadaan',['pelaksana'=>$pelaksana] );
+        return view('admin.input_pengadaan',['pelaksana'=>$pelaksana], ['pengadaan'=>$pengadaan] );
         // dd($pelaksana);
         
 

@@ -77,6 +77,9 @@ Route::get('/input_pelaksana',[PelaksanaController::class, 'create']);
 Route::post('/postdata',[PelaksanaController::class,'store']);
 // Route::post('/inputpelaksana'. PelaksanaController::class);
 
+Route::post('/postpengadaan',[PengadaanController::class], 'store' );
+Route::post('/postjadwal',[JadwalController::class], 'store' );
+
 Route::get('/input_jadwal', function () {
     return view('admin.input_jadwal');
 });

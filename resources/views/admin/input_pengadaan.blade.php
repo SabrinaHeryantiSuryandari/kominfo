@@ -28,54 +28,72 @@
     <div class="card-body">
       <h4 class="card-title">Data Masukan Pengadaan</h4>
 
-      <form>
+      <form action="postpengadaan" method="POST">
         @csrf
-        <div class="row">
-          <div class="col-md-12">
-            <div class="form-group row">
+        {{-- <div class="row"> --}}
+        <table class="" style="margin:20px auto;" id="dataTable" width="100%" cellspacing="0">
+          {{-- <div class="col-md-12"> --}}
+            {{-- <div class="form-group row"> --}}
+          <div class="col-xs-12 col-sm-12 col-md-12">
 
-              <label class="col-sm-3 col-form-label">Pelaksana/Nama Perusahaan</label>
-              <div class="col-sm-9">
-                <select class="form-control" name="pelaksana_id" >
+              <label for="exampleInputName1" class="col-sm-9 col-form-label">Pelaksana/Nama Perusahaan</label>
+              <div class="col-sm-12">
+                {{-- <select class="form-control" name="pelaksana_id" > --}}
+                <select class="form-control select2-multiple" name="pelaksana_id" >
                   <option> Pilih PT </option>
                   @foreach ($pelaksana as $get)
                     {{-- <option > {{$get->pt_pelaksana}}</option> --}}
-                    <option value="{{$get->id}}" {{ $visitor->host_id == $host->id ? 'selected' : ''  }}>
-                      {{$host->name}} <br>{{$host->Mobile}}
-                  </option>
+                    <option value="{{$get->id}}">{{ $get->pt_pelaksana }} </option>
                   @endforeach
                 </select>
               </div>
 
-              <label class="col-sm-3 col-form-label">Tanggal Pelaksanaan</label>
-              <div class="col-sm-9">
-                <input class="form-control" type="date" placeholder="dd/mm/yyyy" />
+              {{-- <div class="col-sm-9">
+                <label class="col-sm-3 col-form-label">Tanggal Pelaksanaan</label>
+                <input class="form-control" type="date" name="" placeholder="dd/mm/yyyy" />
+              </div> --}}
+              <label for="exampleTextarea1" class="col-sm-9 col-form-label">Jenis Pengadaan</label>
+              <div class="col-sm-12">
+                <input type="text" class="form-control" name="jenis_pengadaan" placeholder="Pengadaan .....">
               </div>
-              <label class="col-sm-3 col-form-label">Deskripsi Pelaksanaan</label>
-              <div class="col-sm-9">
-                <input type="text" class="form-control" />
+              
+              <label for="exampleTextarea1" class="col-sm-9 col-form-label">Biaya HPS (Harga Perkiraan Sendiri)</label>
+              <div class="col-sm-12">
+                <input type="text" class="form-control" name="total_hps" placeholder="10000000">
               </div>
-              <label class="col-sm-3 col-form-label">Total Biaya</label>
-              <div class="col-sm-9">
-                <input type="text" class="form-control" />
+
+              <label for="exampleTextarea1" class="col-sm-9 col-form-label">Deskripsi HPS (Harga Perkiraan Sendiri)</label>
+              <div class="col-sm-12">
+                <input type="text" class="form-control" placeholder="Sepuluh Juta Rupiah">
               </div>
-              <label class="col-sm-3 col-form-label">Deskripsi</label>
-              <div class="col-sm-9">
-                <input type="text" class="form-control" />
+
+              <label for="exampleTextarea1" class="col-sm-9 col-form-label">Harga Penawaran</label>
+              <div class="col-sm-12">
+                <input type="text" class="form-control" placeholder="10000000">
               </div>
-              <label class="col-sm-3 col-form-label">Nilai Negosiasi</label>
-              <div class="col-sm-9">
-                <input type="text" class="form-control" />
+
+              <label for="exampleTextarea1" class="col-sm-9 col-form-label">Deskripsi Harga Penawaran </label>
+              <div class="col-sm-12">
+                <input type="text" class="form-control" placeholder="Sepuluh Juta Rupiah">
               </div>
-              <label class="col-sm-3 col-form-label">Deskripsi</label>
-              <div class="col-sm-9">
-                <input type="text" class="form-control" />
+
+              <label for="exampleTextarea1" class="col-sm-9 col-form-label">Nilai Negosiasi</label>
+              <div class="col-sm-12">
+                <input type="text" class="form-control" placeholder="10000000">
               </div>
-            </div>
+
+              <label for="exampleTextarea1" class="col-sm-9 col-form-label">Deskripsi Negosiasi</label>
+              <div class="col-sm-12">
+                <input type="text" class="form-control" placeholder="Sepuluh Juta Rupiah">
+              </div>
+            {{-- </div> --}}
+          {{-- </div> --}}
           </div>
-        </div>
+        </table>
+
         <a href="/home" class="btn btn-light">Batal</a>
         <a href="/input_jadwal" type="submit" class="btn btn-primary mr-2">Selanjutnya</a>
+        
         {{-- <div class="row">
           <div class="col-12">
             <ul class="">

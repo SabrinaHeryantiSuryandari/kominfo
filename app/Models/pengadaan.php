@@ -8,25 +8,21 @@ use Illuminate\Database\Eloquent\Model;
 class pengadaan extends Model
 {
     use HasFactory;
-
-    
-    protected $table = "pengadaans";
-    protected $primarykay = "id";
     
     protected $fillable = [
         // 'id', 
-        'perusahaan_id',
+        'pelaksana_id',
         'jenis_pengadaan',
-        'tanggal_acara',
-        'deskripsi_tgl_acara',
-        'waktu_acara',
-        'tempat_acara',
         'total_hps',
         'deskripsi_hps',
+        'Harga Penawaran',
+        'Deskripsi_penawaran',
         'nilai_negosiasi',
         'deskripsi_nilai_nego'
-
     ];
+    
+    protected $table = "pengadaans";
+    protected $primarykay = "id";
  
     public function pelaksana()
     {
