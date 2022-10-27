@@ -30,352 +30,352 @@
 
       <form action="postpengadaan" method="POST">
         @csrf
-        {{-- <div class="row"> --}}
+        <!-- {{-- <div class="row"> --}} -->
         <table class="" style="margin:20px auto;" id="dataTable" width="100%" cellspacing="0">
-          {{-- <div class="col-md-12"> --}}
-            {{-- <div class="form-group row"> --}}
+          <!-- {{-- <div class="col-md-12"> --}}
+          {{-- <div class="form-group row"> --}} -->
           <div class="col-xs-12 col-sm-12 col-md-12">
 
-              <label for="exampleInputName1" class="col-sm-9 col-form-label">Pelaksana/Nama Perusahaan</label>
-              <div class="col-sm-12">
-                {{-- <select class="form-control" name="pelaksana_id" > --}}
-                <select class="form-control select2-multiple" name="pelaksana_id" >
-                  <option> Pilih PT </option>
-                  @foreach ($pelaksana as $get)
-                    {{-- <option > {{$get->pt_pelaksana}}</option> --}}
-                    <option value="{{$get->id}}">{{ $get->pt_pelaksana }} </option>
-                  @endforeach
-                </select>
-              </div>
+            <label for="exampleInputName1" class="col-sm-9 col-form-label">Pelaksana/Nama Perusahaan</label>
+            <div class="col-sm-12">
+              <!-- {{-- <select class="form-control" name="pelaksana_id" > --}} -->
+              <select class="form-control select2-multiple" name="pelaksana_id">
+                <option> Pilih PT </option>
+                @foreach ($pelaksana as $get)
+                <!-- {{-- <option > {{$get->pt_pelaksana}}</option> --}} -->
+                <option value="{{$get->id}}">{{ $get->pt_pelaksana }} </option>
+                @endforeach
+              </select>
+            </div>
 
-              {{-- <div class="col-sm-9">
+            <!-- {{-- <div class="col-sm-9">
                 <label class="col-sm-3 col-form-label">Tanggal Pelaksanaan</label>
                 <input class="form-control" type="date" name="" placeholder="dd/mm/yyyy" />
-              </div> --}}
-              <label for="exampleTextarea1" class="col-sm-9 col-form-label">Jenis Pengadaan</label>
-              <div class="col-sm-12">
-                <input type="text" class="form-control" name="jenis_pengadaan" placeholder="Pengadaan .....">
-              </div>
-              
-              <label for="exampleTextarea1" class="col-sm-9 col-form-label">Biaya HPS (Harga Perkiraan Sendiri)</label>
-              <div class="col-sm-12">
-                <input type="text" class="form-control" name="total_hps" placeholder="10000000">
-              </div>
+              </div> --}} -->
+            <label for="exampleTextarea1" class="col-sm-9 col-form-label">Jenis Pengadaan</label>
+            <div class="col-sm-12">
+              <input type="text" class="form-control" name="jenis_pengadaan" placeholder="Pengadaan .....">
+            </div>
 
-              <label for="exampleTextarea1" class="col-sm-9 col-form-label">Deskripsi HPS (Harga Perkiraan Sendiri)</label>
-              <div class="col-sm-12">
-                <input type="text" class="form-control" name="deskripsi_hps" placeholder="Sepuluh Juta Rupiah">
-              </div>
+            <label for="exampleTextarea1" class="col-sm-9 col-form-label">Biaya HPS (Harga Perkiraan Sendiri)</label>
+            <div class="col-sm-12">
+              <input type="text" class="form-control" name="total_hps" placeholder="10000000">
+            </div>
 
-              <label for="exampleTextarea1" class="col-sm-9 col-form-label">Harga Penawaran</label>
-              <div class="col-sm-12">
-                <input type="text" class="form-control" name="harga_penawaran" placeholder="10000000">
-              </div>
+            <label for="exampleTextarea1" class="col-sm-9 col-form-label">Deskripsi HPS (Harga Perkiraan Sendiri)</label>
+            <div class="col-sm-12">
+              <input type="text" class="form-control" name="deskripsi_hps" placeholder="Sepuluh Juta Rupiah">
+            </div>
 
-              <label for="exampleTextarea1" class="col-sm-9 col-form-label">Deskripsi Harga Penawaran </label>
-              <div class="col-sm-12">
-                <input type="text" class="form-control" name="deskripsi_penawaran" placeholder="Sepuluh Juta Rupiah">
-              </div>
+            <label for="exampleTextarea1" class="col-sm-9 col-form-label">Harga Penawaran</label>
+            <div class="col-sm-12">
+              <input type="text" class="form-control" name="harga_penawaran" placeholder="10000000">
+            </div>
 
-              <label for="exampleTextarea1" class="col-sm-9 col-form-label">Nilai Negosiasi</label>
-              <div class="col-sm-12">
-                <input type="text" class="form-control" name="nilai_negosiasi" placeholder="10000000">
-              </div>
+            <label for="exampleTextarea1" class="col-sm-9 col-form-label">Deskripsi Harga Penawaran </label>
+            <div class="col-sm-12">
+              <input type="text" class="form-control" name="deskripsi_penawaran" placeholder="Sepuluh Juta Rupiah">
+            </div>
 
-              <label for="exampleTextarea1" class="col-sm-9 col-form-label">Deskripsi Negosiasi</label>
-              <div class="col-sm-12">
-                <input type="text" class="form-control" name="deskripsi_negosiasi" placeholder="Sepuluh Juta Rupiah">
-              </div>
-            {{-- </div> --}}
-          {{-- </div> --}}
+            <label for="exampleTextarea1" class="col-sm-9 col-form-label">Nilai Negosiasi</label>
+            <div class="col-sm-12">
+              <input type="text" class="form-control" name="nilai_negosiasi" placeholder="10000000">
+            </div>
+
+            <label for="exampleTextarea1" class="col-sm-9 col-form-label">Deskripsi Negosiasi</label>
+            <div class="col-sm-12">
+              <input type="text" class="form-control" name="deskripsi_negosiasi" placeholder="Sepuluh Juta Rupiah">
+            </div>
+            <!-- {{-- </div> --}}
+            {{-- </div> --}} -->
           </div>
         </table>
 
         <a href="/home" class="btn btn-light">Batal</a>
         <button type="submit" class="btn btn-primary mr-2">Selanjutnya</button>
         <a href="/input_jadwal" class="btn btn-light">NEXT</a>
-        
-        {{-- <div class="row">
-          <div class="col-12">
-            <ul class="">
-              <li>
+
+        <!-- {{-- <div class="row"> 
+        <div class="col-12">
+          <ul class="">
+            <li>
               <div class="collapsible">Pelaksana</div>
-                <div class="content">
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <label class="active" for="gda">Tanggal</label>
-                      <input placeholder="GDA" id="gda" value="" type="date" name="gda" class="input validate ">
-                      <span class="error error_gda"></span>
-                    </div>
+              <div class="content">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label class="active" for="gda">Tanggal</label>
+                    <input placeholder="GDA" id="gda" value="" type="date" name="gda" class="input validate ">
+                    <span class="error error_gda"></span>
                   </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <label class="active" for="gda">Nomor</label>
-                      <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
-                      <span class="error error_gda"></span>
-                    </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label class="active" for="gda">Nomor</label>
+                    <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
+                    <span class="error error_gda"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="collapsible">SK Pejabat Pengadaan</div>
+              <div class="content">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label class="active" for="gda">Tanggal</label>
+                    <input placeholder="GDA" id="gda" value="" type="date" name="gda" class="input validate ">
+                    <span class="error error_gda"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label class="active" for="gda">Nomor</label>
+                    <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
+                    <span class="error error_gda"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="collapsible">SK Pejabat Pemeriksa Administratif</div>
+              <div class="content">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label class="active" for="gda">Tanggal</label>
+                    <input placeholder="GDA" id="gda" value="" type="date" name="gda" class="input validate ">
+                    <span class="error error_gda"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label class="active" for="gda">Nomor</label>
+                    <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
+                    <span class="error error_gda"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label class="active" for="gda">Nama</label>
+                    <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
+                    <span class="error error_gda"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label class="active" for="gda">NIP</label>
+                    <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
+                    <span class="error error_gda"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label class="active" for="gda">No. BA Hasil Pem. Adm.</label>
+                    <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
+                    <span class="error error_gda"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="collapsible">Bidang Pengelolaan</div>
+              <div class="content">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label class="active" for="gda">Program</label>
+                    <input placeholder="GDA" id="gda" value="" type="date" name="gda" class="input validate ">
+                    <span class="error error_gda"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label class="active" for="gda">Kegiatan</label>
+                    <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
+                    <span class="error error_gda"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label class="active" for="gda">Sub Kegiatan</label>
+                    <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
+                    <span class="error error_gda"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label class="active" for="gda">Pekerjaan</label>
+                    <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
+                    <span class="error error_gda"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label class="active" for="gda">Kode Rekening</label>
+                    <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
+                    <span class="error error_gda"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label class="active" for="gda">Uraian Belanja</label>
+                    <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
+                    <span class="error error_gda"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label class="active" for="gda">Sumber Dana</label>
+                    <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
+                    <span class="error error_gda"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label class="active" for="gda">Tanggal Pelaksanaan</label>
+                    <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
+                    <span class="error error_gda"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label class="active" for="gda">Batas Waktu Penyelesaian</label>
+                    <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
+                    <span class="error error_gda"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label class="active" for="gda">Jangka Waktu Pengerjaan</label>
+                    <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
+                    <span class="error error_gda"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label class="active" for="gda">Tanggal Mulai Penkerjaan</label>
+                    <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
+                    <span class="error error_gda"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label class="active" for="gda">Tempat</label>
+                    <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
+                    <span class="error error_gda"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label class="active" for="gda">Kota</label>
+                    <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
+                    <span class="error error_gda"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label class="active" for="gda">Pelaksana</label>
+                    <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
+                    <span class="error error_gda"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label class="active" for="gda">Alamat</label>
+                    <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
+                    <span class="error error_gda"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label class="active" for="gda">Yang TTD</label>
+                    <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
+                    <span class="error error_gda"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label class="active" for="gda">Jabatan</label>
+                    <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
+                    <span class="error error_gda"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label class="active" for="gda">Jabatan</label>
+                    <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
+                    <span class="error error_gda"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label class="active" for="gda">NPWP</label>
+                    <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
+                    <span class="error error_gda"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label class="active" for="gda">Nomor Telepon</label>
+                    <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
+                    <span class="error error_gda"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label class="active" for="gda">Fax</label>
+                    <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
+                    <span class="error error_gda"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label class="active" for="gda">Email</label>
+                    <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
+                    <span class="error error_gda"></span>
                   </div>
                 </div>
 
-                <div class="collapsible">SK Pejabat Pengadaan</div>
-                <div class="content">
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <label class="active" for="gda">Tanggal</label>
-                      <input placeholder="GDA" id="gda" value="" type="date" name="gda" class="input validate ">
-                      <span class="error error_gda"></span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <label class="active" for="gda">Nomor</label>
-                      <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
-                      <span class="error error_gda"></span>
-                    </div>
+
+              </div>
+
+              <div class="collapsible">Surat Penawaran</div>
+              <div class="content">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label class="active" for="gda">Tanggal</label>
+                    <input placeholder="GDA" id="gda" value="" type="date" name="gda" class="input validate ">
+                    <span class="error error_gda"></span>
                   </div>
                 </div>
-
-                <div class="collapsible">SK Pejabat Pemeriksa Administratif</div>
-                <div class="content">
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <label class="active" for="gda">Tanggal</label>
-                      <input placeholder="GDA" id="gda" value="" type="date" name="gda" class="input validate ">
-                      <span class="error error_gda"></span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <label class="active" for="gda">Nomor</label>
-                      <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
-                      <span class="error error_gda"></span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <label class="active" for="gda">Nama</label>
-                      <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
-                      <span class="error error_gda"></span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <label class="active" for="gda">NIP</label>
-                      <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
-                      <span class="error error_gda"></span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <label class="active" for="gda">No. BA Hasil Pem. Adm.</label>
-                      <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
-                      <span class="error error_gda"></span>
-                    </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label class="active" for="gda">Nomor Surat</label>
+                    <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
+                    <span class="error error_gda"></span>
                   </div>
                 </div>
-
-                <div class="collapsible">Bidang Pengelolaan</div>
-                <div class="content">
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <label class="active" for="gda">Program</label>
-                      <input placeholder="GDA" id="gda" value="" type="date" name="gda" class="input validate ">
-                      <span class="error error_gda"></span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <label class="active" for="gda">Kegiatan</label>
-                      <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
-                      <span class="error error_gda"></span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <label class="active" for="gda">Sub Kegiatan</label>
-                      <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
-                      <span class="error error_gda"></span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <label class="active" for="gda">Pekerjaan</label>
-                      <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
-                      <span class="error error_gda"></span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <label class="active" for="gda">Kode Rekening</label>
-                      <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
-                      <span class="error error_gda"></span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <label class="active" for="gda">Uraian Belanja</label>
-                      <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
-                      <span class="error error_gda"></span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <label class="active" for="gda">Sumber Dana</label>
-                      <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
-                      <span class="error error_gda"></span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <label class="active" for="gda">Tanggal Pelaksanaan</label>
-                      <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
-                      <span class="error error_gda"></span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <label class="active" for="gda">Batas Waktu Penyelesaian</label>
-                      <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
-                      <span class="error error_gda"></span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <label class="active" for="gda">Jangka Waktu Pengerjaan</label>
-                      <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
-                      <span class="error error_gda"></span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <label class="active" for="gda">Tanggal Mulai Penkerjaan</label>
-                      <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
-                      <span class="error error_gda"></span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <label class="active" for="gda">Tempat</label>
-                      <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
-                      <span class="error error_gda"></span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <label class="active" for="gda">Kota</label>
-                      <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
-                      <span class="error error_gda"></span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <label class="active" for="gda">Pelaksana</label>
-                      <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
-                      <span class="error error_gda"></span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <label class="active" for="gda">Alamat</label>
-                      <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
-                      <span class="error error_gda"></span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <label class="active" for="gda">Yang TTD</label>
-                      <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
-                      <span class="error error_gda"></span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <label class="active" for="gda">Jabatan</label>
-                      <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
-                      <span class="error error_gda"></span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <label class="active" for="gda">Jabatan</label>
-                      <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
-                      <span class="error error_gda"></span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <label class="active" for="gda">NPWP</label>
-                      <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
-                      <span class="error error_gda"></span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <label class="active" for="gda">Nomor Telepon</label>
-                      <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
-                      <span class="error error_gda"></span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <label class="active" for="gda">Fax</label>
-                      <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
-                      <span class="error error_gda"></span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <label class="active" for="gda">Email</label>
-                      <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
-                      <span class="error error_gda"></span>
-                    </div>
-                  </div>
-
-
-                </div>
-
-                <div class="collapsible">Surat Penawaran</div>
-                <div class="content">
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <label class="active" for="gda">Tanggal</label>
-                      <input placeholder="GDA" id="gda" value="" type="date" name="gda" class="input validate ">
-                      <span class="error error_gda"></span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <label class="active" for="gda">Nomor Surat</label>
-                      <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
-                      <span class="error error_gda"></span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <label class="active" for="gda">Jangka Waktu Pekerjaan</label>
-                      <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
-                      <span class="error error_gda"></span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <label class="active" for="gda">Jangka Waktu Penawaran</label>
-                      <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
-                      <span class="error error_gda"></span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <label class="active" for="gda">No. Kwitansi</label>
-                      <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
-                      <span class="error error_gda"></span>
-                    </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label class="active" for="gda">Jangka Waktu Pekerjaan</label>
+                    <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
+                    <span class="error error_gda"></span>
                   </div>
                 </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label class="active" for="gda">Jangka Waktu Penawaran</label>
+                    <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
+                    <span class="error error_gda"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label class="active" for="gda">No. Kwitansi</label>
+                    <input placeholder="GDA" id="gda" value="" type="text" name="gda" class="input validate ">
+                    <span class="error error_gda"></span>
+                  </div>
+                </div>
+              </div>
 
-              </li>
-            </ul>
-          </div>  --}}
+            </li>
+          </ul>
+        </div> --}}
       </form>
     </div>
   </div>

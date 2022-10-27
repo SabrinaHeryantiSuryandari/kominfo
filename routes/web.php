@@ -11,6 +11,8 @@ use App\Http\Controllers\PelaksanaController;
 use App\Http\Controllers\PengadaanController;
 use App\Http\Controllers\JadwalController;
 
+use App\Http\Controllers\PejabatController;
+
 use Illuminate\Contracts\View\View as ViewView;
 use Illuminate\Support\Facades\Auth;
 
@@ -72,18 +74,22 @@ Route::get('/input_anggaran', function () {
 //     return view('admin.inputpengadaan');
 // });
 
-Route::get('/input_jadwal',[PengadaanController::class, 'index']);
-Route::get('/input_jadwal',[PengadaanController::class, 'create']);
-Route::post('/postpengadaan',[PengadaanController::class, 'store']);
-
 //untuk 
-Route::get('/input_pengadaan',[PelaksanaController::class, 'index']);
-Route::get('/input_pelaksana',[PelaksanaController::class, 'create']);
-Route::post('/postdata',[PelaksanaController::class,'store']);
+Route::get('/input_pengadaan', [PelaksanaController::class, 'index']);
+Route::get('/input_pelaksana', [PelaksanaController::class, 'create']);
+Route::post('/postdata', [PelaksanaController::class, 'store']);
 // Route::post('/inputpelaksana'. PelaksanaController::class);
 
+Route::get('/input_jadwal', [PengadaanController::class, 'index']);
+Route::post('/postpengadaan', [PengadaanController::class, 'store']);
 
-Route::post('/postjadwal',[JadwalController::class], 'store' );
+Route::get('/input_barang', [JadwalController::class, 'index']);
+Route::post('/postjadwal', [JadwalController::class, 'store']);
+
+//pejabat
+Route::get('/pejabat', [PejabatController::class, 'index']);
+
+
 
 // Route::get('/input_jadwal', function () {
 //     return view('admin.input_jadwal');

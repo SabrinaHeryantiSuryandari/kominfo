@@ -15,10 +15,11 @@ class PejabatController extends Controller
      */
     public function index()
     {
-        $pejabats = pejabat::all();
+        $pejabat = Pejabat::all();
 
-        return view('admin.input_pejabat',compact('pejabats'))
-        ->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('index.admin', ['pejabat' => $pejabat]);
+        // return view('admin.input_pejabat', compact('pejabats'))
+        //     ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -30,7 +31,7 @@ class PejabatController extends Controller
     {
         // $pejabats = pejabat::all();
 
-        return view('pejabat', compact('pejabats'));
+        // return view('pejabat', compact('pejabats'));
     }
 
     /**
@@ -44,22 +45,22 @@ class PejabatController extends Controller
         $request->validate([
             // 'id' => 'required',
             'kuasa_pengguna_anggaran' => 'required',
-            'nip_kuasa_pengguna'=> 'required',
+            'nip_kuasa_pengguna' => 'required',
             'pejabat_pembuatan_komitmen' => 'required',
-            'nip_pejabat_komitmen'=> 'required',
+            'nip_pejabat_komitmen' => 'required',
             'pejabat_pengadaan' => 'required',
             'nip_pejabat_kpengadaan' => 'required',
             'bpp' => 'required',
             'nip_bpp' => 'required'
 
         ]);
-      
-        Pejabat::create($request->all()); 
+
+        Pejabat::create($request->all());
         // $asets = Aset::create($request->except(['aset_id', 'nama', 'keterangan']));
         // $pemilik = Pemilik::create(['aset_id' => $asets->id, $request->only(['nama', 'keterangan', 'aset_id'])]);
 
         return redirect()->route('pejabats.index')
-                        ->with('success','Data Pelaksana Berhasil Disimpan!');
+            ->with('success', 'Data Pelaksana Berhasil Disimpan!');
     }
 
     /**
@@ -70,7 +71,7 @@ class PejabatController extends Controller
      */
     public function show(pejabat $pejabat)
     {
-        return view('admin.show',compact('pejabat'));
+        return view('admin.show', compact('pejabat'));
     }
 
     /**
@@ -81,7 +82,7 @@ class PejabatController extends Controller
      */
     public function edit(pejabat $pejabat)
     {
-        return view('admin.edit',compact('pejabat'));
+        return view('admin.index', compact('pejabat'));
     }
 
     /**
@@ -95,19 +96,20 @@ class PejabatController extends Controller
     {
         $request->validate([
             'kuasa_pengguna_anggaran' => 'required',
-            'nip_kuasa_pengguna'=> 'required',
+            'nip_kuasa_pengguna' => 'required',
             'pejabat_pembuatan_komitmen' => 'required',
-            'nip_pejabat_komitmen'=> 'required',
+            'nip_pejabat_komitmen' => 'required',
             'pejabat_pengadaan' => 'required',
             'nip_pejabat_kpengadaan' => 'required',
             'bpp' => 'required',
             'nip_bpp' => 'required'
         ]);
-    
-        $pejabat->update($request->all());
-    
+
+        $pejabat->fill($request->post())->save();
+        // $pejabat->update($request->all());
+
         return redirect()->route('pejabats.index')
-                        ->with('success','Aset Berhasil updated!');
+            ->with('success', 'Aset Berhasil updated!');
     }
 
     /**
@@ -119,8 +121,8 @@ class PejabatController extends Controller
     public function destroy(pejabat $pejabat)
     {
         $pejabat->delete();
-       
+
         return redirect()->route('pejabats.index')
-                        ->with('success','Aset Berhasil Dihapus!');
+            ->with('success', 'Aset Berhasil Dihapus!');
     }
 }

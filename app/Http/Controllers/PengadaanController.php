@@ -23,9 +23,11 @@ class PengadaanController extends Controller
         // $barang = Barang::all();
         // $jadwals = Jadwal::all();
 
-        return view('admin.input_jadwal',['pengadaan'=>$pengadaan], 
-        // ['pelaksana'=>$pelaksana] 
-    );
+        return view(
+            'admin.input_jadwal',
+            ['pengadaan' => $pengadaan],
+            // ['pelaksana'=>$pelaksana] 
+        );
 
         // return view('admin.input_pengadaan',compact('pengadaans'))
         // ->with('i', (request()->input('page', 1) - 1) * 5);
@@ -42,7 +44,7 @@ class PengadaanController extends Controller
         // $pelaksana = Pelaksana::all();
         // $pengadaans = Pengadaan::all();
         // $barang = Barang::all();
-        
+
         // return view('pengadaan', compact('pelaksanas'));
         return view('admin.input_pengadaan');
     }
@@ -66,14 +68,14 @@ class PengadaanController extends Controller
             'nilai_negosiasi' => 'required',
             'deskripsi_negosiasi' => 'required'
         ]);
-      
-        Pengadaan::create($request->post()); 
+
+        Pengadaan::create($request->post());
 
         // return redirect()->route('home')
         //                 ->with('success','Aset Berhasil Dihapus!');
-        
+
         return redirect()->to('home');
-        
+
         // return redirect()->route('jadwals.index')
         //                 ->with('success','Data Pelaksana Berhasil Disimpan!');
 
@@ -113,9 +115,9 @@ class PengadaanController extends Controller
      * @param  \App\Models\pengadaan  $pengadaan
      * @return \Illuminate\Http\Response
      */
-    public function show(pengadaan $pengadaan)
+    public function show(Pengadaan $pengadaan)
     {
-        return view('admin.input_pengadaan',compact('pengadaan'));
+        return view('admin.input_pengadaan', compact('pengadaan'));
     }
 
     /**
@@ -124,9 +126,9 @@ class PengadaanController extends Controller
      * @param  \App\Models\pengadaan  $pengadaan
      * @return \Illuminate\Http\Response
      */
-    public function edit(pengadaan $pengadaan)
+    public function edit(Pengadaan $pengadaan)
     {
-        return view('admin.edit',compact('pengadaan'));
+        return view('admin.edit', compact('pengadaan'));
     }
 
     /**
@@ -177,8 +179,8 @@ class PengadaanController extends Controller
     public function destroy(pengadaan $pengadaan)
     {
         $pengadaan->delete();
-       
+
         return redirect()->route('pengadaans.index')
-                        ->with('success','Aset Berhasil Dihapus!');
+            ->with('success', 'Aset Berhasil Dihapus!');
     }
 }

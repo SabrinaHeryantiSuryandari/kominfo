@@ -22,9 +22,9 @@ class Jadwal extends Model
         'nomor',
         'deskripsi_tgl'
     ];
- 
+
     public function pengadaan()
     {
-    	return $this->belongsTo(pengadaan::class);
+        return $this->belongsTo(pengadaan::class);
     }
 }

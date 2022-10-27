@@ -28,12 +28,11 @@ return new class extends Migration
             $table->foreignId('pengadaan_id')->constrained();
             $table->string('kegiatan');
             $table->string('alokasi');
-            $table->date('hari');
+            $table->string('hari');
             $table->date('tanggal');
             $table->bigInteger('nomor');
             $table->text('deskripsi_tgl');
             $table->timestamps();
-
         });
     }
 
