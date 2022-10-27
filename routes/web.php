@@ -10,6 +10,7 @@ use App\Http\Controllers\PemilikController;
 use App\Http\Controllers\PelaksanaController;
 use App\Http\Controllers\PengadaanController;
 use App\Http\Controllers\JadwalController;
+use App\Http\Controllers\BarangController;
 
 use App\Http\Controllers\PejabatController;
 
@@ -80,10 +81,10 @@ Route::get('/input_pelaksana', [PelaksanaController::class, 'create']);
 Route::post('/postdata', [PelaksanaController::class, 'store']);
 // Route::post('/inputpelaksana'. PelaksanaController::class);
 
-Route::get('/input_jadwal', [PengadaanController::class, 'index']);
+Route::get('/input_jadwal', [JadwalController::class, 'index']);
 Route::post('/postpengadaan', [PengadaanController::class, 'store']);
 
-Route::get('/input_barang', [JadwalController::class, 'index']);
+Route::get('/input_barang', [BarangController::class, 'index']);
 Route::post('/postjadwal', [JadwalController::class, 'store']);
 
 
@@ -97,9 +98,9 @@ Route::get('/pejabat', [PejabatController::class, 'index']);
 //     return view('admin.input_jadwal');
 // });
 
-Route::get('/input_barang', function () {
-    return view('admin.input_barang');
-});
+// Route::get('/input_barang', function () {
+//     return view('admin.input_barang');
+// });
 // Route::resource('/pelaksanas', PelaksanaController::class);
 Route::get('/input_pelaksana', function () {
     return view('admin.input_pelaksana');

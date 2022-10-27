@@ -18,6 +18,7 @@ class JadwalController extends Controller
     {
         // $pengadaan = Pengadaan::all();
         $jadwal = Jadwal::all();
+        $pengadaan = Pengadaan::all();
 
         // $pengadaan = Pengadaan::all();
         // $pelaksanas = pelaksana::orderBy('id','desc')->paginate(5);
@@ -27,7 +28,11 @@ class JadwalController extends Controller
         // $pelaksana = Pelaksana::select('*')
         //                 ->get();
 
-        return view('admin.input_jadwal', ['jadwal' => $jadwal]);
+        return view(
+            'admin.input_jadwal',
+            ['jadwal' => $jadwal],
+            ['pengadaan' => $pengadaan],
+        );
         // $jadwal = Jadwal::all();
 
         // return view('admin.input_jadwal', ['jadwal'=>$jadwal]);
@@ -73,8 +78,9 @@ class JadwalController extends Controller
      * @param  \App\Models\jadwal  $jadwal
      * @return \Illuminate\Http\Response
      */
-    public function show(jadwal $jadwal)
+    public function show(Jadwal $jadwal)
     {
+        return view('admin.input_jadwal', compact('jadwal'));
         //
     }
 

@@ -39,10 +39,10 @@
                                     <label for="exampleInputName1" class="col-sm-3 col-form-label">jenis pengadaan</label>
                                     <div class="col-sm-9">
                                         <select class="form-control" name="pengadaan_id">
-                                        <option> Pilih Pengadaan </option>
-                                        {{-- @foreach ($pengadaan as $item)
-                                        <option value="{{$item->id}}">{{ $item->jenis_pengadaan }}</option>
-                                        @endforeach --}}
+                                            <option> Pilih Pengadaan </option>
+                                            @foreach ($pengadaan as $item)
+                                            <option value="{{$item->id}}">{{ $item->jenis_pengadaan }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>

@@ -17,13 +17,22 @@ class BarangController extends Controller
      */
     public function index()
     {
-        $pengadaans = pengadaan::all();
+        $barang = Barang::all();
+        $pengadaan = Pengadaan::all();
+
+        return view(
+            'admin.input_barang',
+            ['barang' => $barang],
+            ['pengadaan' => $pengadaan],
+        );
+
+        // $pengadaans = pengadaan::all();
         // $pelaksanas = Pelaksana::all();
-        $barangs = barang::all();
+        // $barangs = barang::all();
         // $jadwals = Jadwal::all();
 
-        return view('admin.input_pengadaan',compact('pengadaans'))
-        ->with('i', (request()->input('page', 1) - 1) * 5);
+        // return view('admin.input_pengadaan',compact('pengadaans'))
+        // ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -33,9 +42,9 @@ class BarangController extends Controller
      */
     public function create()
     {
-        $pengadaans = pengadaan::all();
+        // $pengadaans = pengadaan::all();
 
-        return view('pengadaan', compact('pelaksanas'));
+        return view('admin.input_barang');
     }
 
     /**
@@ -46,25 +55,25 @@ class BarangController extends Controller
      */
     public function store(Request $request)
     {
-        $pengadaans =   pengadaan::create($request->except([
+        // $pengadaans =   pengadaan::create($request->except([
 
-            
-            'barang',
-            'jumlah_barang',
-            'satuan',
-            'harga_satuan'      
-        ]));
 
-        $request['pengadaan_id'] = $pengadaans->id;
-        $barangs = Barang::create($request->only([
-            'pengadaan_id',
-            'barang',
-            'jumlah_barang',
-            'satuan',
-            'harga_satuan'     
-        ]));
+        //     'barang',
+        //     'jumlah_barang',
+        //     'satuan',
+        //     'harga_satuan'
+        // ]));
 
-        return back()->with('success',' Post baru berhasil dibuat.');
+        // $request['pengadaan_id'] = $pengadaans->id;
+        // $barangs = Barang::create($request->only([
+        //     'pengadaan_id',
+        //     'barang',
+        //     'jumlah_barang',
+        //     'satuan',
+        //     'harga_satuan'
+        // ]));
+
+        // return back()->with('success', ' Post baru berhasil dibuat.');
     }
 
     /**
@@ -73,9 +82,9 @@ class BarangController extends Controller
      * @param  \App\Models\barang  $barang
      * @return \Illuminate\Http\Response
      */
-    public function show(barang $barang)
+    public function show(Barang $barang)
     {
-        return view('admin.lihat',compact('barang'));
+        return view('admin.input_barang', compact('barang'));
     }
 
     /**
@@ -86,7 +95,7 @@ class BarangController extends Controller
      */
     public function edit(barang $barang)
     {
-        return view('admin.lihat',compact('barang'));
+        return view('admin.lihat', compact('barang'));
     }
 
     /**
@@ -110,8 +119,8 @@ class BarangController extends Controller
     public function destroy(barang $barang)
     {
         $barang->delete();
-       
+
         return redirect()->route('barang.index')
-                        ->with('success','Aset Berhasil Dihapus!');
+            ->with('success', 'Aset Berhasil Dihapus!');
     }
 }

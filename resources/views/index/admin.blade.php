@@ -194,6 +194,12 @@
                 </button>
             </div>
             <div class="modal-body">
+                @csrf
+                @if (session()->has('message'))
+                <div class="alert alert-success">
+                    {{ session()->get('message') }}
+                </div>
+                @endif
                 <form>
                     <div class="mb-4">
                         <label for="recipient-name" class="col-form-label">Kuasa Pengguna Anggaran</label>

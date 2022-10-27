@@ -344,7 +344,7 @@
       </div>
     </div> --}}
 
-     partial -->
+    partial -->
     <!-- partial:partials/_sidebar.html -->
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
       <ul class="nav">
@@ -428,7 +428,7 @@
               </li> --}}
               <div class="col-12 col-xl-8 mb-4 mb-xl-0">
                 <h3 class="font-weight-bold">Welcome XXX</h3>
-                <h6 class="font-weight-normal mb-0">Selamat Datang di Sistem Informasi Keuangan Divisi Pengelolaan Data Statistik <br> Dinas Komunikasi dan Informatika Provinsi Jawa Timur
+                <h6 class="font-weight-normal mb-0">Selamat Datang di Sistem Informasi Keuangan Bidang Data dan Statistik <br> Dinas Komunikasi dan Informatika Provinsi Jawa Timur
                   {{-- <span class="text-primary">3 unread alerts!</span> --}}
                 </h6>
               </div>
@@ -441,7 +441,7 @@
               {{-- <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown"> --}}
               <div class="col-12 col-xl-8 mb-4 mb-xl-0">
                 <h3 class="font-weight-bold">Welcome {{ Auth::user()->name }}</h3>
-                <h6 class="font-weight-normal mb-0">Selamat Datang di Sistem Informasi Keuangan Divisi Pengelolaan Data Statistik <br> Dinas Komunikasi dan Informatika Provinsi Jawa Timur
+                <h6 class="font-weight-normal mb-0">Selamat Datang di Sistem Informasi Keuangan Bidang Data dan Statistik <br> Dinas Komunikasi dan Informatika Provinsi Jawa Timur
                   {{-- <span class="text-primary">3 unread alerts!</span> --}}
                 </h6>
               </div>

@@ -19,14 +19,14 @@ class PengadaanController extends Controller
     public function index()
     {
         $pengadaan = Pengadaan::all();
-        // $pelaksana = Pelaksana::all();
+        $pelaksana = Pelaksana::all();
         // $barang = Barang::all();
         // $jadwals = Jadwal::all();
 
         return view(
-            'admin.input_jadwal','admin.input_barang',
+            'admin.input_pengadaan',
             ['pengadaan' => $pengadaan],
-            // ['pelaksana'=>$pelaksana] 
+            ['pelaksana' => $pelaksana]
         );
 
         // return view('admin.input_pengadaan',compact('pengadaans'))
@@ -74,7 +74,7 @@ class PengadaanController extends Controller
         // return redirect()->route('home')
         //                 ->with('success','Aset Berhasil Dihapus!');
 
-        return redirect()->to('home');
+        return redirect()->to('input_jadwal');
 
         // return redirect()->route('jadwals.index')
         //                 ->with('success','Data Pelaksana Berhasil Disimpan!');
