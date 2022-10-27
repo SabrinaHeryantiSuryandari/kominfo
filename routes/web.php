@@ -76,7 +76,7 @@ Route::get('/input_anggaran', function () {
 // });
 
 //untuk 
-Route::get('/input_pengadaan', [PelaksanaController::class, 'index']);
+Route::get('/input_pengadaan', [PengadaanController::class, 'index']);
 Route::get('/input_pelaksana', [PelaksanaController::class, 'create']);
 Route::post('/postdata', [PelaksanaController::class, 'store']);
 // Route::post('/inputpelaksana'. PelaksanaController::class);
