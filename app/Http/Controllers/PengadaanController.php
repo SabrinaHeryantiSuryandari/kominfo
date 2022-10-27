@@ -24,7 +24,7 @@ class PengadaanController extends Controller
         // $jadwals = Jadwal::all();
 
         return view(
-            'admin.input_jadwal',
+            'admin.input_jadwal','admin.input_barang',
             ['pengadaan' => $pengadaan],
             // ['pelaksana'=>$pelaksana] 
         );

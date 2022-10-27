@@ -86,6 +86,8 @@ Route::post('/postpengadaan', [PengadaanController::class, 'store']);
 Route::get('/input_barang', [JadwalController::class, 'index']);
 Route::post('/postjadwal', [JadwalController::class, 'store']);
 
+
+
 //pejabat
 Route::get('/pejabat', [PejabatController::class, 'index']);
 

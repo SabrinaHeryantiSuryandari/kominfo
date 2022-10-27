@@ -36,6 +36,17 @@
                         <div class="" id="dynamic_form">
                             <div class="form-group baru-data">
                                 <div class="form-row">
+                                    <label for="exampleInputName1" class="col-sm-3 col-form-label">jenis pengadaan</label>
+                                    <div class="col-sm-9">
+                                        <select class="form-control" name="pengadaan_id">
+                                        <option> Pilih Pengadaan </option>
+                                        {{-- @foreach ($pengadaan as $item)
+                                        <option value="{{$item->id}}">{{ $item->jenis_pengadaan }}</option>
+                                        @endforeach --}}
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
                                     <div class="form-group col-md-3">
                                         <label for="inputEmail4">Nama Barang</label>
                                         <input type="text" class="form-control" id="" placeholder="Nama Barang">
