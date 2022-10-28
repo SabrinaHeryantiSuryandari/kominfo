@@ -88,14 +88,14 @@
                                 <td>Kuasa Pengguna Anggaran</td>
                                 <td>{{ $pjb->kuasa_pengguna_anggaran }}</td>
                                 <td>{{ $pjb->nip_kuasa_pengguna }}</td>
-                                <!-- <td>{{ $pjb->kuasa_pengguna_anggaran }}</td>
+                                {{-- <td>{{ $pjb->kuasa_pengguna_anggaran }}</td>
                                 <td>{{ $pjb->nip_kuasa_pengguna }}</td>
                                 <td>{{ $pjb->pejabat_pembuatan_komitmen }}</td>
                                 <td>{{ $pjb->nip_pejabat_komitmen }}</td>
                                 <td>{{ $pjb->pejabat_pengadaan }}</td>
                                 <td>{{ $pjb->nip_pejabat_pengadaan }}</td>
                                 <td>{{ $pjb->bpp }}</td>
-                                <td>{{ $pjb->nip_bpp }}</td> -->
+                                <td>{{ $pjb->nip_bpp }}</td> --}}
                             </tr>
                             <tr>
                                 <td>Pejabat Pembuat Komitmen</td>
@@ -201,9 +201,12 @@
                 </div>
                 @endif
                 <form>
+                {{-- <form action="{{ route('pejabat.update', $pejabat->id)}}"> --}}
+                    @csrf
+
+                    <label for="recipient-name" class="col-form-label">Kuasa Pengguna Anggaran</label>
                     <div class="mb-4">
-                        <label for="recipient-name" class="col-form-label">Kuasa Pengguna Anggaran</label>
-                        <input type="text" class="form-control" id="recipient-name" placeholder="Nama Kuasa Pengguna Anggaran">
+                        <input type="text" class="form-control" id="recipient-name" name="" placeholder="Nama Kuasa Pengguna Anggaran">
                     </div>
                     <div class="mb-4">
                         <label for="message-text" class="col-form-label">NIP Kuasa Pengguna Anggaran</label>

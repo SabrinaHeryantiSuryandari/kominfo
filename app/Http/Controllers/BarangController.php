@@ -55,6 +55,18 @@ class BarangController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            // 'id' => 'required',
+            'pengadaan_id' => 'required',
+            'barang' => 'required',
+            'jumlah_barang' => 'required',
+            'satuan' => 'required',
+            'harga_satuan' => 'required'
+        ]);
+
+        Barang::create($request->post());
+
+        return redirect()->to('input_barang');
         // $pengadaans =   pengadaan::create($request->except([
 
 

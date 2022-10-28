@@ -80,12 +80,13 @@ Route::get('/input_pengadaan', [PelaksanaController::class, 'index']);
 Route::get('/input_pelaksana', [PelaksanaController::class, 'create']);
 Route::post('/postdata', [PelaksanaController::class, 'store']);
 // Route::post('/inputpelaksana'. PelaksanaController::class);
-
-Route::get('/input_jadwal', [JadwalController::class, 'index']);
 Route::post('/postpengadaan', [PengadaanController::class, 'store']);
 
-Route::get('/input_barang', [BarangController::class, 'index']);
+Route::get('/input_jadwal', [JadwalController::class, 'index']);
 Route::post('/postjadwal', [JadwalController::class, 'store']);
+
+Route::get('/input_barang', [BarangController::class, 'index']);
+Route::post('/postbarang', [BarangController::class, 'store']);
 
 
 
