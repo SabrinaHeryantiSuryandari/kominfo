@@ -204,35 +204,35 @@
                     @csrf
                     <div class="mb-4">
                         <label for="recipient-name" class="col-form-label">Kuasa Pengguna Anggaran</label>
-                        <input type="text" class="form-control" id="recipient-name" name="kuasa_pengguna_anggaran" value="{{ $pjb->kuasa_pengguna_anggaran }}">
+                        <input type="text" class="form-control" id="recipient-name" name="kuasa_pengguna_anggaran" value="">
                     </div>
                     <div class="mb-4">
                         <label for="message-text" class="col-form-label">NIP Kuasa Pengguna Anggaran</label>
-                        <input type="number" class="form-control" id="recipient-name" name="nip_kuasa_pengguna" value="{{ $pjb->nip_kuasa_pengguna }}">
+                        <input type="number" class="form-control" id="recipient-name" name="nip_kuasa_pengguna" value="">
                     </div>
                     <div class="mb-4">
                         <label for="message-text" class="col-form-label">Pejabat Pembuat Komitmen</label>
-                        <input type="text" class="form-control" id="recipient-name" name="pejabat_pembuatan_komitmen" value="{{ $pjb->pejabat_pembuatan_komitmen }}">
+                        <input type="text" class="form-control" id="recipient-name" name="pejabat_pembuatan_komitmen" value="">
                     </div>
                     <div class="mb-4">
                         <label for="message-text" class="col-form-label">NIP Pejabat Pembuat Komitmen</label>
-                        <input type="number" class="form-control" id="recipient-name" name="nip_pejabat_komitmen" value="{{ $pjb->nip_pejabat_komitmen }}">
+                        <input type="number" class="form-control" id="recipient-name" name="nip_pejabat_komitmen" value="">
                     </div>
                     <div class="mb-4">
                         <label for="message-text" class="col-form-label">Pejabat Pengadaan</label>
-                        <input type="text" class="form-control" id="recipient-name" name="pejabat_pengadaan" value="{{ $pjb->pejabat_pengadaan }}">
+                        <input type="text" class="form-control" id="recipient-name" name="pejabat_pengadaan" value="">
                     </div>
                     <div class="mb-4">
                         <label for="message-text" class="col-form-label">NIP Pejabat Pengadaan</label>
-                        <input type="number" class="form-control" id="recipient-name" name="nip_pejabat_kpengadaan" value="{{ $pjb->nip_pejabat_kpengadaan }}">
+                        <input type="number" class="form-control" id="recipient-name" name="nip_pejabat_kpengadaan" value="">
                     </div>
                     <div class="mb-4">
                         <label for="message-text" class="col-form-label">BPP</label>
-                        <input type="text" class="form-control" id="recipient-name" name="bpp" value="{{ $pjb->bpp }}">
+                        <input type="text" class="form-control" id="recipient-name" name="bpp" value="">
                     </div>
                     <div class="mb-4">
                         <label for="message-text" class="col-form-label">NIP BPP</label>
-                        <input type="number" class="form-control" id="recipient-name" name="nip_bpp" value="{{ $pjb->nip_bpp }}">
+                        <input type="number" class="form-control" id="recipient-name" name="nip_bpp" value="">
                     </div>
                 </form>
             </div>
