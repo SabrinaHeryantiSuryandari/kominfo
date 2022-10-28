@@ -201,40 +201,47 @@
                 </div>
                 @endif
                 <form>
+<<<<<<< HEAD
                 {{-- <form action="{{ route('pejabat.update', $pejabat->id)}}"> --}}
                     @csrf
 
                     <label for="recipient-name" class="col-form-label">Kuasa Pengguna Anggaran</label>
                     <div class="mb-4">
                         <input type="text" class="form-control" id="recipient-name" name="" placeholder="Nama Kuasa Pengguna Anggaran">
+=======
+                    @csrf
+                    <div class="mb-4">
+                        <label for="recipient-name" class="col-form-label">Kuasa Pengguna Anggaran</label>
+                        <input type="text" class="form-control" id="recipient-name" name="kuasa_pengguna_anggaran" value="">
+>>>>>>> 629cef5447535775edc2357e05a5328c95f48a44
                     </div>
                     <div class="mb-4">
                         <label for="message-text" class="col-form-label">NIP Kuasa Pengguna Anggaran</label>
-                        <input type="number" class="form-control" id="recipient-name" placeholder="Nama Kuasa Pengguna Anggaran">
+                        <input type="number" class="form-control" id="recipient-name" name="nip_kuasa_pengguna" value="">
                     </div>
                     <div class="mb-4">
                         <label for="message-text" class="col-form-label">Pejabat Pembuat Komitmen</label>
-                        <input type="text" class="form-control" id="recipient-name" placeholder="Nama Kuasa Pengguna Anggaran">
+                        <input type="text" class="form-control" id="recipient-name" name="pejabat_pembuatan_komitmen" value="">
                     </div>
                     <div class="mb-4">
                         <label for="message-text" class="col-form-label">NIP Pejabat Pembuat Komitmen</label>
-                        <input type="number" class="form-control" id="recipient-name" placeholder="Nama Kuasa Pengguna Anggaran">
+                        <input type="number" class="form-control" id="recipient-name" name="nip_pejabat_komitmen" value="">
                     </div>
                     <div class="mb-4">
                         <label for="message-text" class="col-form-label">Pejabat Pengadaan</label>
-                        <input type="text" class="form-control" id="recipient-name" placeholder="Nama Kuasa Pengguna Anggaran">
+                        <input type="text" class="form-control" id="recipient-name" name="pejabat_pengadaan" value="">
                     </div>
                     <div class="mb-4">
                         <label for="message-text" class="col-form-label">NIP Pejabat Pengadaan</label>
-                        <input type="number" class="form-control" id="recipient-name" placeholder="Nama Kuasa Pengguna Anggaran">
+                        <input type="number" class="form-control" id="recipient-name" name="nip_pejabat_kpengadaan" value="">
                     </div>
                     <div class="mb-4">
                         <label for="message-text" class="col-form-label">BPP</label>
-                        <input type="text" class="form-control" id="recipient-name" placeholder="Nama Kuasa Pengguna Anggaran">
+                        <input type="text" class="form-control" id="recipient-name" name="bpp" value="">
                     </div>
                     <div class="mb-4">
                         <label for="message-text" class="col-form-label">NIP BPP</label>
-                        <input type="number" class="form-control" id="recipient-name" placeholder="Nama Kuasa Pengguna Anggaran">
+                        <input type="number" class="form-control" id="recipient-name" name="nip_bpp" value="">
                     </div>
                 </form>
             </div>

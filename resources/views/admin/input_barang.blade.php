@@ -73,12 +73,13 @@
                                 </div>
                                 <div class="button-group">
                                     <button type="button" class="btn btn-success btn-tambah"><i class="fa fa-plus"></i></button>
+                                    {{-- <button class="btn btn-success btn-tambah" id="addme" onclick="addCode()" ><i class="fa fa-plus"></i></button> --}}
                                     <button type="button" class="btn btn-danger btn-hapus" style="display:none;"><i class="fa fa-times"></i></button>
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-simpan">Simpan <i class="fa fa-save"></i></button>
-                    </form>
+                        <button type="submit" class="btn btn-primary document">Simpan <i class="fa fa-save"></i></button>
+                    </form>                    
                 </div>
             </div>
         </div>
@@ -148,9 +149,21 @@
 
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-{{-- <script type="text/javascript">
+<script type="text/javascript">
     function addForm() {
+    // for (var i = 0; i < split.length; i++) {
         var addrow = '<div class="form-group baru-data">\
+                        <div class="form-row">\
+                            <label for="exampleInputName1" class="col-sm-3 col-form-label">jenis pengadaan</label>\
+                            <div class="col-sm-9">\
+                            <select class="form-control" name="pengadaan_id" placeholder="Pilih Pengadaan">\
+                                <option> Pilih Pengadaan </option> \
+                                @foreach ($pengadaan as $item)\
+                                    <option value="{{$item->id}}">{{ $item->jenis_pengadaan }}</option>\
+                                @endforeach\
+                                </select>\
+                            </div>\
+                        </div>\
                         <div class="form-row">\
                             <div class="form-group col-md-3">\
                                 <label for="inputEmail4">Nama Barang</label>\
@@ -185,6 +198,7 @@
         // var addrow = document.getElementById('text-box');
         // addrow.innerHTML += 'Size <input value=' + split[i] + 'type="text"> Description <input type="text" name="vrow" id="price">'
     }
+// }
 
     $("#dynamic_form").on("click", ".btn-tambah", function() {
         addForm()
@@ -208,54 +222,46 @@
             if ($(this).val() == "") {
                 event.preventDefault()
                 $(this).css('border-color', 'red');
-
                 $(this).on('focus', function() {
                     $(this).css('border-color', '#ccc');
                 });
             }
         })
     })
-</script> --}}
-<script>
-    $(document).ready(function() {
-        var id = 1; 
-        /*Assigning id and class for tr and td tags for separation.*/
-        $("#butsend").click(function() {
-        var newid = id++; 
-        $("#table1").append('<tr valign="top" id="'+newid+'">\n\
-        <td width="100px" >' + newid + '</td>\n\
-        <td width="100px" class="pengadaan_id'+newid+'">' + $("#pengadaan_id").val() + '</td>\n\
-        <td width="100px" class="barang'+newid+'">' + $("#barang").val() + '</td>\n\
-        <td width="100px" class="jumlah_barang'+newid+'">' + $("#jumlah_barang").val() + '</td>\n\
-        <td width="100px" class="satuan'+newid+'">' + $("#satuan").val() + '</td>\n\
-        <td width="100px" class="harga_satuan'+newid+'">' + $("#harga_satuan").val() + '</td>\n\
-        <td width="100px"><a href="javascript:void(0);" class="remCF">Remove</a></td>\n\ </tr>');
-        });
-        $("#table1").on('click', '.remCF', function() {
-        $(this).parent().parent().remove();
-        });
-        /*crating new click event for save button*/
-        $("#butsave").click(function() {
-        var lastRowId = $('#table1 tr:last').attr("id"); /*finds id of the last row inside table*/
-        var name = new Array(); 
-        var email = new Array();
-        for ( var i = 1; i <= lastRowId; i++) {
-        name.push($("#"+i+" .name"+i).html()); /*pushing all the names listed in the table*/
-        email.push($("#"+i+" .email"+i).html()); /*pushing all the emails listed in the table*/
-        }
-        var sendName = JSON.stringify(name); 
-        var sendEmail = JSON.stringify(email);
-        $.ajax({
-        url: "save.php",
-        type: "post",
-        data: {name : sendName , email : sendEmail},
-        success : function(data){
-        alert(data); /* alerts the response from php.*/
-        }
-        });
-        });
-    });
-    </script>
+</script>
 
+<script type="text/javascript">
+    $(document).on('click', '#update_btn', function () {
+        $.ajax({
+            type: 'POST',
+            url: 'BarangController/store',
+            datatype: "json",
+            // datatype: form.serialize(),
+            data: {
+                pengadaan_id: $("#pengadaan_id").val(),
+                barang: $("#barang").val(),
+                jumlah_barang: $("#jumlah_barang").val(),
+                satuan: $("#satuan").val(),
+                harga_satuan: $("#harga_satuan").val(),
+            },
+            success: function (data) {
+                alert(data);
+                if (data == 'ADD_OK') {
+                    location.reload();
+                } else {
+                    alert('something wrong');
+                }
+            }
+        })
+    });
+</script>
+
+
+{{-- <script>
+    function addCode() {
+        document.getElementById("addme").innerHTML +=
+            "<h3>This is the text which has been inserted by JS</h3>";
+    }
+</> --}}
 
 @endsection
