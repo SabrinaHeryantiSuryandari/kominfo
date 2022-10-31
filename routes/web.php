@@ -88,7 +88,7 @@ Route::post('/postjadwal', [JadwalController::class, 'store']);
 Route::get('/input_barang', [BarangController::class, 'index']);
 Route::post('/postbarang', [BarangController::class, 'store']);
 
-
+Route::resource('/barang', BarangController::class);
 
 //pejabat
 Route::get('/pejabat', [PejabatController::class, 'index']);

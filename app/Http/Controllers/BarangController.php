@@ -24,7 +24,7 @@ class BarangController extends Controller
             'admin.input_barang',
             ['barang' => $barang],
             ['pengadaan' => $pengadaan],
-        );
+        )->with('i', (request()->input('page', 1) - 1) * 5);
 
         // $pengadaans = pengadaan::all();
         // $pelaksanas = Pelaksana::all();
@@ -133,6 +133,6 @@ class BarangController extends Controller
         $barang->delete();
 
         return redirect()->route('barang.index')
-            ->with('success', 'Aset Berhasil Dihapus!');
+            ->with('success', 'Barang Berhasil Dihapus!');
     }
 }
