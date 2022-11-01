@@ -25,7 +25,9 @@ class PelaksanaController extends Controller
         // $pelaksana = Pelaksana::select('*')
         //                 ->get();
 
-        return view('admin.input_pengadaan',['pelaksana'=>$pelaksana],
+        return view(
+            'admin.input_pengadaan',
+            ['pelaksana'=>$pelaksana],
         //  ['pengadaan'=>$pengadaan] 
         );
         // dd($pelaksana);
