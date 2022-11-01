@@ -22797,6 +22797,7 @@ select.border-dark.tt-hint:focus {
 .form-group.has-danger .tt-query,
 .form-group.has-danger .tt-hint {
   border-color: #FF4747;
+
 }
 
 .form-group .file-upload-default {
@@ -23867,6 +23868,7 @@ dl li {
 .pagination.pagination-separated .jsgrid .jsgrid-pager .jsgrid-pager-page:first-child, .jsgrid .jsgrid-pager .pagination.pagination-separated .jsgrid-pager-page:first-child,
 .jsgrid .pagination-separated.jsgrid-pager .jsgrid-pager-page:first-child {
   margin-left: 0;
+  
 }
 
 .pagination.pagination-separated .page-item:last-child, .jsgrid .pagination-separated.jsgrid-pager .page-item:last-child, .pagination.pagination-separated .jsgrid .jsgrid-pager .jsgrid-pager-nav-button:last-child, .jsgrid .jsgrid-pager .pagination.pagination-separated .jsgrid-pager-nav-button:last-child, .jsgrid .pagination-separated.jsgrid-pager .jsgrid-pager-nav-button:last-child,
@@ -26195,28 +26197,32 @@ body.avgrund-active {
   font-size: .65rem;
 }
 
-.dataTables_wrapper .dataTable thead .sorting:before,
+/* .dataTables_wrapper .dataTable thead .sorting:before,
 .dataTables_wrapper .dataTable thead .sorting_asc:before,
 .dataTables_wrapper .dataTable thead .sorting_desc:before,
 .dataTables_wrapper .dataTable thead .sorting_asc_disabled:before,
 .dataTables_wrapper .dataTable thead .sorting_desc_disabled:before {
-  content: "\e64b";
+  content: "\2191 \2193";
   right: 1.2em;
   bottom: 0;
-}
+} */
 
 .dataTables_wrapper .dataTable thead .sorting:after,
 .dataTables_wrapper .dataTable thead .sorting_asc:after,
 .dataTables_wrapper .dataTable thead .sorting_desc:after,
 .dataTables_wrapper .dataTable thead .sorting_asc_disabled:after,
 .dataTables_wrapper .dataTable thead .sorting_desc_disabled:after {
-  content: "\e648";
+  content: "\2191 \2193";
   right: 1.2em;
   top: 0;
 }
 
 .dataTables_wrapper .dataTables_paginate {
-  margin-top: 20px;
+  /* margin-top: 20px; */
+  /* margin-left: 10px; */
+  padding-left: 10px;
+  
+
 }
 
 .dataTables_wrapper .dataTables_info {
