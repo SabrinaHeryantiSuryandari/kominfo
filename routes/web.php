@@ -141,5 +141,14 @@ Route::resource('/pemilik', PemilikController::class);
 // Route::resource('/pengguna', View::class);
 // Route::resource('/save', App\Http\Controllers\view::class,'save');
 
-
+//print
+Route::get('/nota_dinas1', function () {
+    return view('print.nota_dinas1');
+});
+Route::get('/nota_dinas2', function () {
+    return view('print.nota_dinas2');
+});
+Route::get('/pakta_integritas', function () {
+    return view('print.pakta_integritas');
+});
 // Route::resource('/getusr',[App\Http\Controllers\AdminController::class, 'index']);
