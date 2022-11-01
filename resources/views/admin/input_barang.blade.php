@@ -135,7 +135,8 @@
                 </div>
                 <br>
 
-                <table id="data1" class="table table-bordered" cellspacing="0" width="100%">
+                <table id="data1" class="table table-bordered" cellspacing="0">
+                {{-- <table id="data1" class="table table-bordered" cellspacing="0" width="100%"> --}}
                 {{-- <table class="table table-bordered " id="data1" style="width:100%"> --}}
                 {{-- <table class="table table-bordered" id="example"> --}}
                     <thead>
@@ -198,7 +199,7 @@
 </div>
 
 <!-- Javascript -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="dynamic-form.js"></script>
 
@@ -317,7 +318,7 @@
         document.getElementById("addme").innerHTML +=
             "<h3>This is the text which has been inserted by JS</h3>";
     }
-</script>
+</script> --}}
 
 {{-- <script>
   var myChart = new Chart(
