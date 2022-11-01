@@ -1,12 +1,12 @@
 @extends('layouts/index')
 
 @section('content')
-@section('judul')
+{{-- @section('judul')
 {{'Input Data / Belum Tersertifikasi'}}
 @endsection
 @section('title')
 {{'Input Data yang Belum Tersertifikasi'}}
-@endsection
+@endsection --}}
 
 <div class="row">
     {{-- <div class="col-lg-12 grid-margin stretch-card">
@@ -64,48 +64,50 @@
                     <table class="table table-bordered" id="example" style="width:100%">
                         <thead>
                             <tr>
-                                <th> NO </th>
-                                <th> ID </th>
-                                <th>No Sertifikat</th>
-                                <th>Nama Aset</th>
-                                <th>Alamat</th>
-                                <th>Status Aset</th>
+                                {{-- <th>NO</th> --}}
+                                <th>Nama Pengadaan</th>
+                                <th>Nama Perusahaan</th>
+                                <th>Harga Kontrak</th>
+                                {{-- <th>Alamat</th>
+                                <th>Status Aset</th> --}}
                                 {{-- <th>Luas Aset</th> --}}
                                 {{-- <th>Kondisi Aset</th>
-                            <th>Kondisi Geografis</th>
-                            <th>Asal Usul</th>
-                            <th>Tahun Kepemilikan</th>
-                            <th>Tahun Pembangunan</th>
-                            <th>Tahun Rehab</th> --}}
-                                <th>Keterangan</th>
+                                <th>Kondisi Geografis</th>
+                                <th>Asal Usul</th>
+                                <th>Tahun Kepemilikan</th>
+                                <th>Tahun Pembangunan</th>
+                                <th>Tahun Rehab</th> --}}
+                                {{-- <th>Keterangan</th> --}}
                                 <th width="280px">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- {{-- @foreach ($asets as $aset) --}}
-                            {{-- <tr>
-                                <td>{{ ++$i }}</td>
-                            <td>{{ $aset->id}}</td>
-                            <td>{{ $aset->no_sertifikat }}</td>
-                            <td>{{ $aset->nama_aset }}</td>
-                            <td>{{ $aset->alamat_aset }}</td>
-                            <td>{{ $aset->status_aset }}</td>
+                            {{-- @if(count($pengadaan)<=50) --}}
+                            @foreach ($pengadaan as $pengadaan)
+                            <tr>
+                                {{-- <td>{{ ++$i }}</td> --}}
+                                <td>{{ $pengadaan->jenis_pengadaan}}</td>
+                                <td>{{ $pengadaan->pt_pelaksana}}</td>
+                                {{-- @foreach ($pelaksana as $pelaksana)
+                                    <td>{{ $pelaksana->pt_pelaksana }}</td>
+                                @endforeach --}}
+                                <td>{{ $pengadaan->nilai_negosiasi }}</td>
 
-                            <td>{{ $aset->keterangan_aset }}</td>
-                            <td>
+                                <td>
 
-                                <form action="{{ route('asets.destroy',$aset->id) }}" method="POST">
+                                    <form action="{{ route('pengadaan.destroy',$pengadaan->id) }}" method="POST">
 
-                                    <a class="btn btn-info" href="{{ route('asets.show',$aset->id) }}">Detail</a>
-                                    <a class="btn btn-primary" href="{{ route('asets.edit',$aset->id) }}">Edit</a>
-                                    @csrf
-                                    @method('DELETE')
+                                        <a class="btn btn-info" href="{{ route('pengadaan.show',$pengadaan->id) }}">Detail</a>
+                                        <a class="btn btn-primary" href="{{ route('pengadaan.edit',$pengadaan->id) }}">Edit</a>
+                                        @csrf
+                                        @method('DELETE')
 
-                                    <button type="submit" class="btn btn-danger">Delete</button>
-                                </form>
-                            </td>
-                            </tr> --}} -->
-                            <!-- {{-- @endforeach --}} -->
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            @endforeach
+                            {{-- @endif --}}
                         </tbody>
                     </table>
                 </div>

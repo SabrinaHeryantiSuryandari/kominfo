@@ -129,8 +129,10 @@
                 </div>
                 <br>
 
-
                 <table id="data1" class="table table-bordered" cellspacing="0">
+                    {{-- <table id="data1" class="table table-bordered" cellspacing="0" width="100%"> --}}
+                    {{-- <table class="table table-bordered " id="data1" style="width:100%"> --}}
+                    {{-- <table class="table table-bordered" id="example"> --}}
                     <thead>
                         <tr>
                             <th>Jenis Pengadaan</th>
@@ -192,7 +194,7 @@
 
 
 <!-- Javascript -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="dynamic-form.js"></script>
 
@@ -209,75 +211,75 @@
                                 <option> Pilih Pengadaan </option> \
                                 @foreach ($pengadaan as $item)\
                                     <option value="{{$item->id}}">{{ $item->jenis_pengadaan }}</option>\
-                                @endforeach\
-                                </select>\
-                            </div>\
-                        </div>\
-                        <div class="form-row">\
-                            <div class="form-group col-md-3">\
-                                <label for="inputEmail4">Nama Barang</label>\
-                                <input type="text" class="form-control" id="" name="barang" placeholder="Nama Barang">\
-                            </div>\
-                            <div class="form-group col-md-3">\
-                                <label for="inputEmail4">Jumlah Barang</label>\
-                                <input type="number" class="form-control" id="" name="jumlah_barang" placeholder="Jumlah Barang">\
-                            </div>\
-                            <div class="form-group col-md-3">\
-                                <label for="">Satuan</label>\
-                                <select class="form-control" id="" name="satuan" >\
-                                    <option>Pilih</option>\
-                                    <option>Buah</option>\
-                                    <option>Pack</option>\
-                                    <option>Lusin</option>\
-                                    <option>Karton</option>\
-                                </select>\
-                            </div>\
-                            <div class="form-group col-md-3">\
-                                <label for="inputPassword4">Harga Satuan</label>\
-                                <input type="text" class="form-control" id="" name="harga_satuan" placeholder="1.200.000">\
-                            </div>\
-                        </div>\
-                        <div class="button-group">\
-                            <button type="button" class="btn btn-success btn-tambah"><i class="fa fa-plus"></i></button>\
-                            <button type="button" class="btn btn-danger btn-hapus"><i class="fa fa-times"></i></button>\
-                        </div>\
-                    </div>'
-        $("#dynamic_form").append(addrow);
+@endforeach\
+</select>\
+</div>\
+</div>\
+<div class="form-row">\
+    <div class="form-group col-md-3">\
+        <label for="inputEmail4">Nama Barang</label>\
+        <input type="text" class="form-control" id="" name="barang" placeholder="Nama Barang">\
+    </div>\
+    <div class="form-group col-md-3">\
+        <label for="inputEmail4">Jumlah Barang</label>\
+        <input type="number" class="form-control" id="" name="jumlah_barang" placeholder="Jumlah Barang">\
+    </div>\
+    <div class="form-group col-md-3">\
+        <label for="">Satuan</label>\
+        <select class="form-control" id="" name="satuan">\
+            <option>Pilih</option>\
+            <option>Buah</option>\
+            <option>Pack</option>\
+            <option>Lusin</option>\
+            <option>Karton</option>\
+        </select>\
+    </div>\
+    <div class="form-group col-md-3">\
+        <label for="inputPassword4">Harga Satuan</label>\
+        <input type="text" class="form-control" id="" name="harga_satuan" placeholder="1.200.000">\
+    </div>\
+</div>\
+<div class="button-group">\
+    <button type="button" class="btn btn-success btn-tambah"><i class="fa fa-plus"></i></button>\
+    <button type="button" class="btn btn-danger btn-hapus"><i class="fa fa-times"></i></button>\
+</div>\
+</div>'
+$("#dynamic_form").append(addrow);
 
-        // var addrow = document.getElementById('text-box');
-        // addrow.innerHTML += 'Size <input value=' + split[i] + 'type="text"> Description <input type="text" name="vrow" id="price">'
-    }
-    // }
+// var addrow = document.getElementById('text-box');
+// addrow.innerHTML += 'Size <input value=' + split[i] + ' type="text"> Description <input type="text" name="vrow" id="price">'
+}
+// }
 
-    $("#dynamic_form").on("click", ".btn-tambah", function() {
-        addForm()
-        $(this).css("display", "none")
-        var valtes = $(this).parent().find(".btn-hapus").css("display", "");
-    })
+$("#dynamic_form").on("click", ".btn-tambah", function() {
+addForm()
+$(this).css("display", "none")
+var valtes = $(this).parent().find(".btn-hapus").css("display", "");
+})
 
-    $("#dynamic_form").on("click", ".btn-hapus", function() {
-        $(this).parent().parent('.baru-data').remove();
-        var bykrow = $(".baru-data").length;
-        if (bykrow == 1) {
-            $(".btn-hapus").css("display", "none")
-            $(".btn-tambah").css("display", "");
-        } else {
-            $('.baru-data').last().find('.btn-tambah').css("display", "");
-        }
-    });
+$("#dynamic_form").on("click", ".btn-hapus", function() {
+$(this).parent().parent('.baru-data').remove();
+var bykrow = $(".baru-data").length;
+if (bykrow == 1) {
+$(".btn-hapus").css("display", "none")
+$(".btn-tambah").css("display", "");
+} else {
+$('.baru-data').last().find('.btn-tambah').css("display", "");
+}
+});
 
-    $('.btn-simpan').on('click', function() {
-        $('#dynamic_form').find('input[type="text"], input[type="number"], select, textarea').each(function() {
-            if ($(this).val() == "") {
-                event.preventDefault()
-                $(this).css('border-color', 'red');
-                $(this).on('focus', function() {
-                    $(this).css('border-color', '#ccc');
-                });
-            }
+$('.btn-simpan').on('click', function() {
+$('#dynamic_form').find('input[type="text"], input[type="number"], select, textarea').each(function() {
+if ($(this).val() == "") {
+event.preventDefault()
+$(this).css('border-color', 'red');
+$(this).on('focus', function() {
+$(this).css('border-color', '#ccc');
+});
+}
 
-        })
-    })
+})
+})
 </script>
 
 <script type="text/javascript">
@@ -311,7 +313,7 @@
         document.getElementById("addme").innerHTML +=
             "<h3>This is the text which has been inserted by JS</h3>";
     }
-</script>
+</script> --}}
 
 <!-- {{-- <script>
   var myChart = new Chart(

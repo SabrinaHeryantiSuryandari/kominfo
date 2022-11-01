@@ -57,10 +57,6 @@ Route::get('/lihat', function () {
 });
 
 //baru
-Route::get('/pengadaan1', function () {
-    return view('admin.pengadaan1');
-});
-
 Route::get('/pengadaan2', function () {
     return view('admin.pengadaan2');
 });
@@ -76,7 +72,7 @@ Route::get('/input_anggaran', function () {
 // });
 
 //untuk 
-Route::get('/input_pengadaan', [PengadaanController::class, 'index']);
+Route::get('/input_pengadaan', [PelaksanaController::class, 'index']);
 Route::get('/input_pelaksana', [PelaksanaController::class, 'create']);
 Route::post('/postdata', [PelaksanaController::class, 'store']);
 // Route::post('/inputpelaksana'. PelaksanaController::class);
@@ -89,6 +85,13 @@ Route::get('/input_barang', [BarangController::class, 'index']);
 Route::post('/postbarang', [BarangController::class, 'store']);
 
 Route::resource('/barang', BarangController::class);
+
+// Route::get('/input_pengadaan', [PengadaanController::class, 'index']);
+Route::resource('/pengadaan', PengadaanController::class);
+// Route::resource('/pengadaan2', PengadaanController::class);
+
+Route::get('/pengadaan1', [PengadaanController::class, 'index1']);
+Route::get('/pengadaan2', [PengadaanController::class, 'index2']);
 
 //pejabat
 Route::get('/pejabat', [PejabatController::class, 'index']);
@@ -103,9 +106,9 @@ Route::get('/pejabat', [PejabatController::class, 'index']);
 //     return view('admin.input_barang');
 // });
 // Route::resource('/pelaksanas', PelaksanaController::class);
-Route::get('/input_pelaksana', function () {
-    return view('admin.input_pelaksana');
-});
+// Route::get('/input_pelaksana', function () {
+//     return view('admin.input_pelaksana');
+// });
 
 Route::get('/setting', function () {
     return view('admin.setting');
