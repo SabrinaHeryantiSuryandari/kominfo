@@ -85,7 +85,7 @@ Route::post('/postpengadaan', [PengadaanController::class, 'store']);
 // Route::patch('/pengadaan/{id}', 'PengadaanController@update');
 // Route::delete('/pengadaan/{id}', 'PengadaanController@destroy');
 
-Route::get('pejabat/tampil', [PejabatController::class, 'tampilpejabat'])->name('tampilpejabat')->middleware('auth');
+// Route::get('pejabat/tampil', [PejabatController::class, 'tampilpejabat'])->name('tampilpejabat')->middleware('auth');
 Route::get('pejabat/ubah/{id}', [PejabatController::class, 'ubahpejabat'])->name('ubahpejabat')->middleware('auth');
 Route::post('pejabat/update', [PejabatController::class, 'updatepejabat'])->name('updatepejabat')->middleware('auth');
 
@@ -175,19 +175,6 @@ Route::get('/undangan_persiapan', function () {
 Route::get('/pakta_integritas', function () {
     return view('print.pakta_integritas');
 });
-<<<<<<< HEAD
 // Route::resource('/getusr',[App\Http\Controllers\AdminController::class, 'index']);
 
 // Route::get('/editpejabat/{}')
-=======
-Route::get('/daftar_hadir', function () {
-    return view('print.daftar_hadir');
-});
-Route::get('/berita_acara', function () {
-    return view('print.berita_acara');
-});
-Route::get('/ba_evaluasi', function () {
-    return view('print.ba_evaluasi');
-});
-// Route::resource('/getusr',[App\Http\Controllers\AdminController::class, 'index']);
->>>>>>> ebe37bea1e602578993c4a0c2c38f9a3e88e7b88

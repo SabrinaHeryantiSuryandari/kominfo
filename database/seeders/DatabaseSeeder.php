@@ -39,7 +39,7 @@ class DatabaseSeeder extends Seeder
             'pejabat_pembuatan_komitmen' => 'I WAYAN RUDY ARTHA, S.Kom',
             'nip_pejabat_komitmen' => '19770517 200901 1 005',
             'pejabat_pengadaan' => 'ADI KURNIAWAN.S.Kom.,M.Kom',
-            'nip_pejabat_kpengadaan' => '19890618 201403 1 002',
+            'nip_pejabat_pengadaan' => '19890618 201403 1 002',
             'bpp' => 'SISCA AGUSTIA PUTRI, S.Sos',
             'nip_bpp' => '19850120 201001 2 016',
             

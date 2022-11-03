@@ -10,7 +10,7 @@ class pejabat extends Model
     use HasFactory;
 
     protected $fillable = [
-        'id',
+        // 'id',
         'tahun_sk',
         'tanggal_sk',
         'nomor_sk',

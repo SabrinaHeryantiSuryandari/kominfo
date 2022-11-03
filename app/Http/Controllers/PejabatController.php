@@ -53,7 +53,7 @@ class PejabatController extends Controller
             'pejabat_pembuatan_komitmen' => 'required',
             'nip_pejabat_komitmen' => 'required',
             'pejabat_pengadaan' => 'required',
-            'nip_pejabat_kpengadaan' => 'required',
+            'nip_pejabat_pengadaan' => 'required',
             'bpp' => 'required',
             'nip_bpp' => 'required'
 
@@ -120,7 +120,7 @@ class PejabatController extends Controller
             'pejabat_pembuatan_komitmen' => 'required',
             'nip_pejabat_komitmen' => 'required',
             'pejabat_pengadaan' => 'required',
-            'nip_pejabat_kpengadaan' => 'required',
+            'nip_pejabat_pengadaan' => 'required',
             'bpp' => 'required',
             'nip_bpp' => 'required'
         ]);
@@ -152,7 +152,7 @@ class PejabatController extends Controller
 
     return view('index.admin', ['pejabat' => $pejabat]);
     }
-    public function updatesantri(Request $request)
+    public function updatepejabat(Request $request, Pejabat $pejabat)
     {
     $pejabat = Pejabat::where('id', $request->id)
                 ->update([
@@ -164,11 +164,36 @@ class PejabatController extends Controller
                     'pejabat_pembuatan_komitmen' => $request->pejabat_pembuatan_komitmen,
                     'nip_pejabat_komitmen' => $request->nip_pejabat_komitmen,
                     'pejabat_pengadaan' => $request->pejabat_pengadaan,
-                    'nip_pejabat_kpengadaan' => $request->nip_pejabat_kpengadaan,
+                    'nip_pejabat_pengadaan' => $request->nip_pejabat_pengadaan,
                     'bpp' => $request->bpp,
                     'nip_bpp' => $request->nip_bpp
                 ]);
 
-    return redirect()->route('home');
+
+    $data = $pejabat->insert->Pejabat::all();
+
+    return redirect()->route('home', $data);
+    
+    // return view('index.admin', ['pejabat' => $pejabat]);
+
+    // $request->validate([
+    //     'tahun_sk' => 'required',
+    //         'tanggal_sk' => 'required',
+    //         'nomor_sk' => 'required',
+    //         'kuasa_pengguna_anggaran' => 'required',
+    //         'nip_kuasa_pengguna' => 'required',
+    //         'pejabat_pembuatan_komitmen' => 'required',
+    //         'nip_pejabat_komitmen' => 'required',
+    //         'pejabat_pengadaan' => 'required',
+    //         'nip_pejabat_kpengadaan' => 'required',
+    //         'bpp' => 'required',
+    //         'nip_bpp' => 'required'
+    // ]);
+  
+    // $pejabat->update($request->all());
+  
+    // return redirect()->route('home')
+    //                 ->with('success','Aset Berhasil updated!');
+
     }
 }
