@@ -169,9 +169,25 @@ Route::get('/nota_dinas1', function () {
 Route::get('/nota_dinas2', function () {
     return view('print.nota_dinas2');
 });
+Route::get('/undangan_persiapan', function () {
+    return view('print.undangan_persiapan');
+});
 Route::get('/pakta_integritas', function () {
     return view('print.pakta_integritas');
 });
+<<<<<<< HEAD
 // Route::resource('/getusr',[App\Http\Controllers\AdminController::class, 'index']);
 
 // Route::get('/editpejabat/{}')
+=======
+Route::get('/daftar_hadir', function () {
+    return view('print.daftar_hadir');
+});
+Route::get('/berita_acara', function () {
+    return view('print.berita_acara');
+});
+Route::get('/ba_evaluasi', function () {
+    return view('print.ba_evaluasi');
+});
+// Route::resource('/getusr',[App\Http\Controllers\AdminController::class, 'index']);
+>>>>>>> ebe37bea1e602578993c4a0c2c38f9a3e88e7b88
