@@ -29,8 +29,8 @@ return new class extends Migration
             $table->string('alamat');
             $table->string('nama_pelaksana');
             $table->string('jabatan_pelaksana');
-            $table->bigInteger('kode_rekening');
-            $table->bigInteger('npwp');
+            $table->string('kode_rekening');
+            $table->string('npwp');
             $table->bigInteger('tlp');
             $table->timestamps();
             // $table->integer('kode_rekening',20);

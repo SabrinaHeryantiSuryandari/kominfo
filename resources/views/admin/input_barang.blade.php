@@ -84,7 +84,8 @@
 
 
 
-<div class="col-12 grid-margin stretch-card">
+{{-- <div class="col-12 grid-margin stretch-card"> --}}
+<div class="stretch-card">
     <div class="card shadow">
         <div class="card-body">
             <div class="table-responsive">

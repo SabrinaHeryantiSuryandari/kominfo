@@ -54,9 +54,10 @@
             <div class="card-body">
                 <h4 class="card-title">Daftar Pejabat</h4>
                 <div class="text-right">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalSaya">
+                    {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalSaya">
                         Edit Data Pejabat
-                    </button>
+                    </button> --}}
+                    <a class="btn btn-primary" href="/editpejabat{{$pejabat->id}}" data-toggle="modal" data-target="#modalSaya">Edit Data Pejabat</a>
                 </div>
                 <div class="table-responsive pt-3 pb-2">
                     @if ($message = Session::get('success'))
@@ -200,8 +201,12 @@
                     {{ session()->get('message') }}
                 </div>
                 @endif
-                <form>
+                {{-- <form action="" method="POST"> --}}
+                @foreach($santri as $s)
+                <form method="post" action="{{route('updatepejabat')}}">
                     @csrf
+                    @method('PUT')
+
                     <div class="mb-4">
                         <label for="recipient-name" class="col-form-label">Kuasa Pengguna Anggaran</label>
                         <input type="text" class="form-control" id="recipient-name" name="kuasa_pengguna_anggaran" value="">

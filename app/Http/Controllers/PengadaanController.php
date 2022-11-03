@@ -17,23 +17,23 @@ class PengadaanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    // public function index()
-    // {
-    //     $pengadaan = Pengadaan::all();
-    //     $pelaksana = Pelaksana::all();
-    //     // $barang = Barang::all();
-    //     // $jadwals = Jadwal::all();
+    public function index()
+    {
+        $pengadaan = Pengadaan::all();
+        $pelaksana = Pelaksana::all();
+        // $barang = Barang::all();
+        // $jadwals = Jadwal::all();
 
-    //     return view(
-    //         'admin.pengadaan1',
-    //         // 'admin.input_pengadaan',
-    //         ['pengadaan' => $pengadaan],
-    //         ['pelaksana' => $pelaksana]
-    //     );
+        return view(
+            'admin.pengadaan1',
+            // 'admin.input_pengadaan',
+            ['pengadaan' => $pengadaan],
+            ['pelaksana' => $pelaksana]
+        );
 
-    //     // return view('admin.input_pengadaan',compact('pengadaans'))
-    //     // ->with('i', (request()->input('page', 1) - 1) * 5);
-    // }
+        // return view('admin.input_pengadaan',compact('pengadaans'))
+        // ->with('i', (request()->input('page', 1) - 1) * 5);
+    }
 
     public function index1()
     {
@@ -109,10 +109,10 @@ class PengadaanController extends Controller
 
         Pengadaan::create($request->post());
 
+        return redirect()->to('input_jadwal');
         // return redirect()->route('home')
         //                 ->with('success','Aset Berhasil Dihapus!');
 
-        return redirect()->to('input_jadwal');
 
         // return redirect()->route('jadwals.index')
         //                 ->with('success','Data Pelaksana Berhasil Disimpan!');
@@ -166,7 +166,10 @@ class PengadaanController extends Controller
      */
     public function edit(Pengadaan $pengadaan)
     {
+        
+        $pengadaan = Pengadaan::where('id',$pengadaan)->first();
         return view('admin.edit', compact('pengadaan'));
+        // return view('m');
     }
 
     /**
@@ -178,31 +181,47 @@ class PengadaanController extends Controller
      */
     public function update(Request $request, pengadaan $pengadaan)
     {
-        // $pelaksanas =   Pelaksana::updating($request->except([
+        $pengadaan = Pengadaan::where('id',$pengadaan)->first();
+            // $pengadaan->
+            // $pengadaan
+            $request->validate([
+                // 'id' => 'required',
+                'pelaksana_id' => 'required',
+                'jenis_pengadaan' => 'required',
+                'total_hps' => 'required',
+                'deskripsi_hps' => 'required',
+                'harga_penawaran' => 'required',
+                'deskripsi_penawaran' => 'required',
+                'nilai_negosiasi' => 'required',
+                'deskripsi_negosiasi' => 'required'
+            ]);
+    
+            Pengadaan::create($request->post());
+    
+            return redirect()->to('input_jadwal');
+
+
+        // $pengadaan =   Pelaksana::updating($request->except([
         //     'pelaksana_id',
         //     'jenis_pengadaan',
-        //     'tanggal_acara',
-        //     'deskripsi_tgl_acara',
-        //     'waktu_acara',
-        //     'tempat_acara',
         //     'total_hps',
         //     'deskripsi_hps',
+        //     'harga_penawaran',
+        //     'deskripsi_penawaran',
         //     'nilai_negosiasi',
-        //     'deskripsi_nilai_nego',        
+        //     'deskripsi_negosiasi'
         // ]));
 
         // $request['pelaksana_id'] = $pelaksanas ->id;
         // $pengadaans = Pengadaan::updating($request->only([
         //     'pelaksana_id',
         //     'jenis_pengadaan',
-        //     'tanggal_acara',
-        //     'deskripsi_tgl_acara',
-        //     'waktu_acara',
-        //     'tempat_acara',
         //     'total_hps',
         //     'deskripsi_hps',
+        //     'harga_penawaran',
+        //     'deskripsi_penawaran',
         //     'nilai_negosiasi',
-        //     'deskripsi_nilai_nego'        
+        //     'deskripsi_negosiasi'  
         // ]));
 
         // return back()->with('success',' Post baru berhasil dibuat.');

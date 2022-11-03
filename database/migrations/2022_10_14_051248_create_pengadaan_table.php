@@ -28,11 +28,11 @@ return new class extends Migration
             $table->id();
             $table->foreignId('pelaksana_id')->constrained();
             $table->string('jenis_pengadaan');
-            $table->bigInteger('total_hps');
+            $table->string('total_hps');
             $table->text('deskripsi_hps');
-            $table->bigInteger('harga_penawaran');
+            $table->string('harga_penawaran');
             $table->text('deskripsi_penawaran');
-            $table->bigInteger('nilai_negosiasi');
+            $table->string('nilai_negosiasi');
             $table->text('deskripsi_negosiasi');
             $table->timestamps();
         });
