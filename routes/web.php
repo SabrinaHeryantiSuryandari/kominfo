@@ -82,16 +82,6 @@ Route::resource('/pelaksana', PelaksanaController::class);
 Route::get('/input_pengadaan', [PengadaanController::class, 'index']);
 Route::post('/postpengadaan', [PengadaanController::class, 'store']);
 
-Route::get('/pejabat/edit/{id}', [PejabatController::class, 'edit']);
-Route::post('/pejabat/update/{id}', [PejabatController::class, 'update']);
-
-
-
-// Route::get('{id}/edit-pejabat', [PejabatController::class], 'edit');
-// Route::get('update-pejabat/{id}' [PejabatController::class], 'update');
-// Route::get('{id}/edit-pejabat', 'PejabatController@edit');
-// Route::post('update-pejabat/{id}', 'PejabatController@update');
-// Route::post('update-pejabat/{id}', [PejabatController::class], 'update');
 
 // Route::get('/{id}/edit', 'PengadaanController@edit');
 // Route::post('/update/{id}', 'PengadaanController@update');
@@ -100,17 +90,6 @@ Route::post('/pejabat/update/{id}', [PejabatController::class, 'update']);
 // Route::patch('/pengadaan/{id}', 'PengadaanController@update');
 // Route::delete('/pengadaan/{id}', 'PengadaanController@destroy');
 
-// Route::get('pejabat/tampil', [PejabatController::class, 'tampilpejabat'])->name('tampilpejabat')->middleware('auth');
-<<<<<<< HEAD
-// Route::get('pejabat/ubah/{id}', [PejabatController::class, 'edit'])->name('ubahpejabat')->middleware('auth');
-// Route::post('pejabat/update', [PejabatController::class, 'update'])->name('updatepejabat')->middleware('auth');
-// Route::get('pejabat/ubah/{id}', [PejabatController::class, 'ubahpejabat'])->name('ubahpejabat')->middleware('auth');
-// Route::post('pejabat/update', [PejabatController::class, 'updatepejabat'])->name('updatepejabat')->middleware('auth');
-=======
-Route::get('pejabat/ubah/{id}', [PejabatController::class, 'ubahpejabat'])->name('ubahpejabat')->middleware('auth');
-Route::post('pejabat/update', [PejabatController::class, 'updatepejabat'])->name('updatepejabat')->middleware('auth');
-Route::resource('/pejabat', PejabatController::class);
->>>>>>> a85de726d9267ab57a6a2d1babd16294d56b28a6
 
 Route::get('/input_jadwal', [JadwalController::class, 'index']);
 Route::post('/postjadwal', [JadwalController::class, 'store']);
@@ -128,14 +107,9 @@ Route::get('/pengadaan1', [PengadaanController::class, 'index1']);
 Route::get('/pengadaan2', [PengadaanController::class, 'index2']);
 
 //pejabat
-// Route::get('/pejabat', [PejabatController::class, 'index']);
-// // Route::get('/editpejabat', [PejabatController::class, 'edit']);
+// Route::get('/pejabat/edit/{id}', [PejabatController::class, 'edit']);
+Route::post('/pejabat/update/{id}', [PejabatController::class, 'update']);
 
-// // Route::get('/editpejabat', [PejabatController::class, 'update']);
-// Route::resource('/pejabat', PejabatController::class);
-
-// Route::get('pejabat/edit/{id}', array('as'=>'edit_pejabat','pejabat'=>'PejabatController@edit'));
-// Route::put('pejabat/update/{id}', array('as'=>'update_pejabat','pejabat'=>'PejabatController@update'));
 
 // Route::get('/input_jadwal', function () {
 //     return view('admin.input_jadwal');

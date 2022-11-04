@@ -29,13 +29,13 @@ class PejabatController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        // $pejabats = pejabat::all();
+    // public function create()
+    // {
+    //     // $pejabats = pejabat::all();
 
-        // return view('pejabat', compact('pejabats'));
+    //     // return view('pejabat', compact('pejabats'));
 
-    }
+    // }
 
     /**
      * Store a newly created resource in storage.
@@ -43,47 +43,47 @@ class PejabatController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        // $request->validate([
-        //     'id' => 'required',
-        //     'tahun_sk' => 'required',
-        //     'tanggal_sk' => 'required',
-        //     'nomor_sk' => 'required',
-        //     'kuasa_pengguna_anggaran' => 'required',
-        //     'nip_kuasa_pengguna' => 'required',
-        //     'pejabat_pembuatan_komitmen' => 'required',
-        //     'nip_pejabat_komitmen' => 'required',
-        //     'pejabat_pengadaan' => 'required',
-        //     'nip_pejabat_pengadaan' => 'required',
-        //     'bpp' => 'required',
-        //     'nip_bpp' => 'required'
+    // public function store(Request $request)
+    // {
+    //     // $request->validate([
+    //     //     'id' => 'required',
+    //     //     'tahun_sk' => 'required',
+    //     //     'tanggal_sk' => 'required',
+    //     //     'nomor_sk' => 'required',
+    //     //     'kuasa_pengguna_anggaran' => 'required',
+    //     //     'nip_kuasa_pengguna' => 'required',
+    //     //     'pejabat_pembuatan_komitmen' => 'required',
+    //     //     'nip_pejabat_komitmen' => 'required',
+    //     //     'pejabat_pengadaan' => 'required',
+    //     //     'nip_pejabat_pengadaan' => 'required',
+    //     //     'bpp' => 'required',
+    //     //     'nip_bpp' => 'required'
 
-        // ]);
+    //     // ]);
 
-        // Pejabat::create($request->all());
-        // // $asets = Aset::create($request->except(['aset_id', 'nama', 'keterangan']));
-        // // $pemilik = Pemilik::create(['aset_id' => $asets->id, $request->only(['nama', 'keterangan', 'aset_id'])]);
+    //     // Pejabat::create($request->all());
+    //     // // $asets = Aset::create($request->except(['aset_id', 'nama', 'keterangan']));
+    //     // // $pemilik = Pemilik::create(['aset_id' => $asets->id, $request->only(['nama', 'keterangan', 'aset_id'])]);
 
-        // return redirect()->route('pejabat.index')
-        //     ->with('success', 'Data Pelaksana Berhasil Disimpan!');
+    //     // return redirect()->route('pejabat.index')
+    //     //     ->with('success', 'Data Pelaksana Berhasil Disimpan!');
 
-        $pejabat = new Pejabat();
-            $pejabat->id = $request->id;
-            $pejabat->tahun_sk = $request->tahun_sk;
-            $pejabat->tanggal_sk = $request->tanggal_sk;
-            $pejabat->nomor_sk = $request->nomor_sk;
-            $pejabat->kuasa_pengguna_anggaran = $request->kuasa_pengguna_anggaran;
-            $pejabat->nip_kuasa_pengguna = $request->nip_kuasa_pengguna;
-            $pejabat->pejabat_pembuatan_komitmen = $request->pejabat_pembuatan_komitmen;
-            $pejabat->nip_pejabat_komitmen = $request->nip_pejabat_komitmen;
-            $pejabat->pejabat_pengadaan = $request->pejabat_pengadaan;
-            $pejabat->nip_pejabat_pengadaan = $request->nip_pejabat_pengadaan;
-            $pejabat->bpp = $request->bpp;
-            $pejabat->nip_bpp = $request->nip_bpp;
-        $pejabat->save();
-        return Redirect('home');
-    }
+    //     $pejabat = new Pejabat();
+    //         $pejabat->id = $request->id;
+    //         $pejabat->tahun_sk = $request->tahun_sk;
+    //         $pejabat->tanggal_sk = $request->tanggal_sk;
+    //         $pejabat->nomor_sk = $request->nomor_sk;
+    //         $pejabat->kuasa_pengguna_anggaran = $request->kuasa_pengguna_anggaran;
+    //         $pejabat->nip_kuasa_pengguna = $request->nip_kuasa_pengguna;
+    //         $pejabat->pejabat_pembuatan_komitmen = $request->pejabat_pembuatan_komitmen;
+    //         $pejabat->nip_pejabat_komitmen = $request->nip_pejabat_komitmen;
+    //         $pejabat->pejabat_pengadaan = $request->pejabat_pengadaan;
+    //         $pejabat->nip_pejabat_pengadaan = $request->nip_pejabat_pengadaan;
+    //         $pejabat->bpp = $request->bpp;
+    //         $pejabat->nip_bpp = $request->nip_bpp;
+    //     $pejabat->save();
+    //     return Redirect('home');
+    // }
 
     /**
      * Display the specified resource.
@@ -91,15 +91,15 @@ class PejabatController extends Controller
      * @param  \App\Models\pejabat  $pejabat
      * @return \Illuminate\Http\Response
      */
-    public function show(pejabat $pejabat)
-    {
-        // return view('admin.show', compact('pejabat'));
-        // return response()->json([
-        //     'success' => true,
-        //     'message' => 'Detail Data Post',
-        //     'data'    => $pejabat 
-        // ]); 
-    }
+    // public function show(pejabat $pejabat)
+    // {
+    //     // return view('admin.show', compact('pejabat'));
+    //     // return response()->json([
+    //     //     'success' => true,
+    //     //     'message' => 'Detail Data Post',
+    //     //     'data'    => $pejabat 
+    //     // ]); 
+    // }
 
     /**
      * Show the form for editing the specified resource.
@@ -200,13 +200,13 @@ class PejabatController extends Controller
      * @param  \App\Models\pejabat  $pejabat
      * @return \Illuminate\Http\Response
      */
-    public function destroy(pejabat $pejabat)
-    {
-        $pejabat->delete();
+    // public function destroy(pejabat $pejabat)
+    // {
+    //     $pejabat->delete();
 
-        return redirect()->route('pejabat.index')
-            ->with('success', 'Aset Berhasil Dihapus!');
-    }
+    //     return redirect()->route('pejabat.index')
+    //         ->with('success', 'Aset Berhasil Dihapus!');
+    // }
 
     // public function ubahpejabat($id)
     // {
