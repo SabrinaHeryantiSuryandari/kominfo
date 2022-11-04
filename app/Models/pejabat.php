@@ -11,12 +11,15 @@ class pejabat extends Model
 
     protected $fillable = [
         // 'id',
+        'tahun_sk',
+        'tanggal_sk',
+        'nomor_sk',
         'kuasa_pengguna_anggaran',
         'nip_kuasa_pengguna',
         'pejabat_pembuatan_komitmen',
         'nip_pejabat_komitmen',
         'pejabat_pengadaan',
-        'nip_pejabat_kpengadaan',
+        'nip_pejabat_pengadaan',
         'bpp',
         'nip_bpp'
     ];

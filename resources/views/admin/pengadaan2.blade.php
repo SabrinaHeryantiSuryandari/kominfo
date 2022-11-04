@@ -53,7 +53,8 @@
                 <h6 class="m-0 font-weight-bold text-white text-center">Tabel Data Aset</h6>
             </div> --}} -->
             <div class="card-body">
-                <h4 class="card-title">Data Pengadaan <i class="fa-solid fa-greater-than "></i> 50 juta</h4>
+                <h3>Data Pengadaan <i class="fa-solid fa-greater-than "></i> 50 juta</h3>
+                <br>
                 <div class="table-responsive">
                     @if ($message = Session::get('success'))
                     <div class="alert alert-success">
@@ -61,7 +62,7 @@
                     </div>
                     @endif
 
-                    <table class="table table-bordered" id="example" style="width:100%">
+                    <table class="table table-bordered" id="data1" style="width:100%">
                         <thead>
                             <tr>
                                 {{-- <th>NO</th> --}}
@@ -108,6 +109,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                    <br>
                 </div>
             </div>
         </div>

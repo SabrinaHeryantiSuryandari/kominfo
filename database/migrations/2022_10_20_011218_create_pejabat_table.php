@@ -20,20 +20,23 @@ return new class extends Migration
             // $table->string('pejabat_pembuatan_komitmen');
             // $table->string('nip_pejabat_komitmen');
             // $table->string('pejabat_pengadaan');
-            // $table->string('nip_pejabat_kpengadaan');
+            // $table->string('nip_pejabat_pengadaan');
             // $table->string('bpp');
             // $table->string('nip_bpp');
             // $table->timestamps();
 
             $table->id();
+            $table->Integer('tahun_sk');
+            $table->date('tanggal_sk');
+            $table->string('nomor_sk');
             $table->string('kuasa_pengguna_anggaran');
-            $table->bigInteger('nip_kuasa_pengguna');
+            $table->string('nip_kuasa_pengguna');
             $table->string('pejabat_pembuatan_komitmen');
-            $table->bigInteger('nip_pejabat_komitmen');
+            $table->string('nip_pejabat_komitmen');
             $table->string('pejabat_pengadaan');
-            $table->bigInteger('nip_pejabat_kpengadaan');
+            $table->string('nip_pejabat_pengadaan');
             $table->string('bpp');
-            $table->bigInteger('nip_bpp');
+            $table->string('nip_bpp');
             $table->timestamps();
         });
     }

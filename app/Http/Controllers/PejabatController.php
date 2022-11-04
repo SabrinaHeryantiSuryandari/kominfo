@@ -32,6 +32,7 @@ class PejabatController extends Controller
         // $pejabats = pejabat::all();
 
         // return view('pejabat', compact('pejabats'));
+
     }
 
     /**
@@ -43,13 +44,16 @@ class PejabatController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            // 'id' => 'required',
+            'id' => 'required',
+            'tahun_sk' => 'required',
+            'tanggal_sk' => 'required',
+            'nomor_sk' => 'required',
             'kuasa_pengguna_anggaran' => 'required',
             'nip_kuasa_pengguna' => 'required',
             'pejabat_pembuatan_komitmen' => 'required',
             'nip_pejabat_komitmen' => 'required',
             'pejabat_pengadaan' => 'required',
-            'nip_pejabat_kpengadaan' => 'required',
+            'nip_pejabat_pengadaan' => 'required',
             'bpp' => 'required',
             'nip_bpp' => 'required'
 
@@ -59,7 +63,7 @@ class PejabatController extends Controller
         // $asets = Aset::create($request->except(['aset_id', 'nama', 'keterangan']));
         // $pemilik = Pemilik::create(['aset_id' => $asets->id, $request->only(['nama', 'keterangan', 'aset_id'])]);
 
-        return redirect()->route('pejabats.index')
+        return redirect()->route('pejabat.index')
             ->with('success', 'Data Pelaksana Berhasil Disimpan!');
     }
 
@@ -71,7 +75,12 @@ class PejabatController extends Controller
      */
     public function show(pejabat $pejabat)
     {
-        return view('admin.show', compact('pejabat'));
+        // return view('admin.show', compact('pejabat'));
+        // return response()->json([
+        //     'success' => true,
+        //     'message' => 'Detail Data Post',
+        //     'data'    => $pejabat 
+        // ]); 
     }
 
     /**
@@ -82,7 +91,15 @@ class PejabatController extends Controller
      */
     public function edit(pejabat $pejabat)
     {
-        return view('admin.index', compact('pejabat'));
+        // $pejabat = Pejabat::find($id);
+        // $pejabat->distribution_code=Input::get('distribution_code');
+        // $pejabat->destination=Input::get('destination');
+        // $pejabat->hlr=Input::get('hlr');
+        // $pejabat->first_iccid=Input::get('first_iccid');
+        // $pejabat->last_iccid=Input::get('last_iccid');
+        // $pejabat->quantity=Input::get('quantity');
+
+        return view('index.admin', compact('pejabat'));
     }
 
     /**
@@ -95,21 +112,22 @@ class PejabatController extends Controller
     public function update(Request $request, pejabat $pejabat)
     {
         $request->validate([
+            'tahun_sk' => 'required',
+            'tanggal_sk' => 'required',
+            'nomor_sk' => 'required',
             'kuasa_pengguna_anggaran' => 'required',
             'nip_kuasa_pengguna' => 'required',
             'pejabat_pembuatan_komitmen' => 'required',
             'nip_pejabat_komitmen' => 'required',
             'pejabat_pengadaan' => 'required',
-            'nip_pejabat_kpengadaan' => 'required',
+            'nip_pejabat_pengadaan' => 'required',
             'bpp' => 'required',
             'nip_bpp' => 'required'
         ]);
 
-        $pejabat->fill($request->post())->save();
-        // $pejabat->update($request->all());
+        $pejabat->update($request->all());
 
-        return redirect()->route('pejabats.index')
-            ->with('success', 'Aset Berhasil updated!');
+        return redirect()->route('index.admin');
     }
 
     /**
@@ -122,7 +140,60 @@ class PejabatController extends Controller
     {
         $pejabat->delete();
 
-        return redirect()->route('pejabats.index')
+        return redirect()->route('pejabat.index')
             ->with('success', 'Aset Berhasil Dihapus!');
+    }
+
+    public function ubahpejabat($id)
+    {
+    $pejabat = Pejabat::select('*')
+                ->where('id', $id)
+                ->get();
+
+    return view('index.admin', ['pejabat' => $pejabat]);
+    }
+    public function updatepejabat(Request $request, Pejabat $pejabat)
+    {
+    $pejabat = Pejabat::where('id', $request->id)
+                ->update([
+                    'tahun_sk' => $request->tahun_sk,
+                    'tanggal_sk' => $request->tanggal_sk,
+                    'nomor_sk' => $request->nomor_sk,
+                    'kuasa_pengguna_anggaran' => $request->kuasa_pengguna_anggaran,
+                    'nip_kuasa_pengguna' => $request->nip_kuasa_pengguna,
+                    'pejabat_pembuatan_komitmen' => $request->pejabat_pembuatan_komitmen,
+                    'nip_pejabat_komitmen' => $request->nip_pejabat_komitmen,
+                    'pejabat_pengadaan' => $request->pejabat_pengadaan,
+                    'nip_pejabat_pengadaan' => $request->nip_pejabat_pengadaan,
+                    'bpp' => $request->bpp,
+                    'nip_bpp' => $request->nip_bpp
+                ]);
+
+
+    $data = $pejabat->insert->Pejabat::all();
+
+    return redirect()->route('home', $data);
+    
+    // return view('index.admin', ['pejabat' => $pejabat]);
+
+    // $request->validate([
+    //     'tahun_sk' => 'required',
+    //         'tanggal_sk' => 'required',
+    //         'nomor_sk' => 'required',
+    //         'kuasa_pengguna_anggaran' => 'required',
+    //         'nip_kuasa_pengguna' => 'required',
+    //         'pejabat_pembuatan_komitmen' => 'required',
+    //         'nip_pejabat_komitmen' => 'required',
+    //         'pejabat_pengadaan' => 'required',
+    //         'nip_pejabat_kpengadaan' => 'required',
+    //         'bpp' => 'required',
+    //         'nip_bpp' => 'required'
+    // ]);
+  
+    // $pejabat->update($request->all());
+  
+    // return redirect()->route('home')
+    //                 ->with('success','Aset Berhasil updated!');
+
     }
 }

@@ -57,14 +57,14 @@ Route::get('/lihat', function () {
 });
 
 //baru
-Route::get('/pengadaan2', function () {
-    return view('admin.pengadaan2');
-});
+// Route::get('/pengadaan2', function () {
+//     return view('admin.pengadaan2');
+// });
 
 
-Route::get('/input_anggaran', function () {
-    return view('admin.input_anggaran');
-});
+// Route::get('/input_anggaran', function () {
+//     return view('admin.input_anggaran');
+// });
 
 // Route::resource('/pengaadaan', PengadaanController::class);
 // Route::get('/input_pengadaan', function () {
@@ -80,6 +80,17 @@ Route::resource('/pelaksana', PelaksanaController::class);
 // Route::post('/inputpelaksana'. PelaksanaController::class);
 Route::get('/input_pengadaan', [PengadaanController::class, 'index']);
 Route::post('/postpengadaan', [PengadaanController::class, 'store']);
+
+// Route::get('/{id}/edit', 'PengadaanController@edit');
+// Route::post('/update/{id}', 'PengadaanController@update');
+// Route::delete('{id}/hapus', 'PengadaanController@destroy');
+// Route::get('/pengadaan/{id}/edit', 'PengadaanController@edit');
+// Route::patch('/pengadaan/{id}', 'PengadaanController@update');
+// Route::delete('/pengadaan/{id}', 'PengadaanController@destroy');
+
+// Route::get('pejabat/tampil', [PejabatController::class, 'tampilpejabat'])->name('tampilpejabat')->middleware('auth');
+Route::get('pejabat/ubah/{id}', [PejabatController::class, 'ubahpejabat'])->name('ubahpejabat')->middleware('auth');
+Route::post('pejabat/update', [PejabatController::class, 'updatepejabat'])->name('updatepejabat')->middleware('auth');
 
 Route::get('/input_jadwal', [JadwalController::class, 'index']);
 Route::post('/postjadwal', [JadwalController::class, 'store']);
@@ -97,9 +108,14 @@ Route::get('/pengadaan1', [PengadaanController::class, 'index1']);
 Route::get('/pengadaan2', [PengadaanController::class, 'index2']);
 
 //pejabat
-Route::get('/pejabat', [PejabatController::class, 'index']);
+// Route::get('/pejabat', [PejabatController::class, 'index']);
+// // Route::get('/editpejabat', [PejabatController::class, 'edit']);
 
+// // Route::get('/editpejabat', [PejabatController::class, 'update']);
+// Route::resource('/pejabat', PejabatController::class);
 
+// Route::get('pejabat/edit/{id}', array('as'=>'edit_pejabat','pejabat'=>'PejabatController@edit'));
+// Route::put('pejabat/update/{id}', array('as'=>'update_pejabat','pejabat'=>'PejabatController@update'));
 
 // Route::get('/input_jadwal', function () {
 //     return view('admin.input_jadwal');
@@ -131,6 +147,8 @@ Route::post('/save', [view::class, 'save']);
 // Route::delete('/admin/{id}', 'view@destroy')->name('admin.destroy');
 // Route::get('admin/hapus/{id}', 'view@hapus');
 Route::get('admin/hapus/{id}', [view::class, 'hapus']);
+// Route::get('admin/edit/{id}', [PejabatController::class, '']);
+
 
 Route::get('/guest', [GuestController::class, 'index'])->name('guest');
 
@@ -154,7 +172,12 @@ Route::get('/nota_dinas1', function () {
 Route::get('/nota_dinas2', function () {
     return view('print.nota_dinas2');
 });
+Route::get('/undangan_persiapan', function () {
+    return view('print.undangan_persiapan');
+});
 Route::get('/pakta_integritas', function () {
     return view('print.pakta_integritas');
 });
 // Route::resource('/getusr',[App\Http\Controllers\AdminController::class, 'index']);
+
+// Route::get('/editpejabat/{}')

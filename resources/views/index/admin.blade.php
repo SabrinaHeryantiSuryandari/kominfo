@@ -54,9 +54,17 @@
             <div class="card-body">
                 <h4 class="card-title">Daftar Pejabat</h4>
                 <div class="text-right">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalSaya">
+                    {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalSaya">
                         Edit Data Pejabat
-                    </button>
+                    </button> --}}
+                    {{-- <a class="btn btn-primary" href="/editpejabat{{$pejabat->id}}" data-toggle="modal" data-target="#modalSaya">Edit Data Pejabat</a> --}}
+                    @foreach ($pejabat as $p)
+                        
+                    <a href="/pejabat/ubah/{{$p->id}}" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modalSaya">
+                        {{-- <i class="fa fa-pencil"></i> --}}
+                        Edit Data Pejabat
+                    </a>
+                    @endforeach
                 </div>
                 <div class="table-responsive pt-3 pb-2">
                     @if ($message = Session::get('success'))
@@ -105,7 +113,7 @@
                             <tr>
                                 <td>Pejabat Pengadaan</td>
                                 <td>{{ $pjb->pejabat_pengadaan }}</td>
-                                <td>{{ $pjb->nip_pejabat_kpengadaan }}</td>
+                                <td>{{ $pjb->nip_pejabat_pengadaan }}</td>
                             </tr>
                             <tr>
                                 <td>BPP</td>
@@ -165,7 +173,7 @@
                     <p class="card-title">Sales Report</p>
                     <a href="#" class="text-info">View all</a>
                 </div>
-                <p class="font-weight-500">The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc</p>
+                <p class="font-weight-500">The total text of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc</p>
                 <div id="sales-legend" class="chartjs-legend mt-4 mb-2">
                     <ul class="1-legend">
                         <li>
@@ -200,23 +208,39 @@
                     {{ session()->get('message') }}
                 </div>
                 @endif
-                <form>
+                {{-- <form action="" method="POST"> --}}
+                @foreach($pejabat as $p)
+                <form method="post" action="{{route('updatepejabat')}}">
                     @csrf
+                    @method('PUT')
+
+                    <div class="mb-4">
+                        <label for="recipient-name" class="col-form-label">Tahun SK</label>
+                        <input type="text" class="form-control" id="recipient-name" name="tahun_sk" value="{{ $p->tahun_sk }}" placeholder="Tahun SK">
+                    </div>
+                    <div class="mb-4">
+                        <label for="recipient-name" class="col-form-label">Tanggal SK</label>
+                        <input type="text" class="form-control" id="recipient-name" name="tanggal_sk" value="{{ $p->tanggal_sk }}" placeholder="Tanggal SK">
+                    </div>
+                    <div class="mb-4">
+                        <label for="recipient-name" class="col-form-label">Nomor SK</label>
+                        <input type="text" class="form-control" id="recipient-name" name="nomor_sk" value="{{ $p->nomor_sk }}" placeholder="Nomor SK">
+                    </div>
                     <div class="mb-4">
                         <label for="recipient-name" class="col-form-label">Kuasa Pengguna Anggaran</label>
-                        <input type="text" class="form-control" id="recipient-name" name="kuasa_pengguna_anggaran" value="">
+                        <input type="text" class="form-control" id="recipient-name" name="kuasa_pengguna_anggaran" value="{{ $p->kuasa_pengguna_anggaran }}" placeholder="Kuasa Pengguna Angggaran">
                     </div>
                     <div class="mb-4">
                         <label for="message-text" class="col-form-label">NIP Kuasa Pengguna Anggaran</label>
-                        <input type="number" class="form-control" id="recipient-name" name="nip_kuasa_pengguna" value="">
+                        <input type="text" class="form-control" id="recipient-name" name="nip_kuasa_pengguna" value="{{ $p->nip_kuasa_pengguna }}" placeholder="NIP Kuasa Pengguna Anggaran">
                     </div>
                     <div class="mb-4">
                         <label for="message-text" class="col-form-label">Pejabat Pembuat Komitmen</label>
-                        <input type="text" class="form-control" id="recipient-name" name="pejabat_pembuatan_komitmen" value="">
+                        <input type="text" class="form-control" id="recipient-name" name="pejabat_pembuatan_komitmen" value="{{ $p->pejabat_pembuatan_komitmen }}" placeholder="Pejabat Pembuat Komitmen">
                     </div>
                     <div class="mb-4">
                         <label for="message-text" class="col-form-label">NIP Pejabat Pembuat Komitmen</label>
-                        <input type="number" class="form-control" id="recipient-name" name="nip_pejabat_komitmen" value="">
+                        <input type="text" class="form-control" id="recipient-name" name="nip_pejabat_komitmen" value="{{ $p->nip_pejabat_komitmen }}" placeholder="NIP Pejabat Pembuat Komitmen">
                     </div>
                     <div class="mb-4">
                         <label for="message-text" class="col-form-label">Pejabat Pengadaan</label>
@@ -224,21 +248,26 @@
                     </div>
                     <div class="mb-4">
                         <label for="message-text" class="col-form-label">NIP Pejabat Pengadaan</label>
-                        <input type="number" class="form-control" id="recipient-name" name="nip_pejabat_kpengadaan" value="">
+                        <input type="text" class="form-control" id="recipient-name" name="nip_pejabat_pengadaan" value="{{ $p->nip_pejabat_pengadaan }}" placeholder="Pejabat Pengadaan">
                     </div>
                     <div class="mb-4">
                         <label for="message-text" class="col-form-label">BPP</label>
-                        <input type="text" class="form-control" id="recipient-name" name="bpp" value="">
+                        <input type="text" class="form-control" id="recipient-name" name="bpp" value="{{ $p->bpp }}" placeholder="BPP">
                     </div>
                     <div class="mb-4">
                         <label for="message-text" class="col-form-label">NIP BPP</label>
-                        <input type="number" class="form-control" id="recipient-name" name="nip_bpp" value="">
+                        <input type="text" class="form-control" id="recipient-name" name="nip_bpp" value="{{ $p->nip_bpp}}" placeholder="NIP BPP">
                     </div>
+                    {{-- <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                        <button type="submit" class="btn btn-primary">Oke</button>
+                        {{-- <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Update Data</button> --}}
+                    {{-- </div>  --}}
+                    <div class="form-group text-right">
+                        <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Update Data</button>
+                      </div>
                 </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                <button type="button" class="btn btn-primary">Oke</button>
+                @endforeach
             </div>
         </div>
     </div>
