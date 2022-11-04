@@ -25,11 +25,7 @@ class PengadaanController extends Controller
         // $jadwals = Jadwal::all();
 
         return view(
-<<<<<<< HEAD
             'admin.input_pengadaan',
-=======
-            'admin.pengadaan1',
->>>>>>> 794381cd829e2053e804dbf95e03dbeae591b1ab
             // 'admin.input_pengadaan',
             ['pengadaan' => $pengadaan],
             ['pelaksana' => $pelaksana]
@@ -171,8 +167,8 @@ class PengadaanController extends Controller
      */
     public function edit(Pengadaan $pengadaan)
     {
-        
-        $pengadaan = Pengadaan::where('id',$pengadaan)->first();
+
+        $pengadaan = Pengadaan::where('id', $pengadaan)->first();
         return view('admin.edit', compact('pengadaan'));
         // return view('m');
     }
@@ -186,24 +182,24 @@ class PengadaanController extends Controller
      */
     public function update(Request $request, pengadaan $pengadaan)
     {
-        $pengadaan = Pengadaan::where('id',$pengadaan)->first();
-            // $pengadaan->
-            // $pengadaan
-            $request->validate([
-                // 'id' => 'required',
-                'pelaksana_id' => 'required',
-                'jenis_pengadaan' => 'required',
-                'total_hps' => 'required',
-                'deskripsi_hps' => 'required',
-                'harga_penawaran' => 'required',
-                'deskripsi_penawaran' => 'required',
-                'nilai_negosiasi' => 'required',
-                'deskripsi_negosiasi' => 'required'
-            ]);
-    
-            Pengadaan::create($request->post());
-    
-            return redirect()->to('input_jadwal');
+        $pengadaan = Pengadaan::where('id', $pengadaan)->first();
+        // $pengadaan->
+        // $pengadaan
+        $request->validate([
+            // 'id' => 'required',
+            'pelaksana_id' => 'required',
+            'jenis_pengadaan' => 'required',
+            'total_hps' => 'required',
+            'deskripsi_hps' => 'required',
+            'harga_penawaran' => 'required',
+            'deskripsi_penawaran' => 'required',
+            'nilai_negosiasi' => 'required',
+            'deskripsi_negosiasi' => 'required'
+        ]);
+
+        Pengadaan::create($request->post());
+
+        return redirect()->to('input_jadwal');
 
 
         // $pengadaan =   Pelaksana::updating($request->except([

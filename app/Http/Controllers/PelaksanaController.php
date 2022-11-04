@@ -16,7 +16,12 @@ class PelaksanaController extends Controller
      */
     public function index()
     {
-        $pelaksana = Pelaksana::all();
+
+        $pelaksana = Pelaksana::latest()->paginate(5);
+
+        return view('admin.input_pelaksana', compact('pelaksana'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
+        // $pelaksana = Pelaksana::all();
         // $pengadaan = Pengadaan::all();
         // $pelaksanas = pelaksana::orderBy('id','desc')->paginate(5);
         // return view('pelaksanas.index', compact('pelaksanas'));
@@ -25,11 +30,11 @@ class PelaksanaController extends Controller
         // $pelaksana = Pelaksana::select('*')
         //                 ->get();
 
-        return view(
-            'admin.input_pelaksana',
-            ['pelaksana' => $pelaksana],
-            //  ['pengadaan'=>$pengadaan] 
-        )->with('i', (request()->input('page', 1) - 1) * 5);
+        // return view(
+        //     'admin.input_pelaksana',
+        //     ['pelaksana' => $pelaksana],
+        //     //  ['pengadaan'=>$pengadaan] 
+        // )->with('i', (request()->input('page', 1) - 1) * 5);
         // dd($pelaksana);
 
 
@@ -65,14 +70,18 @@ class PelaksanaController extends Controller
             'tlp' => 'required'
         ]);
 
-        Pelaksana::create($request->post());
+        // Pelaksana::create($request->post());
+        Pelaksana::create($request->all());
+
+        return redirect()->route('pelaksana.index')
+            ->with('success', 'Data Pelaksana Berhasil Ditambahkan');
         // $asets = Aset::create($request->except(['aset_id', 'nama', 'keterangan']));
         // $pemilik = Pemilik::create(['aset_id' => $asets->id, $request->only(['nama', 'keterangan', 'aset_id'])]);
 
         // return redirect()->route('admin.input_pelaksana')
         //                 ->with('success','Data Pelaksana Berhasil Disimpan!');
 
-        return redirect()->to('home');
+        // return redirect()->to('home');
     }
 
     /**
@@ -83,7 +92,7 @@ class PelaksanaController extends Controller
      */
     public function show(Pelaksana $pelaksana)
     {
-        return view('admin.input_pelaksana', compact('pelaksana'));
+        return view('pelaksana.index', compact('pelaksana'));
     }
 
     /**
@@ -116,10 +125,15 @@ class PelaksanaController extends Controller
             'tlp' => 'required'
         ]);
 
-        $pelaksana->fill($request->post())->save();
+        $pelaksana->update($request->all());
 
-        return redirect()->route('pelaksanas.index')
-            ->with('success', 'Aset Berhasil updated!');
+        return redirect()->route('pelaksana.index')
+            ->with('success', 'Data Pelaksana Berhasil di Update');
+
+        // $pelaksana->fill($request->post())->save();
+
+        // return redirect()->route('pelaksanas.index')
+        //     ->with('success', 'Aset Berhasil updated!');
     }
 
     /**

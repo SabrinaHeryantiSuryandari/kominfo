@@ -91,6 +91,7 @@ Route::post('/postpengadaan', [PengadaanController::class, 'store']);
 // Route::get('pejabat/tampil', [PejabatController::class, 'tampilpejabat'])->name('tampilpejabat')->middleware('auth');
 Route::get('pejabat/ubah/{id}', [PejabatController::class, 'ubahpejabat'])->name('ubahpejabat')->middleware('auth');
 Route::post('pejabat/update', [PejabatController::class, 'updatepejabat'])->name('updatepejabat')->middleware('auth');
+Route::resource('/pejabat', PejabatController::class);
 
 Route::get('/input_jadwal', [JadwalController::class, 'index']);
 Route::post('/postjadwal', [JadwalController::class, 'store']);
