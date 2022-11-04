@@ -14,6 +14,7 @@ use App\Http\Controllers\BarangController;
 
 use App\Http\Controllers\PejabatController;
 
+use Illuminate\Contracts\Cache\Store;
 use Illuminate\Contracts\View\View as ViewView;
 use Illuminate\Support\Facades\Auth;
 
@@ -78,6 +79,17 @@ Route::post('/postdata', [PelaksanaController::class, 'store']);
 // Route::post('/inputpelaksana'. PelaksanaController::class);
 Route::post('/postpengadaan', [PengadaanController::class, 'store']);
 
+Route::get('/pejabat/edit/{id}', [PejabatController::class, 'edit']);
+Route::post('/pejabat/update/{id}', [PejabatController::class, 'update']);
+
+
+
+// Route::get('{id}/edit-pejabat', [PejabatController::class], 'edit');
+// Route::get('update-pejabat/{id}' [PejabatController::class], 'update');
+// Route::get('{id}/edit-pejabat', 'PejabatController@edit');
+// Route::post('update-pejabat/{id}', 'PejabatController@update');
+// Route::post('update-pejabat/{id}', [PejabatController::class], 'update');
+
 // Route::get('/{id}/edit', 'PengadaanController@edit');
 // Route::post('/update/{id}', 'PengadaanController@update');
 // Route::delete('{id}/hapus', 'PengadaanController@destroy');
@@ -86,8 +98,10 @@ Route::post('/postpengadaan', [PengadaanController::class, 'store']);
 // Route::delete('/pengadaan/{id}', 'PengadaanController@destroy');
 
 // Route::get('pejabat/tampil', [PejabatController::class, 'tampilpejabat'])->name('tampilpejabat')->middleware('auth');
-Route::get('pejabat/ubah/{id}', [PejabatController::class, 'ubahpejabat'])->name('ubahpejabat')->middleware('auth');
-Route::post('pejabat/update', [PejabatController::class, 'updatepejabat'])->name('updatepejabat')->middleware('auth');
+// Route::get('pejabat/ubah/{id}', [PejabatController::class, 'edit'])->name('ubahpejabat')->middleware('auth');
+// Route::post('pejabat/update', [PejabatController::class, 'update'])->name('updatepejabat')->middleware('auth');
+// Route::get('pejabat/ubah/{id}', [PejabatController::class, 'ubahpejabat'])->name('ubahpejabat')->middleware('auth');
+// Route::post('pejabat/update', [PejabatController::class, 'updatepejabat'])->name('updatepejabat')->middleware('auth');
 
 Route::get('/input_jadwal', [JadwalController::class, 'index']);
 Route::post('/postjadwal', [JadwalController::class, 'store']);

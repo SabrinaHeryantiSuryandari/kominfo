@@ -13,8 +13,6 @@
         <div class="card card-tale">
             <div class="card-body">
                 <h4 class="mb-4 pt-2">Input Pelaksana</h4>
-                <!-- {{-- <p class="fs-30 mb-2">Input Anggaran</p><br> --}}
-                {{-- <p>22.00% (30 days)</p> --}} -->
                 <div class="pt-2">
                     <a href="/input_pelaksana" type="button" class="btn btn-outline-danger" style="color: white; border-color: white">
                         <i class="ti-upload btn-icon-prepend"></i>
@@ -29,14 +27,11 @@
         <div class="card card-dark-blue">
             <div class="card-body">
                 <h4 class="mb-4 pt-2 ">Input Pengadaan</h4>
-                <!-- {{-- <p class="fs-30 mb-2">Input Pengadaan</p><br> --}}
-                {{-- <p>22.00% (30 days)</p> --}} -->
                 <div class="pt-2 ">
                     <!-- {{-- <a href="/input_pengadaan" type="button" class="btn btn-danger btn-icon-text  "> --}} -->
                     <a href="/input_pengadaan" type="button" class="btn btn-outline-danger" style="color: white; border-color: white">
                         <i class="ti-upload btn-icon-prepend"></i>
                         Input Pengadaan
-                        <!-- {{-- <i class="menu-arrow"></i> --}} -->
                     </a>
                 </div>
             </div>
@@ -47,24 +42,32 @@
 <div class="row">
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card shadow">
-            <!-- {{-- <div class="card shadow mb-3 "> --}}
-            {{-- <div class="card-header py-2 "style="background-color: #40B9CB;">
-                <h6 class="m-0 font-weight-bold text-white text-center">Tabel Data Aset</h6>
-            </div> --}} -->
             <div class="card-body">
                 <h4 class="card-title">Daftar Pejabat</h4>
-                <div class="text-right">
-                    {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalSaya">
-                        Edit Data Pejabat
-                    </button> --}}
-                    {{-- <a class="btn btn-primary" href="/editpejabat{{$pejabat->id}}" data-toggle="modal" data-target="#modalSaya">Edit Data Pejabat</a> --}}
-                    @foreach ($pejabat as $p)
-                        
-                    <a href="/pejabat/ubah/{{$p->id}}" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modalSaya">
-                        {{-- <i class="fa fa-pencil"></i> --}}
-                        Edit Data Pejabat
-                    </a>
+                <div>
+
+                    @foreach ( $pejabat as $p )
+                    <div>
+                    <tr>
+                        <th>tahun:</th>
+                        <th>{{$p->tahun_sk}}</th>
+                    </tr></div>
+                    <div>
+                    <tr>
+                        <th>Tanggal:</th>
+                        <th>{{$p->tanggal_sk}}</th>
+                    </tr></div>
+                    <div>
+                    <tr>
+                        <th>Nomor:</th>
+                        <th>{{$p->nomor_sk}}</th>
+                    </tr></div>
                     @endforeach
+                </div>
+                <div class="text-right">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalSaya">
+                        Edit Data Pejabat
+                    </button>
                 </div>
                 <div class="table-responsive pt-3 pb-2">
                     @if ($message = Session::get('success'))
@@ -79,15 +82,6 @@
                                 <th> Jenis Pejabat </th>
                                 <th> Nama Pejabat </th>
                                 <th> NIP Pejabat </th>
-                                <!-- <th> Kuasa Pengguna </th>
-                                <th> NIP Kuasa Pengguna </th>
-                                <th> Kuasa Pengguna </th>
-                                <th> NIP Kuasa Pengguna </th>
-                                <th> Kuasa Pengguna </th>
-                                <th> NIP Kuasa Pengguna </th>
-                                <th> Kuasa Pengguna </th>
-                                <th> NIP Kuasa Pengguna </th> -->
-                                <!-- <th width="280px">Action</th> -->
                             </tr>
                         </thead>
                         <tbody>
@@ -96,14 +90,6 @@
                                 <td>Kuasa Pengguna Anggaran</td>
                                 <td>{{ $pjb->kuasa_pengguna_anggaran }}</td>
                                 <td>{{ $pjb->nip_kuasa_pengguna }}</td>
-                                {{-- <td>{{ $pjb->kuasa_pengguna_anggaran }}</td>
-                                <td>{{ $pjb->nip_kuasa_pengguna }}</td>
-                                <td>{{ $pjb->pejabat_pembuatan_komitmen }}</td>
-                                <td>{{ $pjb->nip_pejabat_komitmen }}</td>
-                                <td>{{ $pjb->pejabat_pengadaan }}</td>
-                                <td>{{ $pjb->nip_pejabat_pengadaan }}</td>
-                                <td>{{ $pjb->bpp }}</td>
-                                <td>{{ $pjb->nip_bpp }}</td> --}}
                             </tr>
                             <tr>
                                 <td>Pejabat Pembuat Komitmen</td>
@@ -208,70 +194,88 @@
                     {{ session()->get('message') }}
                 </div>
                 @endif
-                {{-- <form action="" method="POST"> --}}
-                @foreach($pejabat as $p)
-                <form method="post" action="{{route('updatepejabat')}}">
-                    @csrf
-                    @method('PUT')
 
+                @foreach ($pejabat as $pejabat)
+                <form method="POST" action="{{ url('pejabat/update', $pejabat->id ) }}">
+                    @csrf
+                    
                     <div class="mb-4">
                         <label for="recipient-name" class="col-form-label">Tahun SK</label>
-                        <input type="text" class="form-control" id="recipient-name" name="tahun_sk" value="{{ $p->tahun_sk }}" placeholder="Tahun SK">
+                        {{-- <input type="text" class="form-control" id="recipient-name" name="tahun_sk" value="{{ $value->tahun_sk }}" placeholder="Tahun SK"> --}}
+                        {{-- <input type="text" class="form-control" id="recipient-name" name="tahun_sk" value="{{ $p->tahun_sk }}" placeholder="Tahun SK"> --}}
+                        <input type="text" class="form-control" id="recipient-name" name="tahun_sk" value="{{ $pejabat->tahun_sk }}" placeholder="Tahun SK">
                     </div>
                     <div class="mb-4">
                         <label for="recipient-name" class="col-form-label">Tanggal SK</label>
-                        <input type="text" class="form-control" id="recipient-name" name="tanggal_sk" value="{{ $p->tanggal_sk }}" placeholder="Tanggal SK">
+                        {{-- <input type="text" class="form-control" id="recipient-name" name="tanggal_sk" value="{{ $value->tanggal_sk }}" placeholder="Tanggal SK"> --}}
+                        {{-- <input type="text" class="form-control" id="recipient-name" name="tanggal_sk" value="{{ $p->tanggal_sk }}" placeholder="Tanggal SK"> --}}
+                        <input type="text" class="form-control" id="recipient-name" name="tanggal_sk" value="{{ $pejabat->tanggal_sk }}" placeholder="Tanggal SK">
                     </div>
                     <div class="mb-4">
                         <label for="recipient-name" class="col-form-label">Nomor SK</label>
-                        <input type="text" class="form-control" id="recipient-name" name="nomor_sk" value="{{ $p->nomor_sk }}" placeholder="Nomor SK">
+                        {{-- <input type="text" class="form-control" id="recipient-name" name="nomor_sk" value="{{ $value->nomor_sk }}" placeholder="Nomor SK"> --}}
+                        {{-- <input type="text" class="form-control" id="recipient-name" name="nomor_sk" value="{{ $p->nomor_sk }}" placeholder="Nomor SK"> --}}
+                        <input type="text" class="form-control" id="recipient-name" name="nomor_sk" value="{{ $pejabat->nomor_sk }}" placeholder="Nomor SK">
                     </div>
                     <div class="mb-4">
                         <label for="recipient-name" class="col-form-label">Kuasa Pengguna Anggaran</label>
-                        <input type="text" class="form-control" id="recipient-name" name="kuasa_pengguna_anggaran" value="{{ $p->kuasa_pengguna_anggaran }}" placeholder="Kuasa Pengguna Angggaran">
+                        {{-- <input type="text" class="form-control" id="recipient-name" name="kuasa_pengguna_anggaran" value="{{ $value->kuasa_pengguna_anggaran }}" placeholder="Kuasa Pengguna Angggaran"> --}}
+                        {{-- <input type="text" class="form-control" id="recipient-name" name="kuasa_pengguna_anggaran" value="{{ $p->kuasa_pengguna_anggaran }}" placeholder="Kuasa Pengguna Angggaran"> --}}
+                        <input type="text" class="form-control" id="recipient-name" name="kuasa_pengguna_anggaran" value="{{ $pejabat->kuasa_pengguna_anggaran }}" placeholder="Kuasa Pengguna Angggaran">
                     </div>
                     <div class="mb-4">
                         <label for="message-text" class="col-form-label">NIP Kuasa Pengguna Anggaran</label>
-                        <input type="text" class="form-control" id="recipient-name" name="nip_kuasa_pengguna" value="{{ $p->nip_kuasa_pengguna }}" placeholder="NIP Kuasa Pengguna Anggaran">
+                        {{-- <input type="text" class="form-control" id="recipient-name" name="nip_kuasa_pengguna" value="{{ $value->nip_kuasa_pengguna }}" placeholder="NIP Kuasa Pengguna Anggaran"> --}}
+                        {{-- <input type="text" class="form-control" id="recipient-name" name="nip_kuasa_pengguna" value="{{ $p->nip_kuasa_pengguna }}" placeholder="NIP Kuasa Pengguna Anggaran"> --}}
+                        <input type="text" class="form-control" id="recipient-name" name="nip_kuasa_pengguna" value="{{ $pejabat->nip_kuasa_pengguna }}" placeholder="NIP Kuasa Pengguna Anggaran">
                     </div>
                     <div class="mb-4">
                         <label for="message-text" class="col-form-label">Pejabat Pembuat Komitmen</label>
-                        <input type="text" class="form-control" id="recipient-name" name="pejabat_pembuatan_komitmen" value="{{ $p->pejabat_pembuatan_komitmen }}" placeholder="Pejabat Pembuat Komitmen">
+                        {{-- <input type="text" class="form-control" id="recipient-name" name="pejabat_pembuatan_komitmen" value="{{ $value->pejabat_pembuatan_komitmen }}" placeholder="Pejabat Pembuat Komitmen"> --}}
+                        {{-- <input type="text" class="form-control" id="recipient-name" name="pejabat_pembuatan_komitmen" value="{{ $p->pejabat_pembuatan_komitmen }}" placeholder="Pejabat Pembuat Komitmen"> --}}
+                        <input type="text" class="form-control" id="recipient-name" name="pejabat_pembuatan_komitmen" value="{{ $pejabat->pejabat_pembuatan_komitmen }}" placeholder="Pejabat Pembuat Komitmen">
                     </div>
                     <div class="mb-4">
                         <label for="message-text" class="col-form-label">NIP Pejabat Pembuat Komitmen</label>
-                        <input type="text" class="form-control" id="recipient-name" name="nip_pejabat_komitmen" value="{{ $p->nip_pejabat_komitmen }}" placeholder="NIP Pejabat Pembuat Komitmen">
+                        {{-- <input type="text" class="form-control" id="recipient-name" name="nip_pejabat_komitmen" value="{{ $value->nip_pejabat_komitmen }}" placeholder="NIP Pejabat Pembuat Komitmen"> --}}
+                        {{-- <input type="text" class="form-control" id="recipient-name" name="nip_pejabat_komitmen" value="{{ $p->nip_pejabat_komitmen }}" placeholder="NIP Pejabat Pembuat Komitmen"> --}}
+                        <input type="text" class="form-control" id="recipient-name" name="nip_pejabat_komitmen" value="{{ $pejabat->nip_pejabat_komitmen }}" placeholder="NIP Pejabat Pembuat Komitmen">
                     </div>
                     <div class="mb-4">
                         <label for="message-text" class="col-form-label">Pejabat Pengadaan</label>
-                        <input type="text" class="form-control" id="recipient-name" name="pejabat_pengadaan" value="">
+                        {{-- <input type="text" class="form-control" id="recipient-name" name="pejabat_pengadaan" value="{{ $value->pejabat_pengadaan}}" placeholder="Pejabat Pengadaan"> --}}
+                        {{-- <input type="text" class="form-control" id="recipient-name" name="pejabat_pengadaan" value="{{ $p->pejabat_pengadaan}}" placeholder="Pejabat Pengadaan"> --}}
+                        <input type="text" class="form-control" id="recipient-name" name="pejabat_pengadaan" value="{{ $pejabat->pejabat_pengadaan}}" placeholder="Pejabat Pengadaan">
                     </div>
                     <div class="mb-4">
                         <label for="message-text" class="col-form-label">NIP Pejabat Pengadaan</label>
-                        <input type="text" class="form-control" id="recipient-name" name="nip_pejabat_pengadaan" value="{{ $p->nip_pejabat_pengadaan }}" placeholder="Pejabat Pengadaan">
+                        {{-- <input type="text" class="form-control" id="recipient-name" name="nip_pejabat_pengadaan" value="{{ $value->nip_pejabat_pengadaan }}" placeholder="Pejabat Pengadaan"> --}}
+                        {{-- <input type="text" class="form-control" id="recipient-name" name="nip_pejabat_pengadaan" value="{{ $p->nip_pejabat_pengadaan }}" placeholder="Pejabat Pengadaan"> --}}
+                        <input type="text" class="form-control" id="recipient-name" name="nip_pejabat_pengadaan" value="{{ $pejabat->nip_pejabat_pengadaan }}" placeholder="Pejabat Pengadaan">
                     </div>
                     <div class="mb-4">
                         <label for="message-text" class="col-form-label">BPP</label>
-                        <input type="text" class="form-control" id="recipient-name" name="bpp" value="{{ $p->bpp }}" placeholder="BPP">
+                        {{-- <input type="text" class="form-control" id="recipient-name" name="bpp" value="{{ $value->bpp }}" placeholder="BPP"> --}}
+                        {{-- <input type="text" class="form-control" id="recipient-name" name="bpp" value="{{ $p->bpp }}" placeholder="BPP"> --}}
+                        <input type="text" class="form-control" id="recipient-name" name="bpp" value="{{ $pejabat->bpp }}" placeholder="BPP">
                     </div>
                     <div class="mb-4">
                         <label for="message-text" class="col-form-label">NIP BPP</label>
-                        <input type="text" class="form-control" id="recipient-name" name="nip_bpp" value="{{ $p->nip_bpp}}" placeholder="NIP BPP">
+                        {{-- <input type="text" class="form-control" id="recipient-name" name="nip_bpp" value="{{ $value->nip_bpp}}" placeholder="NIP BPP"> --}}
+                        {{-- <input type="text" class="form-control" id="recipient-name" name="nip_bpp" value="{{ $p->nip_bpp}}" placeholder="NIP BPP"> --}}
+                        <input type="text" class="form-control" id="recipient-name" name="nip_bpp" value="{{ $pejabat->nip_bpp}}" placeholder="NIP BPP">
                     </div>
-                    {{-- <div class="modal-footer">
+                    <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                        <button type="submit" class="btn btn-primary">Oke</button>
-                        {{-- <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Update Data</button> --}}
-                    {{-- </div>  --}}
-                    <div class="form-group text-right">
                         <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Update Data</button>
-                      </div>
+                    </div> 
                 </form>
                 @endforeach
             </div>
         </div>
     </div>
 </div>
+{{-- @endforeach --}}
 
 <!-- Content Row -->
 @endsection
