@@ -72,10 +72,13 @@ Route::get('/input_anggaran', function () {
 // });
 
 //untuk 
-Route::get('/input_pengadaan', [PelaksanaController::class, 'index']);
-Route::get('/input_pelaksana', [PelaksanaController::class, 'create']);
+
+Route::get('/input_pelaksana', [PelaksanaController::class, 'index']);
 Route::post('/postdata', [PelaksanaController::class, 'store']);
+Route::resource('/pelaksana', PelaksanaController::class);
+
 // Route::post('/inputpelaksana'. PelaksanaController::class);
+Route::get('/input_pengadaan', [PengadaanController::class, 'index']);
 Route::post('/postpengadaan', [PengadaanController::class, 'store']);
 
 Route::get('/input_jadwal', [JadwalController::class, 'index']);
