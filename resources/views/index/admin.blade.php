@@ -8,6 +8,7 @@
 @endsection
 <!-- Content Row -->
 
+{{-- Inputan --}}
 <div class="row ">
     <div class="col-md-6 mb-4 stretch-card transparent">
         <div class="card card-tale">
@@ -39,6 +40,7 @@
     </div>
 </div>
 
+{{-- Tabel Pejabat --}}
 <div class="row">
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card shadow">
@@ -115,6 +117,7 @@
     </div>
 
 </div>
+
 <!-- {{-- 
 <div class="card-body">
     <a href="/pegawai/tambah" class="btn btn-primary">Input Pegawai Baru</a>
@@ -143,6 +146,7 @@
     </table>
 </div> --}} -->
 
+{{-- Diagram --}}
 <div class="row">
     <div class="col grid-margin stretch-card">
         <div class="card shadow">
@@ -177,7 +181,7 @@
     </div>
 </div>
 
-<!-- Modal -->
+<!-- Modal Edit Pejabat -->
 <div class="modal fade" id="modalSaya" tabindex="-1" role="dialog" aria-labelledby="modalSayaLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable" role="document">
         <div class="modal-content">

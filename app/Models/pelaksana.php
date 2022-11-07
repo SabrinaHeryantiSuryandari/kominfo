@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class pelaksana extends Model
+class Pelaksana extends Model
 {
     use HasFactory;
 
@@ -26,7 +26,7 @@ class pelaksana extends Model
  
     public function pengadaan()
     {
-    	return $this->hasOne(pengadaan::class);
+    	return $this->hasOne(Pengadaan::class);
     }
 
 }

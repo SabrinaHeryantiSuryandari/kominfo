@@ -21,23 +21,6 @@ class PelaksanaController extends Controller
 
         return view('admin.input_pelaksana', compact('pelaksana'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
-        // $pelaksana = Pelaksana::all();
-        // $pengadaan = Pengadaan::all();
-        // $pelaksanas = pelaksana::orderBy('id','desc')->paginate(5);
-        // return view('pelaksanas.index', compact('pelaksanas'));
-        // $getmodel = new pelaksana()
-
-        // $pelaksana = Pelaksana::select('*')
-        //                 ->get();
-
-        // return view(
-        //     'admin.input_pelaksana',
-        //     ['pelaksana' => $pelaksana],
-        //     //  ['pengadaan'=>$pengadaan] 
-        // )->with('i', (request()->input('page', 1) - 1) * 5);
-        // dd($pelaksana);
-
-
     }
 
     /**
@@ -75,13 +58,6 @@ class PelaksanaController extends Controller
 
         return redirect()->route('pelaksana.index')
             ->with('success', 'Data Pelaksana Berhasil Ditambahkan');
-        // $asets = Aset::create($request->except(['aset_id', 'nama', 'keterangan']));
-        // $pemilik = Pemilik::create(['aset_id' => $asets->id, $request->only(['nama', 'keterangan', 'aset_id'])]);
-
-        // return redirect()->route('admin.input_pelaksana')
-        //                 ->with('success','Data Pelaksana Berhasil Disimpan!');
-
-        // return redirect()->to('home');
     }
 
     /**
@@ -113,27 +89,12 @@ class PelaksanaController extends Controller
      * @param  \App\Models\pelaksana  $pelaksana
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, pelaksana $pelaksana)
+    public function update(Request $request, $id)
     {
-        $request->validate([
-            'pt_pelaksana' => 'required',
-            'alamat' => 'required',
-            'nama_pelaksana' => 'required',
-            'jabatan_pelaksana' => 'required',
-            'kode_rekening' => 'required',
-            'npwp' => 'required',
-            'tlp' => 'required'
-        ]);
 
-        $pelaksana->update($request->all());
+        $pelaksana = Pelaksana::find($id)->update($request->all()); 
 
-        return redirect()->route('pelaksana.index')
-            ->with('success', 'Data Pelaksana Berhasil di Update');
-
-        // $pelaksana->fill($request->post())->save();
-
-        // return redirect()->route('pelaksanas.index')
-        //     ->with('success', 'Aset Berhasil updated!');
+        return back()->with('success',' Data telah diperbaharui!');
     }
 
     /**

@@ -76,8 +76,20 @@ Route::get('/lihat', function () {
 Route::resource('/pelaksana', PelaksanaController::class);
 Route::get('/input_pelaksana', [PelaksanaController::class, 'index']);
 Route::post('/postdata', [PelaksanaController::class, 'store']);
-Route::post('/pelaksana/update/{id}', [PelaksanaController::class, 'update']);
+// Route::get('/pelaksana/edit/{id}', [PelaksanaController::class, 'edit'])->name('editpelaksana');
+// Route::post('/pelaksana/update/{id}', [PelaksanaController::class, 'update'])->name('updatepelaksana');
+// Route::get('/pelaksana/edit', [PelaksanaController::class, 'edit'])->name('editpelaksana');
+// Route::post('/pelaksana/update', [PelaksanaController::class, 'update'])->name('updatepelaksana');
+// Route::post('/pelaksana/destory/{id}', [PelaksanaController::class, 'destory']);
+// Route::resource('/pelaksana', PelaksanaController::class);
+// Route::get('/{id}/edit-pelaksana', 'PelaksanaController@edit');
+// Route::post('/update-pelaksana/{id}', 'PelaksanaController@update');
 
+// Route::post('/inputpelaksana'. PelaksanaController::class);
+
+
+Route::get('/input_pengadaan', [PengadaanController::class, 'index']);
+Route::post('/postpengadaan', [PengadaanController::class, 'store']);
 
 
 // Route::get('/{id}/edit', 'PengadaanController@edit');
@@ -87,19 +99,14 @@ Route::post('/pelaksana/update/{id}', [PelaksanaController::class, 'update']);
 // Route::patch('/pengadaan/{id}', 'PengadaanController@update');
 // Route::delete('/pengadaan/{id}', 'PengadaanController@destroy');
 
-//jadwal
+
 Route::get('/input_jadwal', [JadwalController::class, 'index']);
 Route::post('/postjadwal', [JadwalController::class, 'store']);
 
-//barang
 Route::get('/input_barang', [BarangController::class, 'index']);
 Route::post('/postbarang', [BarangController::class, 'store']);
 
 Route::resource('/barang', BarangController::class);
-
-//Pengadaan
-Route::get('/input_pengadaan', [PengadaanController::class, 'index']);
-Route::post('/postpengadaan', [PengadaanController::class, 'store']);
 
 // Route::get('/input_pengadaan', [PengadaanController::class, 'index']);
 Route::resource('/pengadaan', PengadaanController::class);
