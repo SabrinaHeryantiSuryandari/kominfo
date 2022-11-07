@@ -160,10 +160,16 @@ Route::get('/pakta_integritas', function () {
 Route::get('/daftar_hadir', function () {
     return view('print.daftar_hadir');
 });
-Route::get('/berita_acara', function () {
-    return view('print.berita_acara');
-});
 Route::get('/ba_evaluasi', function () {
     return view('print.ba_evaluasi');
+});
+Route::get('/dok_prakualifikasi', function () {
+    return view('print.dok_prakualifikasi');
+});
+Route::get('/undangan_permintaan', function () {
+    return view('print.undangan_permintaan');
+});
+Route::get('/ba_penjelasan', function () {
+    return view('print.ba_penjelasan');
 });
 // Route::resource('/getusr',[App\Http\Controllers\AdminController::class, 'index']);

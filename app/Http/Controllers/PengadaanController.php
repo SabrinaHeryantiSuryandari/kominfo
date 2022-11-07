@@ -39,21 +39,21 @@ class PengadaanController extends Controller
     {
         // $pengadaan1 = Pengadaan::select('select * where nilai_negosiasi <= 10000000');
         $pengadaan1 = DB::table('pengadaans')
-                            ->where('nilai_negosiasi', '<=' , 50000000)
-                            ->join('pelaksanas', 'pelaksana_id', '=', 'pelaksanas.id')
-                            ->select('pengadaans.*', 'pelaksanas.pt_pelaksana', )
-                            ->get();
+            ->where('nilai_negosiasi', '<=', 50000000)
+            ->join('pelaksanas', 'pelaksana_id', '=', 'pelaksanas.id')
+            ->select('pengadaans.*', 'pelaksanas.pt_pelaksana',)
+            ->get();
 
         // $pengadaan = Pengadaan::all();
         $pelaksana = Pelaksana::all();
- 
+
         return view(
             'admin.pengadaan1',
             ['pengadaan' => $pengadaan1],
             // ['pengadaan' => $pengadaan],
             ['pelaksana' => $pelaksana]
         );
-        
+
         // return redirect()->route('pengadaan.index');
     }
 
@@ -61,14 +61,15 @@ class PengadaanController extends Controller
     {
         // $pengadaan2 = Pengadaan::select('select * where nilai_negosiasi > 10000000');
         $pengadaan2 = DB::table('pengadaans')
-                            ->where('nilai_negosiasi', '>' , 50000000)
-                            ->join('pelaksanas', 'pelaksana_id', '=', 'pelaksanas.id')
-                            ->select('pengadaans.*', 'pelaksanas.pt_pelaksana', )
-                            ->get();
+            ->where('nilai_negosiasi', '>', 50000000)
+            ->join('pelaksanas', 'pelaksana_id', '=', 'pelaksanas.id')
+            ->select('pengadaans.*', 'pelaksanas.pt_pelaksana',)
+            ->get();
 
         return view(
-            'admin.pengadaan2', 
-            ['pengadaan' => $pengadaan2]);
+            'admin.pengadaan2',
+            ['pengadaan' => $pengadaan2]
+        );
     }
 
     /**
